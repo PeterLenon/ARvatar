@@ -6,7 +6,9 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # If using vcpkg, configure with:
 #   -DCMAKE_TOOLCHAIN_FILE="$HOME/vcpkg/scripts/buildsystems/vcpkg.cmake"
-find_package(Protobuf REQUIRED)        # non-CONFIG so protobuf_generate is available
+find_package(Protobuf CONFIG REQUIRED)
+include(ProtobufGenerate)
+
 find_package(gRPC CONFIG REQUIRED)
 
 # ---- Paths ----
