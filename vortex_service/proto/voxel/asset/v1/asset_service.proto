@@ -1,0 +1,29 @@
+syntax = "proto3";
+package voxel.assets.v1;
+
+import "voxel/common/v1/types.proto";
+
+message GetNeutralRequest { string guru_id = 1; }
+message GetNeutralResponse {
+  voxel.common.v1.Mesh neutral_mesh = 1;
+  voxel.common.v1.Pcd  neutral_pcd  = 2;
+}
+
+message ListVisemesRequest { string guru_id = 1; }
+message ListVisemesResponse {
+  repeated voxel.common.v1.Viseme visemes = 1;
+}
+
+message GetVisemeMeshRequest {
+  string guru_id = 1;
+  voxel.common.v1.Viseme viseme = 2;
+}
+message GetVisemeMeshResponse {
+  voxel.common.v1.Mesh mesh = 1;
+}
+
+service AssetService {
+  rpc GetNeutral(GetNeutralRequest) returns (GetNeutralResponse);
+  rpc ListVisemes(ListVisemesRequest) returns (ListVisemesResponse);
+  rpc GetVisemeMesh(GetVisemeMeshRequest) returns (GetVisemeMeshResponse);
+}

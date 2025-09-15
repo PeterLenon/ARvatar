@@ -1,0 +1,38 @@
+syntax = "proto3";
+package voxel.ingest.v1;
+
+import "voxel/common/v1/types.proto";
+
+message StartSetupRequest {
+  string guru_id = 1;
+  string session_id = 2; // client-generated or service-generated
+}
+
+message StartSetupResponse {
+  string session_id = 1;
+}
+
+message SetupAck {
+  int64 received_frames = 1;
+}
+
+message FinalizeSetupRequest {
+  string guru_id = 1;
+  string session_id = 2;
+  // knobs (downsample/methods), omitted for brevity
+}
+
+message FinalizeSetupResponse {
+  voxel.common.v1.AssetRefs assets = 1;
+}
+
+service IngestService {
+  // 1) Start: init session if you want explicit lifecycle
+  rpc StartSetup(StartSetupRequest) returns (StartSetupResponse);
+
+  // 2) Stream frames for this session (bidi: device → frames, service → acks)
+  rpc StreamSetupFrames(stream voxel.common.v1.FrameChunk) returns (stream SetupAck);
+
+  // 3) Finalize: run PCD & mesh generation; return asset ids for this guru
+  rpc FinalizeSetup(FinalizeSetupRequest) returns (FinalizeSetupResponse);
+}

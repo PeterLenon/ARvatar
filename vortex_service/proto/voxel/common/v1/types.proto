@@ -1,0 +1,78 @@
+syntax = "proto3";
+package voxel.common.v1;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+// Raw video/depth frames from the device
+message FrameChunk {
+  string codec = 1;       // "RAW", "H264", "DEPTH16", etc.
+  bytes  data = 2;
+  int32  width = 3;
+  int32  height = 4;
+  int64  timestamp_ms = 5; // device clock; or prefer Timestamp if you like
+}
+
+message Pcd {
+  string format = 1;      // "pcd", "ply", "xyz", etc.
+  bytes  payload = 2;
+  string units = 3;       // "meters"
+}
+
+message Mesh {
+  string format = 1;      // "ply", "glb", "gltf"
+  bytes  payload = 2;     // or omitted if using uri
+  string uri = 3;         // optional: signed URL / storage key for large assets
+  string units = 4;       // "meters"
+}
+
+// Identifiers returned by the setup pipeline
+message AssetRefs {
+  string guru_id = 1;               // the “persona”
+  string neutral_mesh_id = 2;
+  string neutral_pcd_id = 3;
+  map<string,string> viseme_mesh_ids = 4; // key=Viseme enum string, value=asset id
+}
+
+// Standard ARPAbet-ish set; customize to your TTS/aligner
+enum Viseme {
+  VISEME_UNSPECIFIED = 0;
+  VISEME_PP = 1;   // p/b/m
+  VISEME_FV = 2;   // f/v
+  VISEME_TH = 3;   // th
+  VISEME_DNT = 4;  // d/t/n/l
+  VISEME_KG = 5;   // k/g/ng
+  VISEME_CHJSH = 6;// ch/j/sh/zh
+  VISEME_SZ = 7;   // s/z
+  VISEME_AA = 8;   // a
+  VISEME_EE = 9;   // e
+  VISEME_IH = 10;  // i
+  VISEME_OH = 11;  // o
+  VISEME_UH = 12;  // u
+  VISEME_R = 13;   // r
+  VISEME_WQ = 14;  // w/oo
+  VISEME_MBG = 15; // mouth closed (rest)
+}
+
+message PhonemeMark {
+  string phoneme = 1;            // e.g., "AA", "EH", "TH"
+  int64  start_ms = 2;           // relative to utterance start
+  int64  end_ms = 3;
+  Viseme viseme = 4;             // mapped viseme for display
+}
+
+message WordPiece {
+  string text = 1;
+  int64  start_ms = 2;
+  int64  end_ms = 3;
+}
+
+message LipSync {
+  repeated PhonemeMark phonemes = 1;
+  repeated WordPiece   words = 2;
+}
+
+message Error {
+  string code = 1;    // e.g., "INVALID_ARGUMENT"
+  string message = 2;
+}
