@@ -26,10 +26,12 @@ set(PROTOS
 
 # ---- Messages (.pb.*) ----
 # Create the target first, then have protobuf_generate append sources to it.
-add_library(voxel_proto STATIC
-        src/VoxelRenderer.cpp)
+add_library(voxel_proto STATIC)
 target_include_directories(voxel_proto PUBLIC ${GEN_DIR} ${GEN_DIR}/proto)
 target_link_libraries(voxel_proto PUBLIC protobuf::libprotobuf)
+
+add_library(vortex_renderer STATIC src/VoxelRenderer.cpp)
+target_include_directories(vortex_renderer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 # Ensure protoc searches in <repo>/proto for imports like "voxel/common/v1/types.proto"
 protobuf_generate(
@@ -63,13 +65,11 @@ add_custom_command(
 add_library(voxel_grpc STATIC
         ${GEN_DIR}/voxel/ingest/v1/ingest_service.grpc.pb.cc
         ${GEN_DIR}/voxel/recon/v1/recon_service.grpc.pb.cc
-        src/VoxelRenderer.cpp
 )
 target_include_directories(voxel_grpc PUBLIC ${GEN_DIR} ${GEN_DIR}/proto)
-target_link_libraries(voxel_grpc PUBLIC gRPC::grpc++ protobuf::libprotobuf)
+target_link_libraries(voxel_grpc PUBLIC gRPC::grpc++ voxel_proto)
 
 # ---- App(s) ----
-add_executable(device_client src/device_client.cc
-        src/VoxelRenderer.cpp)
+add_executable(device_client src/device_client.cc)
 target_include_directories(device_client PRIVATE ${GEN_DIR} ${GEN_DIR}/proto)
-target_link_libraries(device_client PRIVATE voxel_proto voxel_grpc gRPC::grpc++ protobuf::libprotobuf)
+target_link_libraries(device_client PRIVATE vortex_renderer voxel_grpc)
