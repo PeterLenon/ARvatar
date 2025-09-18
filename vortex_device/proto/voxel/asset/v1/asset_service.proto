@@ -3,27 +3,34 @@ package voxel.assets.v1;
 
 import "voxel/common/v1/types.proto";
 
-message GetNeutralRequest { string guru_id = 1; }
-message GetNeutralResponse {
-  voxel.common.v1.Mesh neutral_mesh = 1;
-  voxel.common.v1.Pcd  neutral_pcd  = 2;
-}
-
-message ListVisemesRequest { string guru_id = 1; }
-message ListVisemesResponse {
-  repeated voxel.common.v1.Viseme visemes = 1;
-}
-
-message GetVisemeMeshRequest {
+message ListPointCloudsRequest {
   string guru_id = 1;
-  voxel.common.v1.Viseme viseme = 2;
 }
-message GetVisemeMeshResponse {
-  voxel.common.v1.Mesh mesh = 1;
+
+message ListPointCloudsResponse {
+  repeated voxel.common.v1.PointCloudMetadata point_clouds = 1;
+}
+
+message GetPointCloudRequest {
+  string guru_id = 1;
+  string variant = 2;     // optional; default variant returned when empty
+  bool include_mesh = 3;  // request paired mesh when available
+}
+
+message PointCloudAsset {
+  voxel.common.v1.PointCloudMetadata metadata = 1;
+  voxel.common.v1.Pcd point_cloud = 2;
+  voxel.common.v1.Mesh mesh = 3; // optional; omitted unless include_mesh=true
+}
+
+message GetPointCloudResponse {
+  PointCloudAsset asset = 1;
 }
 
 service AssetService {
-  rpc GetNeutral(GetNeutralRequest) returns (GetNeutralResponse);
-  rpc ListVisemes(ListVisemesRequest) returns (ListVisemesResponse);
-  rpc GetVisemeMesh(GetVisemeMeshRequest) returns (GetVisemeMeshResponse);
+  // Enumerate available point clouds (neutral, expressions, lighting variants, etc.)
+  rpc ListPointClouds(ListPointCloudsRequest) returns (ListPointCloudsResponse);
+
+  // Fetch the binary point cloud (and optional mesh) for a guru/variant combination
+  rpc GetPointCloud(GetPointCloudRequest) returns (GetPointCloudResponse);
 }

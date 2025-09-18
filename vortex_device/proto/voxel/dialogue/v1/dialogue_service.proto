@@ -3,26 +3,37 @@ package voxel.dialogue.v1;
 
 import "voxel/common/v1/types.proto";
 
-message AskRequest {
+message GetGuruProfileRequest {
   string guru_id = 1;
-  string user_query = 2;              // text input (or use audio field for ASR)
-  bool   return_audio = 3;            // if true, stream TTS audio chunks
 }
 
-message AskChunk {
-  // Server-streaming chunks as the LLM/TTS progresses
+message GetGuruProfileResponse {
+  voxel.common.v1.GuruProfile profile = 1;
+}
+
+message AskRequest {
+  string guru_id = 1;
+  string conversation_id = 2;          // optional client-supplied conversation handle
+  string user_query = 3;               // text input (or use audio field for ASR later)
+  repeated string context_tags = 4;    // filter RAG sources ("medical", "faq")
+  bool return_audio = 5;               // stream TTS audio chunks
+  bool return_lipsync = 6;             // request viseme timeline alongside transcript
+}
+
+message AnswerChunk {
   oneof payload {
-    string transcript_delta = 1;      // incremental text
-    voxel.common.v1.LipSync lipsync = 2; // full or incremental marks
-    bytes  audio_chunk = 3;           // optional TTS audio
+    string transcript_delta = 1;        // incremental text
+    voxel.common.v1.LipSync lipsync = 2;// full or incremental marks
+    bytes  audio_chunk = 3;             // optional TTS audio
   }
+  repeated voxel.common.v1.ContextReference citations = 4;
   bool is_final = 10;
 }
 
 service DialogueService {
-  // Server streaming: send a question, receive transcript/phoneme/audio chunks
-  rpc Ask(AskRequest) returns (stream AskChunk);
+  // Fetch persona metadata + preferred assets so the device can prime UI/UX
+  rpc GetGuruProfile(GetGuruProfileRequest) returns (GetGuruProfileResponse);
 
-  // Optional bidi (for continuous back-and-forth or voice input):
-  // rpc Converse(stream AskRequest) returns (stream AskChunk);
+  // Server streaming: send a question, receive transcript/phoneme/audio chunks (and citations)
+  rpc Ask(AskRequest) returns (stream AnswerChunk);
 }

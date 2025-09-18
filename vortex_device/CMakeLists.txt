@@ -49,8 +49,8 @@ file(MAKE_DIRECTORY ${GEN_DIR})
 # ---------------- Proto list ----------------
 set(PROTOS
         ${PROTO_ROOT}/voxel/common/v1/types.proto
-        ${PROTO_ROOT}/voxel/ingest/v1/ingest_service.proto
-        ${PROTO_ROOT}/voxel/recon/v1/recon_service.proto
+        ${PROTO_ROOT}/voxel/asset/v1/asset_service.proto
+        ${PROTO_ROOT}/voxel/dialogue/v1/dialogue_service.proto
 )
 
 # ---------------- Protobuf messages (.pb.*) ----------------
@@ -72,23 +72,23 @@ protobuf_generate(
 # Use protoc + grpc plugin to generate gRPC C++ sources for the service protos.
 add_custom_command(
         OUTPUT
-        ${GEN_DIR}/voxel/ingest/v1/ingest_service.grpc.pb.cc
-        ${GEN_DIR}/voxel/ingest/v1/ingest_service.grpc.pb.h
-        ${GEN_DIR}/voxel/recon/v1/recon_service.grpc.pb.cc
-        ${GEN_DIR}/voxel/recon/v1/recon_service.grpc.pb.h
+        ${GEN_DIR}/voxel/asset/v1/asset_service.grpc.pb.cc
+        ${GEN_DIR}/voxel/asset/v1/asset_service.grpc.pb.h
+        ${GEN_DIR}/voxel/dialogue/v1/dialogue_service.grpc.pb.cc
+        ${GEN_DIR}/voxel/dialogue/v1/dialogue_service.grpc.pb.h
         COMMAND $<TARGET_FILE:protobuf::protoc>
         --proto_path=${PROTO_ROOT}
         --grpc_out=${GEN_DIR}
         --plugin=protoc-gen-grpc=$<TARGET_FILE:gRPC::grpc_cpp_plugin>
-        ${PROTO_ROOT}/voxel/ingest/v1/ingest_service.proto
-        ${PROTO_ROOT}/voxel/recon/v1/recon_service.proto
+        ${PROTO_ROOT}/voxel/asset/v1/asset_service.proto
+        ${PROTO_ROOT}/voxel/dialogue/v1/dialogue_service.proto
         DEPENDS ${PROTOS}
         VERBATIM
 )
 
 add_library(voxel_grpc STATIC
-        ${GEN_DIR}/voxel/ingest/v1/ingest_service.grpc.pb.cc
-        ${GEN_DIR}/voxel/recon/v1/recon_service.grpc.pb.cc
+        ${GEN_DIR}/voxel/asset/v1/asset_service.grpc.pb.cc
+        ${GEN_DIR}/voxel/dialogue/v1/dialogue_service.grpc.pb.cc
 )
 target_include_directories(voxel_grpc PUBLIC ${GEN_DIR})
 target_link_libraries(voxel_grpc PUBLIC gRPC::grpc++ voxel_proto)
