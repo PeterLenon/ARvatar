@@ -2,16 +2,6 @@ syntax = "proto3";
 package voxel.common.v1;
 
 import "google/protobuf/timestamp.proto";
-import "google/protobuf/duration.proto";
-
-// Raw video/depth frames from the device
-message FrameChunk {
-  string codec = 1;       // "RAW", "H264", "DEPTH16", etc.
-  bytes  data = 2;
-  int32  width = 3;
-  int32  height = 4;
-  int64  timestamp_ms = 5; // device clock; or prefer Timestamp if you like
-}
 
 message Pcd {
   string format = 1;      // "pcd", "ply", "xyz", etc.
@@ -26,12 +16,23 @@ message Mesh {
   string units = 4;       // "meters"
 }
 
-// Identifiers returned by the setup pipeline
-message AssetRefs {
-  string guru_id = 1;               // the “persona”
-  string neutral_mesh_id = 2;
-  string neutral_pcd_id = 3;
-  map<string,string> viseme_mesh_ids = 4; // key=Viseme enum string, value=asset id
+// Metadata about a guru persona that downstream services can render or query
+message GuruProfile {
+  string guru_id = 1;
+  string display_name = 2;
+  string biography = 3;
+  repeated string tags = 4;
+  string default_point_cloud_variant = 5; // e.g. "neutral"
+  google.protobuf.Timestamp updated_at = 6;
+}
+
+// Summaries for the point-cloud variants that exist for a guru
+message PointCloudMetadata {
+  string guru_id = 1;
+  string variant = 2;        // "neutral", "smile", etc.
+  string description = 3;    // free-form human readable summary
+  bool has_mesh = 4;         // true if a mesh accompanies this point cloud
+  google.protobuf.Timestamp updated_at = 5;
 }
 
 // Standard ARPAbet-ish set; customize to your TTS/aligner
@@ -70,6 +71,15 @@ message WordPiece {
 message LipSync {
   repeated PhonemeMark phonemes = 1;
   repeated WordPiece   words = 2;
+}
+
+// Citations returned with dialogue responses for traceable RAG answers
+message ContextReference {
+  string context_id = 1;
+  string title = 2;
+  string snippet = 3;
+  string uri = 4;
+  double score = 5;            // similarity/confidence score
 }
 
 message Error {

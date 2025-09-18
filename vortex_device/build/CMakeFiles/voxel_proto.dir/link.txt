@@ -1,2 +1,0 @@
-/usr/bin/ar qc libvoxel_proto.a CMakeFiles/voxel_proto.dir/generated/voxel/common/v1/types.pb.cc.o CMakeFiles/voxel_proto.dir/generated/voxel/ingest/v1/ingest_service.pb.cc.o CMakeFiles/voxel_proto.dir/generated/voxel/recon/v1/recon_service.pb.cc.o
-/usr/bin/ranlib libvoxel_proto.a

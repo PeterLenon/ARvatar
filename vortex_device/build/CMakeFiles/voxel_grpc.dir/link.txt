@@ -1,2 +1,0 @@
-/usr/bin/ar qc libvoxel_grpc.a CMakeFiles/voxel_grpc.dir/generated/voxel/ingest/v1/ingest_service.grpc.pb.cc.o CMakeFiles/voxel_grpc.dir/generated/voxel/recon/v1/recon_service.grpc.pb.cc.o
-/usr/bin/ranlib libvoxel_grpc.a
