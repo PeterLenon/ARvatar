@@ -1,7 +1,5 @@
 #include <grpcpp/grpcpp.h>
 #include <iostream>
-#include <vector>
-#include <cstdint>
 #include "voxel/common/v1/types.pb.h"
 #include "voxel/asset/v1/asset_service.grpc.pb.h"
 #include "voxel/dialogue/v1/dialogue_service.grpc.pb.h"
