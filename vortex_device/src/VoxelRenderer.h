@@ -6,37 +6,27 @@
 #define VOXELRENDERER_H
 #include <string>
 #include <fstream>
-
-struct Point{
-    float x;
-    float y;
-    float z;
-};
-
-struct Slice2D {
-    std::unordered_set<uint64_t> occ;
-};
-
-struct CylVox {
-    float s_r, s_z, dtheta_deg;
-    float sx_xy, z_min;
-    std::vector<Slice2D> slices;
-};
+#include <unordered_set>
+#include <pcl/io/pcd_io.h>
+#include <pcl/io/ply_io.h>
+#include <pcl/point_types.h>
+#include <pcl/point_cloud.h>
+#include <vector>
+#include "models/CylinderVox.cpp"
 
 class VoxelRenderer {
-private:
-    std::ifstream pcdAssetFile;
-    std::ofstream voxelAssetFile;
-    std::vector<std::uint8_t> buffer;
+    private:
+    const int DELTA_THETA = 2;
+    Eigen::Vector4f get_pcd_centroid(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr&);
+    const int S_X = 1;
+    const int S_Y = 1;
+    const int S_Z = 1;
+    CylinderVox cylindricalized_voxel= CylinderVox(DELTA_THETA);
 
-    std::vector<Point> load_pcd_or_ply_points(const std::string& path);
-    bool voxelize_loaded_asset_points(std::vector<Point> pcdAssetPoints);
-    CylVox load_voxel_asset_file(const std::vector<Point>& pcdAssetPoints, float s_r, float s_z, float dtheta_deg, float sx_xy);
-public:
-    bool loadAsset(const std::string& path);
-    Frame getNextFrame(double phaseAngle);
+    public:
+    VoxelRenderer();
+    void load_model(std::string);
+    std::vector<std::tuple<int, int>> get_next_slice(int);
 };
-
-
 
 #endif //VOXELRENDERER_H
