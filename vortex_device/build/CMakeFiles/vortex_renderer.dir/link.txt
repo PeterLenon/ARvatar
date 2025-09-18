@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvortex_renderer.a CMakeFiles/vortex_renderer.dir/src/VoxelRenderer.cpp.o
+/usr/bin/ranlib libvortex_renderer.a

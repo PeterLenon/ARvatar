@@ -66,8 +66,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -161,8 +159,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -237,8 +233,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -286,8 +280,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -403,8 +395,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -465,8 +455,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -527,8 +515,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -589,8 +575,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -651,8 +635,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -713,8 +695,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -793,8 +773,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -873,8 +851,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -953,8 +929,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -1033,8 +1007,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -1113,8 +1085,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
   -
@@ -1183,8 +1153,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -1197,8 +1165,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-tH9vwl"
-      binary: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-tH9vwl"
+      source: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-V1Jvkv"
+      binary: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-V1Jvkv"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1211,19 +1179,19 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-tH9vwl'
+        Change Dir: '/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-V1Jvkv'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_55ec1/fast
-        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_55ec1.dir/build.make CMakeFiles/cmTC_55ec1.dir/build
-        Building CXX object CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cc9d7/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_cc9d7.dir/build.make CMakeFiles/cmTC_cc9d7.dir/build
+        Building CXX object CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Apple clang version 16.0.0 (clang-1600.0.26.6)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
         clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
         ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"
-         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-tH9vwl -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-tH9vwl -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-V1Jvkv -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-V1Jvkv -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 16.0.0 (clang-1600.0.26.6) default target arm64-apple-darwin24.6.0
         ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include"
         ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
@@ -1236,13 +1204,13 @@ events:
          /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
          /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_55ec1
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55ec1.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_cc9d7
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc9d7.dir/link.txt --verbose=1
         Apple clang version 16.0.0 (clang-1600.0.26.6)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_55ec1 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a
+         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_cc9d7 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1115.7.3
         BUILD 23:52:02 Dec  5 2024
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -1255,7 +1223,7 @@ events:
         	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_55ec1
+        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_cc9d7
         
       exitCode: 0
   -
@@ -1301,19 +1269,19 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-tH9vwl']
+        ignore line: [Change Dir: '/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-V1Jvkv']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_55ec1/fast]
-        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_55ec1.dir/build.make CMakeFiles/cmTC_55ec1.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cc9d7/fast]
+        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_cc9d7.dir/build.make CMakeFiles/cmTC_cc9d7.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.6)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
         ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"]
-        ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-tH9vwl -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-tH9vwl -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-V1Jvkv -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-V1Jvkv -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 16.0.0 (clang-1600.0.26.6) default target arm64-apple-darwin24.6.0]
         ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"]
@@ -1326,13 +1294,13 @@ events:
         ignore line: [ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
         ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_55ec1]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55ec1.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_cc9d7]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc9d7.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.6)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-        link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_55ec1 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_cc9d7 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
           arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1349,12 +1317,12 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_55ec1] ==> ignore
+          arg [cmTC_cc9d7] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_55ec1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_cc9d7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
@@ -1390,1095 +1358,11 @@ events:
       LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
       TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.9)
   -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
-      - "/opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
-      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:99 (check_cxx_source_compiles)"
-      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:924 (find_package)"
-      - "CMakeLists.txt:11 (find_package)"
-    directories:
-      source: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-3muFtt"
-      binary: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-3muFtt"
-    cmakeVariables:
-      CMAKE_CXX_FLAGS: ""
-      CMAKE_CXX_FLAGS_DEBUG: "-g"
-      CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_OSX_ARCHITECTURES: ""
-      CMAKE_OSX_DEPLOYMENT_TARGET: ""
-      CMAKE_OSX_SYSROOT: ""
-      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
-    buildResult:
-      variable: "CMAKE_HAVE_LIBC_PTHREAD"
-      cached: true
-      stdout: |
-        Change Dir: '/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-3muFtt'
-        
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b8218/fast
-        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b8218.dir/build.make CMakeFiles/cmTC_b8218.dir/build
-        Building CXX object CMakeFiles/cmTC_b8218.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -arch arm64 -fPIE -MD -MT CMakeFiles/cmTC_b8218.dir/src.cxx.o -MF CMakeFiles/cmTC_b8218.dir/src.cxx.o.d -o CMakeFiles/cmTC_b8218.dir/src.cxx.o -c /Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-3muFtt/src.cxx
-        Linking CXX executable cmTC_b8218
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8218.dir/link.txt --verbose=1
-        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b8218.dir/src.cxx.o -o cmTC_b8218
-        
-      exitCode: 0
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:879 (find_library)"
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:928 (_protobuf_find_libraries)"
-      - "CMakeLists.txt:11 (find_package)"
-    mode: "library"
-    variable: "Protobuf_LIBRARY_RELEASE"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "protobuf"
-    candidate_directories:
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-      - "/opt/homebrew/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-      - "/usr/lib/"
-      - "/usr/"
-      - "/usr/X11R6/lib/"
-      - "/usr/X11R6/"
-      - "/opt/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/"
-      - "/Library/Frameworks/"
-      - "/System/Library/Frameworks/"
-    searched_directories:
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-    found: "/opt/homebrew/lib/libprotobuf.dylib"
-    search_context:
-      ENV{PATH}:
-        - "/opt/X11/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
-        - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/Users/pgoshomi/.cargo/bin"
-        - "/Users/pgoshomi/.foundry/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:885 (find_library)"
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:928 (_protobuf_find_libraries)"
-      - "CMakeLists.txt:11 (find_package)"
-    mode: "library"
-    variable: "Protobuf_LIBRARY_DEBUG"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "protobufd"
-      - "protobuf"
-    candidate_directories:
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-      - "/opt/homebrew/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-      - "/usr/lib/"
-      - "/usr/"
-      - "/usr/X11R6/lib/"
-      - "/usr/X11R6/"
-      - "/opt/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/"
-      - "/Library/Frameworks/"
-      - "/System/Library/Frameworks/"
-    searched_directories:
-      - "/opt/X11/bin/"
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-    found: "/opt/homebrew/lib/libprotobuf.dylib"
-    search_context:
-      ENV{PATH}:
-        - "/opt/X11/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
-        - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/Users/pgoshomi/.cargo/bin"
-        - "/Users/pgoshomi/.foundry/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:879 (find_library)"
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:931 (_protobuf_find_libraries)"
-      - "CMakeLists.txt:11 (find_package)"
-    mode: "library"
-    variable: "Protobuf_LITE_LIBRARY_RELEASE"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "protobuf-lite"
-    candidate_directories:
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-      - "/opt/homebrew/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-      - "/usr/lib/"
-      - "/usr/"
-      - "/usr/X11R6/lib/"
-      - "/usr/X11R6/"
-      - "/opt/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/"
-      - "/Library/Frameworks/"
-      - "/System/Library/Frameworks/"
-    searched_directories:
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-    found: "/opt/homebrew/lib/libprotobuf-lite.dylib"
-    search_context:
-      ENV{PATH}:
-        - "/opt/X11/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
-        - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/Users/pgoshomi/.cargo/bin"
-        - "/Users/pgoshomi/.foundry/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:885 (find_library)"
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:931 (_protobuf_find_libraries)"
-      - "CMakeLists.txt:11 (find_package)"
-    mode: "library"
-    variable: "Protobuf_LITE_LIBRARY_DEBUG"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "protobuf-lited"
-      - "protobuf-lite"
-    candidate_directories:
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-      - "/opt/homebrew/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-      - "/usr/lib/"
-      - "/usr/"
-      - "/usr/X11R6/lib/"
-      - "/usr/X11R6/"
-      - "/opt/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/"
-      - "/Library/Frameworks/"
-      - "/System/Library/Frameworks/"
-    searched_directories:
-      - "/opt/X11/bin/"
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-    found: "/opt/homebrew/lib/libprotobuf-lite.dylib"
-    search_context:
-      ENV{PATH}:
-        - "/opt/X11/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
-        - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/Users/pgoshomi/.cargo/bin"
-        - "/Users/pgoshomi/.foundry/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:879 (find_library)"
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:934 (_protobuf_find_libraries)"
-      - "CMakeLists.txt:11 (find_package)"
-    mode: "library"
-    variable: "Protobuf_PROTOC_LIBRARY_RELEASE"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "protoc"
-    candidate_directories:
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-      - "/opt/homebrew/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-      - "/usr/lib/"
-      - "/usr/"
-      - "/usr/X11R6/lib/"
-      - "/usr/X11R6/"
-      - "/opt/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/"
-      - "/Library/Frameworks/"
-      - "/System/Library/Frameworks/"
-    searched_directories:
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-    found: "/opt/homebrew/lib/libprotoc.dylib"
-    search_context:
-      ENV{PATH}:
-        - "/opt/X11/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
-        - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/Users/pgoshomi/.cargo/bin"
-        - "/Users/pgoshomi/.foundry/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:885 (find_library)"
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:934 (_protobuf_find_libraries)"
-      - "CMakeLists.txt:11 (find_package)"
-    mode: "library"
-    variable: "Protobuf_PROTOC_LIBRARY_DEBUG"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "protocd"
-      - "protoc"
-    candidate_directories:
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-      - "/opt/homebrew/"
-      - "/usr/local/lib/"
-      - "/usr/local/"
-      - "/usr/lib/"
-      - "/usr/"
-      - "/usr/X11R6/lib/"
-      - "/usr/X11R6/"
-      - "/opt/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/"
-      - "/Library/Frameworks/"
-      - "/System/Library/Frameworks/"
-    searched_directories:
-      - "/opt/X11/bin/"
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/sbin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/lib/"
-    found: "/opt/homebrew/lib/libprotoc.dylib"
-    search_context:
-      ENV{PATH}:
-        - "/opt/X11/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
-        - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/Users/pgoshomi/.cargo/bin"
-        - "/Users/pgoshomi/.foundry/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:942 (find_path)"
-      - "CMakeLists.txt:11 (find_package)"
-    mode: "path"
-    variable: "Protobuf_INCLUDE_DIR"
-    description: "Path to a file."
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "google/protobuf/service.h"
-    candidate_directories:
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/include/"
-      - "/opt/homebrew/"
-      - "/usr/local/include/"
-      - "/usr/local/"
-      - "/usr/include/"
-      - "/usr/"
-      - "/include/"
-      - "/usr/X11R6/include/"
-      - "/usr/X11R6/"
-      - "/usr/pkg/include/"
-      - "/usr/pkg/"
-      - "/opt/include/"
-      - "/opt/"
-      - "/sw/include/"
-      - "/sw/"
-      - "/opt/local/include/"
-      - "/opt/local/"
-      - "/usr/include/X11/"
-      - "/Users/pgoshomi/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/"
-      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/"
-      - "/Library/Frameworks/"
-      - "/Network/Library/Frameworks/"
-      - "/System/Library/Frameworks/"
-      - "/src/"
-    searched_directories:
-      - "/opt/X11/bin/google.framework/Headers/protobuf/service.h"
-      - "/opt/homebrew/opt/postgresql@15/bin/google.framework/Headers/protobuf/service.h"
-      - "/opt/homebrew/bin/google.framework/Headers/protobuf/service.h"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/google.framework/Headers/protobuf/service.h"
-      - "/opt/homebrew/sbin/google.framework/Headers/protobuf/service.h"
-      - "/usr/local/bin/google.framework/Headers/protobuf/service.h"
-      - "/System/Cryptexes/App/usr/bin/google.framework/Headers/protobuf/service.h"
-      - "/usr/bin/google.framework/Headers/protobuf/service.h"
-      - "/bin/google.framework/Headers/protobuf/service.h"
-      - "/usr/sbin/google.framework/Headers/protobuf/service.h"
-      - "/sbin/google.framework/Headers/protobuf/service.h"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/google.framework/Headers/protobuf/service.h"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/google.framework/Headers/protobuf/service.h"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/google.framework/Headers/protobuf/service.h"
-      - "/Library/Apple/usr/bin/google.framework/Headers/protobuf/service.h"
-      - "/Users/pgoshomi/.cargo/bin/google.framework/Headers/protobuf/service.h"
-      - "/Users/pgoshomi/.foundry/bin/google.framework/Headers/protobuf/service.h"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/google.framework/Headers/protobuf/service.h"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/google.framework/Headers/protobuf/service.h"
-      - "/opt/homebrew/include/google.framework/Headers/protobuf/service.h"
-      - "/opt/homebrew/google.framework/Headers/protobuf/service.h"
-      - "/usr/local/include/google.framework/Headers/protobuf/service.h"
-      - "/usr/local/google.framework/Headers/protobuf/service.h"
-      - "/usr/include/google.framework/Headers/protobuf/service.h"
-      - "/usr/google.framework/Headers/protobuf/service.h"
-      - "/include/google.framework/Headers/protobuf/service.h"
-      - "/usr/X11R6/include/google.framework/Headers/protobuf/service.h"
-      - "/usr/X11R6/google.framework/Headers/protobuf/service.h"
-      - "/usr/pkg/include/google.framework/Headers/protobuf/service.h"
-      - "/usr/pkg/google.framework/Headers/protobuf/service.h"
-      - "/opt/include/google.framework/Headers/protobuf/service.h"
-      - "/opt/google.framework/Headers/protobuf/service.h"
-      - "/sw/include/google.framework/Headers/protobuf/service.h"
-      - "/sw/google.framework/Headers/protobuf/service.h"
-      - "/opt/local/include/google.framework/Headers/protobuf/service.h"
-      - "/opt/local/google.framework/Headers/protobuf/service.h"
-      - "/usr/include/X11/google.framework/Headers/protobuf/service.h"
-      - "/Users/pgoshomi/Library/Frameworks/google.framework/Headers/protobuf/service.h"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks/google.framework/Headers/protobuf/service.h"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks/google.framework/Headers/protobuf/service.h"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/google.framework/Headers/protobuf/service.h"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/google.framework/Headers/protobuf/service.h"
-      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/google.framework/Headers/protobuf/service.h"
-      - "/Library/Frameworks/google.framework/Headers/protobuf/service.h"
-      - "/Network/Library/Frameworks/google.framework/Headers/protobuf/service.h"
-      - "/System/Library/Frameworks/google.framework/Headers/protobuf/service.h"
-      - "/src/google.framework/Headers/protobuf/service.h"
-      - "/opt/X11/bin/google/protobuf/service.h"
-      - "/opt/homebrew/opt/postgresql@15/bin/google/protobuf/service.h"
-      - "/opt/homebrew/bin/google/protobuf/service.h"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/google/protobuf/service.h"
-      - "/opt/homebrew/sbin/google/protobuf/service.h"
-      - "/usr/local/bin/google/protobuf/service.h"
-      - "/System/Cryptexes/App/usr/bin/google/protobuf/service.h"
-      - "/usr/bin/google/protobuf/service.h"
-      - "/bin/google/protobuf/service.h"
-      - "/usr/sbin/google/protobuf/service.h"
-      - "/sbin/google/protobuf/service.h"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/google/protobuf/service.h"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/google/protobuf/service.h"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/google/protobuf/service.h"
-      - "/Library/Apple/usr/bin/google/protobuf/service.h"
-      - "/Users/pgoshomi/.cargo/bin/google/protobuf/service.h"
-      - "/Users/pgoshomi/.foundry/bin/google/protobuf/service.h"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/google/protobuf/service.h"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/google/protobuf/service.h"
-    found: "/opt/homebrew/include/"
-    search_context:
-      ENV{PATH}:
-        - "/opt/X11/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
-        - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/Users/pgoshomi/.cargo/bin"
-        - "/Users/pgoshomi/.foundry/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_INCLUDE_PATH:
-        - "/usr/include/X11"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
-        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/FindProtobuf.cmake:949 (find_program)"
-      - "CMakeLists.txt:11 (find_package)"
-    mode: "program"
-    variable: "Protobuf_PROTOC_EXECUTABLE"
-    description: "The Google Protocol Buffers Compiler"
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "protoc"
-    candidate_directories:
-      - "/opt/X11/bin/"
-      - "/opt/homebrew/opt/postgresql@15/bin/"
-      - "/opt/homebrew/bin/"
-      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Users/pgoshomi/.cargo/bin/"
-      - "/Users/pgoshomi/.foundry/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/sbin/"
-      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/opt/homebrew/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/usr/local/"
-      - "/usr/bin/"
-      - "/usr/sbin/"
-      - "/usr/"
-      - "/bin/"
-      - "/sbin/"
-      - "/usr/X11R6/bin/"
-      - "/usr/X11R6/sbin/"
-      - "/usr/X11R6/"
-      - "/usr/pkg/bin/"
-      - "/usr/pkg/sbin/"
-      - "/usr/pkg/"
-      - "/opt/bin/"
-      - "/opt/sbin/"
-      - "/opt/"
-      - "/sw/bin/"
-      - "/sw/sbin/"
-      - "/sw/"
-      - "/opt/local/bin/"
-      - "/opt/local/sbin/"
-      - "/opt/local/"
-      - "/Users/pgoshomi/Applications/"
-      - "/Applications/"
-      - "/Applications/Xcode.app/Contents/Applications/"
-      - "/Applications/Xcode.app/Contents/Developer/Applications/"
-      - "/vsprojects/x64/Release/"
-      - "/vsprojects/x64/Debug/"
-    searched_directories:
-      - "/opt/X11/bin/protoc"
-      - "/opt/homebrew/opt/postgresql@15/bin/protoc"
-    found: "/opt/homebrew/bin/protoc"
-    search_context:
-      ENV{PATH}:
-        - "/opt/X11/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
-        - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
-        - "/Users/pgoshomi/.cargo/bin"
-        - "/Users/pgoshomi/.foundry/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_APPBUNDLE_PATH:
-        - "/Users/pgoshomi/Applications"
-        - "/Applications"
-        - "/Applications/Xcode.app/Contents/Applications"
-        - "/Applications/Xcode.app/Contents/Developer/Applications"
-  -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/FindZLIB.cmake:152 (find_path)"
-      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:6 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "/opt/homebrew/opt/protobuf/lib/cmake/protobuf/protobuf-config.cmake:6 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     mode: "path"
     variable: "ZLIB_INCLUDE_DIR"
     description: "Path to a file."
@@ -2644,8 +1528,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2678,8 +1560,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/FindZLIB.cmake:182 (find_library)"
-      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:6 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "/opt/homebrew/opt/protobuf/lib/cmake/protobuf/protobuf-config.cmake:6 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     mode: "library"
     variable: "ZLIB_LIBRARY_RELEASE"
     description: "Path to a library."
@@ -2861,8 +1743,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2895,8 +1775,8 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/FindZLIB.cmake:183 (find_library)"
-      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:6 (find_package)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "/opt/homebrew/opt/protobuf/lib/cmake/protobuf/protobuf-config.cmake:6 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     mode: "library"
     variable: "ZLIB_LIBRARY_DEBUG"
     description: "Path to a library."
@@ -3281,8 +2161,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3312,12 +2190,49 @@ events:
         - "/Network/Library/Frameworks"
         - "/System/Library/Frameworks"
   -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:99 (check_cxx_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
+      - "/opt/homebrew/lib/cmake/absl/abslConfig.cmake:4 (find_dependency)"
+      - "/opt/homebrew/opt/protobuf/lib/cmake/protobuf/protobuf-config.cmake:9 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-zE68eg"
+      binary: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-zE68eg"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-zE68eg'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7fc5c/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_7fc5c.dir/build.make CMakeFiles/cmTC_7fc5c.dir/build
+        Building CXX object CMakeFiles/cmTC_7fc5c.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++17 -arch arm64 -fPIE -MD -MT CMakeFiles/cmTC_7fc5c.dir/src.cxx.o -MF CMakeFiles/cmTC_7fc5c.dir/src.cxx.o.d -o CMakeFiles/cmTC_7fc5c.dir/src.cxx.o -c /Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/CMakeScratch/TryCompile-zE68eg/src.cxx
+        Linking CXX executable cmTC_7fc5c
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7fc5c.dir/link.txt --verbose=1
+        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_7fc5c.dir/src.cxx.o -o cmTC_7fc5c
+        
+      exitCode: 0
+  -
     kind: "find_package-v1"
     backtrace:
-      - "/opt/homebrew/lib/cmake/protobuf/protobuf-config.cmake:9 (find_package)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:9 (find_dependency)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "/opt/homebrew/opt/protobuf/lib/cmake/protobuf/protobuf-config.cmake:9 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     name: "absl"
     configs:
       -
@@ -3405,8 +2320,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3436,10 +2349,8 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "/opt/homebrew/lib/cmake/protobuf/protobuf-config.cmake:12 (find_package)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:9 (find_dependency)"
-      - "CMakeLists.txt:12 (find_package)"
+      - "/opt/homebrew/opt/protobuf/lib/cmake/protobuf/protobuf-config.cmake:12 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
     name: "utf8_range"
     configs:
       -
@@ -3531,8 +2442,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3560,82 +2469,83 @@ events:
         - "/Network/Library/Frameworks"
         - "/System/Library/Frameworks"
   -
-    kind: "find_package-v1"
+    kind: "find-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeFindDependencyMacro.cmake:78 (find_package)"
-      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:9 (find_dependency)"
-      - "CMakeLists.txt:12 (find_package)"
-    name: "Protobuf"
-    configs:
-      -
-        filename: "ProtobufConfig.cmake"
-        kind: "cmake"
-      -
-        filename: "protobuf-config.cmake"
-        kind: "cmake"
-    version_request:
-      exact: false
+      - "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake:69 (find_program)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenSSL.cmake:261 (find_package)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:11 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    mode: "program"
+    variable: "PKG_CONFIG_EXECUTABLE"
+    description: "pkg-config executable"
     settings:
-      required: "optional"
-      quiet: true
-      global: false
-      policy_scope: true
-      bypass_provider: false
-      names:
-        - "Protobuf"
-      path_suffixes:
-        - ""
-      paths:
-        CMAKE_FIND_USE_CMAKE_PATH: true
-        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-        CMAKE_FIND_USE_INSTALL_PREFIX: true
-        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
-        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
-        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
-        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
-    candidates:
-      -
-        path: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/pkgRedirects/ProtobufConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/pkgRedirects/protobuf-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/X11/ProtobufConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/X11/protobuf-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/postgresql@15/ProtobufConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/postgresql@15/protobuf-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/ProtobufConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/protobuf-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/lib/cmake/protobuf/ProtobufConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-    found:
-      path: "/opt/homebrew/lib/cmake/protobuf/protobuf-config.cmake"
-      mode: "config"
-      version: "32.0.0"
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "pkg-config"
+      - "pkgconf"
+    candidate_directories:
+      - "/opt/X11/bin/"
+      - "/opt/homebrew/opt/postgresql@15/bin/"
+      - "/opt/homebrew/bin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Library/Apple/usr/bin/"
+      - "/Users/pgoshomi/.cargo/bin/"
+      - "/Users/pgoshomi/.foundry/bin/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/bin/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/sbin/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/opt/homebrew/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+      - "/sw/bin/"
+      - "/sw/sbin/"
+      - "/sw/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
+      - "/opt/local/"
+      - "/Users/pgoshomi/Applications/"
+      - "/Applications/"
+      - "/Applications/Xcode.app/Contents/Applications/"
+      - "/Applications/Xcode.app/Contents/Developer/Applications/"
+    searched_directories:
+      - "/opt/X11/bin/pkg-config"
+      - "/opt/X11/bin/pkgconf"
+      - "/opt/homebrew/opt/postgresql@15/bin/pkg-config"
+      - "/opt/homebrew/opt/postgresql@15/bin/pkgconf"
+    found: "/opt/homebrew/bin/pkg-config"
     search_context:
       ENV{PATH}:
         - "/opt/X11/bin"
@@ -3656,8 +2566,741 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
+        - "/Users/pgoshomi/.cargo/bin"
+        - "/Users/pgoshomi/.foundry/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_APPBUNDLE_PATH:
+        - "/Users/pgoshomi/Applications"
+        - "/Applications"
+        - "/Applications/Xcode.app/Contents/Applications"
+        - "/Applications/Xcode.app/Contents/Developer/Applications"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake:307 (find_library)"
+      - "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake:357 (_pkg_find_libs)"
+      - "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake:695 (_pkg_recalculate)"
+      - "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake:867 (_pkg_check_modules_internal)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenSSL.cmake:263 (pkg_check_modules)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:11 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    mode: "library"
+    variable: "pkgcfg_lib__OPENSSL_ssl"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ssl"
+    candidate_directories:
+      - "/opt/homebrew/Cellar/openssl@3/3.5.2/lib/"
+    found: "/opt/homebrew/Cellar/openssl@3/3.5.2/lib/libssl.dylib"
+    search_context:
+      ENV{PATH}:
+        - "/opt/X11/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/opt/homebrew/bin"
         - "/opt/homebrew/opt/postgresql@15/bin"
         - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Users/pgoshomi/.cargo/bin"
+        - "/Users/pgoshomi/.foundry/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake:307 (find_library)"
+      - "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake:357 (_pkg_find_libs)"
+      - "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake:695 (_pkg_recalculate)"
+      - "/opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake:867 (_pkg_check_modules_internal)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenSSL.cmake:263 (pkg_check_modules)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:11 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    mode: "library"
+    variable: "pkgcfg_lib__OPENSSL_crypto"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "crypto"
+    candidate_directories:
+      - "/opt/homebrew/Cellar/openssl@3/3.5.2/lib/"
+    found: "/opt/homebrew/Cellar/openssl@3/3.5.2/lib/libcrypto.dylib"
+    search_context:
+      ENV{PATH}:
+        - "/opt/X11/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Users/pgoshomi/.cargo/bin"
+        - "/Users/pgoshomi/.foundry/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenSSL.cmake:336 (find_path)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:11 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    mode: "path"
+    variable: "OPENSSL_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "openssl/ssl.h"
+    candidate_directories:
+      - "/opt/homebrew/Cellar/openssl@3/3.5.2/include/include/"
+      - "/opt/homebrew/Cellar/openssl@3/3.5.2/include/"
+      - "/opt/X11/bin/include/"
+      - "/opt/X11/bin/"
+      - "/opt/homebrew/opt/postgresql@15/bin/include/"
+      - "/opt/homebrew/opt/postgresql@15/bin/"
+      - "/opt/homebrew/bin/include/"
+      - "/opt/homebrew/bin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/include/"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
+      - "/opt/homebrew/sbin/include/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/include/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/include/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/include/"
+      - "/usr/bin/"
+      - "/bin/include/"
+      - "/bin/"
+      - "/usr/sbin/include/"
+      - "/usr/sbin/"
+      - "/sbin/include/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/include/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/include/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/include/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/Library/Apple/usr/bin/include/"
+      - "/Library/Apple/usr/bin/"
+      - "/Users/pgoshomi/.cargo/bin/include/"
+      - "/Users/pgoshomi/.cargo/bin/"
+      - "/Users/pgoshomi/.foundry/bin/include/"
+      - "/Users/pgoshomi/.foundry/bin/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/include/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/include/include/"
+      - "/opt/homebrew/include/"
+      - "/opt/homebrew/include/"
+      - "/opt/homebrew/"
+      - "/usr/local/include/include/"
+      - "/usr/local/include/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/include/"
+      - "/usr/include/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/include/"
+      - "/include/"
+      - "/usr/X11R6/include/include/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/include/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/include/"
+      - "/opt/include/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/sw/include/include/"
+      - "/sw/include/"
+      - "/sw/include/"
+      - "/sw/"
+      - "/opt/local/include/include/"
+      - "/opt/local/include/"
+      - "/opt/local/include/"
+      - "/opt/local/"
+      - "/usr/include/X11/include/"
+      - "/usr/include/X11/"
+      - "/Users/pgoshomi/Library/Frameworks/include/"
+      - "/Users/pgoshomi/Library/Frameworks/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks/include/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks/include/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/include/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/include/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/"
+      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/include/"
+      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/"
+      - "/Library/Frameworks/include/"
+      - "/Library/Frameworks/"
+      - "/Network/Library/Frameworks/include/"
+      - "/Network/Library/Frameworks/"
+      - "/System/Library/Frameworks/include/"
+      - "/System/Library/Frameworks/"
+    searched_directories:
+      - "/opt/homebrew/Cellar/openssl@3/3.5.2/include/include/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/Cellar/openssl@3/3.5.2/include/openssl.framework/Headers/ssl.h"
+      - "/opt/X11/bin/include/openssl.framework/Headers/ssl.h"
+      - "/opt/X11/bin/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/opt/postgresql@15/bin/include/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/opt/postgresql@15/bin/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/bin/include/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/bin/openssl.framework/Headers/ssl.h"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/include/openssl.framework/Headers/ssl.h"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/sbin/include/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/sbin/openssl.framework/Headers/ssl.h"
+      - "/usr/local/bin/include/openssl.framework/Headers/ssl.h"
+      - "/usr/local/bin/openssl.framework/Headers/ssl.h"
+      - "/System/Cryptexes/App/usr/bin/include/openssl.framework/Headers/ssl.h"
+      - "/System/Cryptexes/App/usr/bin/openssl.framework/Headers/ssl.h"
+      - "/usr/bin/include/openssl.framework/Headers/ssl.h"
+      - "/usr/bin/openssl.framework/Headers/ssl.h"
+      - "/bin/include/openssl.framework/Headers/ssl.h"
+      - "/bin/openssl.framework/Headers/ssl.h"
+      - "/usr/sbin/include/openssl.framework/Headers/ssl.h"
+      - "/usr/sbin/openssl.framework/Headers/ssl.h"
+      - "/sbin/include/openssl.framework/Headers/ssl.h"
+      - "/sbin/openssl.framework/Headers/ssl.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/include/openssl.framework/Headers/ssl.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/openssl.framework/Headers/ssl.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/include/openssl.framework/Headers/ssl.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/openssl.framework/Headers/ssl.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/include/openssl.framework/Headers/ssl.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/openssl.framework/Headers/ssl.h"
+      - "/Library/Apple/usr/bin/include/openssl.framework/Headers/ssl.h"
+      - "/Library/Apple/usr/bin/openssl.framework/Headers/ssl.h"
+      - "/Users/pgoshomi/.cargo/bin/include/openssl.framework/Headers/ssl.h"
+      - "/Users/pgoshomi/.cargo/bin/openssl.framework/Headers/ssl.h"
+      - "/Users/pgoshomi/.foundry/bin/include/openssl.framework/Headers/ssl.h"
+      - "/Users/pgoshomi/.foundry/bin/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/include/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/include/include/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/include/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/include/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/openssl.framework/Headers/ssl.h"
+      - "/usr/local/include/include/openssl.framework/Headers/ssl.h"
+      - "/usr/local/include/openssl.framework/Headers/ssl.h"
+      - "/usr/local/include/openssl.framework/Headers/ssl.h"
+      - "/usr/local/openssl.framework/Headers/ssl.h"
+      - "/usr/include/include/openssl.framework/Headers/ssl.h"
+      - "/usr/include/openssl.framework/Headers/ssl.h"
+      - "/usr/include/openssl.framework/Headers/ssl.h"
+      - "/usr/openssl.framework/Headers/ssl.h"
+      - "/include/include/openssl.framework/Headers/ssl.h"
+      - "/include/openssl.framework/Headers/ssl.h"
+      - "/usr/X11R6/include/include/openssl.framework/Headers/ssl.h"
+      - "/usr/X11R6/include/openssl.framework/Headers/ssl.h"
+      - "/usr/X11R6/include/openssl.framework/Headers/ssl.h"
+      - "/usr/X11R6/openssl.framework/Headers/ssl.h"
+      - "/usr/pkg/include/include/openssl.framework/Headers/ssl.h"
+      - "/usr/pkg/include/openssl.framework/Headers/ssl.h"
+      - "/usr/pkg/include/openssl.framework/Headers/ssl.h"
+      - "/usr/pkg/openssl.framework/Headers/ssl.h"
+      - "/opt/include/include/openssl.framework/Headers/ssl.h"
+      - "/opt/include/openssl.framework/Headers/ssl.h"
+      - "/opt/include/openssl.framework/Headers/ssl.h"
+      - "/opt/openssl.framework/Headers/ssl.h"
+      - "/sw/include/include/openssl.framework/Headers/ssl.h"
+      - "/sw/include/openssl.framework/Headers/ssl.h"
+      - "/sw/include/openssl.framework/Headers/ssl.h"
+      - "/sw/openssl.framework/Headers/ssl.h"
+      - "/opt/local/include/include/openssl.framework/Headers/ssl.h"
+      - "/opt/local/include/openssl.framework/Headers/ssl.h"
+      - "/opt/local/include/openssl.framework/Headers/ssl.h"
+      - "/opt/local/openssl.framework/Headers/ssl.h"
+      - "/usr/include/X11/include/openssl.framework/Headers/ssl.h"
+      - "/usr/include/X11/openssl.framework/Headers/ssl.h"
+      - "/Users/pgoshomi/Library/Frameworks/include/openssl.framework/Headers/ssl.h"
+      - "/Users/pgoshomi/Library/Frameworks/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks/include/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks/include/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/include/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/include/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/include/openssl.framework/Headers/ssl.h"
+      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/openssl.framework/Headers/ssl.h"
+      - "/Library/Frameworks/include/openssl.framework/Headers/ssl.h"
+      - "/Library/Frameworks/openssl.framework/Headers/ssl.h"
+      - "/Network/Library/Frameworks/include/openssl.framework/Headers/ssl.h"
+      - "/Network/Library/Frameworks/openssl.framework/Headers/ssl.h"
+      - "/System/Library/Frameworks/include/openssl.framework/Headers/ssl.h"
+      - "/System/Library/Frameworks/openssl.framework/Headers/ssl.h"
+      - "/opt/homebrew/Cellar/openssl@3/3.5.2/include/include/openssl/ssl.h"
+    found: "/opt/homebrew/Cellar/openssl@3/3.5.2/include/"
+    search_context:
+      ENV{PATH}:
+        - "/opt/X11/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Users/pgoshomi/.cargo/bin"
+        - "/Users/pgoshomi/.foundry/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenSSL.cmake:594 (find_library)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:11 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    mode: "library"
+    variable: "OPENSSL_SSL_LIBRARY"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ssl"
+      - "ssleay32"
+      - "ssleay32MD"
+    candidate_directories:
+      - "/opt/homebrew/Cellar/openssl@3/3.5.2/lib/"
+      - "/opt/X11/bin/"
+      - "/opt/homebrew/opt/postgresql@15/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/Library/Apple/usr/bin/"
+      - "/Users/pgoshomi/.cargo/bin/"
+      - "/Users/pgoshomi/.foundry/bin/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/lib/"
+      - "/opt/homebrew/lib/"
+      - "/opt/homebrew/"
+      - "/usr/local/lib/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/"
+      - "/opt/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/"
+      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/"
+      - "/Library/Frameworks/"
+      - "/System/Library/Frameworks/"
+    found: "/opt/homebrew/Cellar/openssl@3/3.5.2/lib/libssl.dylib"
+    search_context:
+      ENV{PATH}:
+        - "/opt/X11/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Users/pgoshomi/.cargo/bin"
+        - "/Users/pgoshomi/.foundry/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenSSL.cmake:608 (find_library)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:11 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    mode: "library"
+    variable: "OPENSSL_CRYPTO_LIBRARY"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "crypto"
+    candidate_directories:
+      - "/opt/homebrew/Cellar/openssl@3/3.5.2/lib/"
+      - "/opt/X11/bin/"
+      - "/opt/homebrew/opt/postgresql@15/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/Library/Apple/usr/bin/"
+      - "/Users/pgoshomi/.cargo/bin/"
+      - "/Users/pgoshomi/.foundry/bin/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/lib/"
+      - "/opt/homebrew/lib/"
+      - "/opt/homebrew/"
+      - "/usr/local/lib/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/"
+      - "/opt/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/"
+      - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/"
+      - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/"
+      - "/Library/Frameworks/"
+      - "/System/Library/Frameworks/"
+    found: "/opt/homebrew/Cellar/openssl@3/3.5.2/lib/libcrypto.dylib"
+    search_context:
+      ENV{PATH}:
+        - "/opt/X11/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Users/pgoshomi/.cargo/bin"
+        - "/Users/pgoshomi/.foundry/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/opt/homebrew/lib/cmake/grpc/modules/Findc-ares.cmake:18 (find_package)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    name: "c-ares"
+    configs:
+      -
+        filename: "c-aresConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "c-ares-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "c-ares"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/pkgRedirects/c-aresConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/pkgRedirects/c-ares-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/X11/c-aresConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/X11/c-ares-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/postgresql@15/c-aresConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/postgresql@15/c-ares-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/c-aresConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/c-ares-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/lib/cmake/c-ares/c-aresConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/lib/cmake/c-ares/c-ares-config.cmake"
+      mode: "config"
+      version: "1.34.5"
+    search_context:
+      ENV{PATH}:
+        - "/opt/X11/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Library/Apple/usr/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3687,7 +3330,126 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:12 (find_package)"
+      - "/opt/homebrew/lib/cmake/grpc/modules/Findre2.cmake:15 (find_package)"
+      - "/opt/homebrew/lib/cmake/grpc/gRPCConfig.cmake:20 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    name: "re2"
+    configs:
+      -
+        filename: "re2Config.cmake"
+        kind: "cmake"
+      -
+        filename: "re2-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "re2"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/pkgRedirects/re2Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/pkgRedirects/re2-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/X11/re2Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/X11/re2-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/postgresql@15/re2Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/opt/postgresql@15/re2-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/re2Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/re2-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/homebrew/lib/cmake/re2/re2Config.cmake"
+      mode: "config"
+      version: "11.0.0"
+    search_context:
+      ENV{PATH}:
+        - "/opt/X11/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/opt/postgresql@15/bin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/X11/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Users/pgoshomi/.cargo/bin"
+        - "/Users/pgoshomi/.foundry/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks"
+        - "/Applications/Xcode.app/Contents/Developer/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:13 (find_package)"
     name: "gRPC"
     configs:
       -
@@ -3699,8 +3461,8 @@ events:
     version_request:
       exact: false
     settings:
-      required: "optional"
-      quiet: true
+      required: "required_explicit"
+      quiet: false
       global: false
       policy_scope: true
       bypass_provider: false
@@ -3775,8 +3537,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
-        - "/opt/homebrew/opt/postgresql@15/bin"
-        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
         - "/Users/pgoshomi/.cargo/bin"
         - "/Users/pgoshomi/.foundry/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3803,6 +3563,4 @@ events:
         - "/Library/Frameworks"
         - "/Network/Library/Frameworks"
         - "/System/Library/Frameworks"
-      CMAKE_MODULE_PATH:
-        - "/opt/homebrew/lib/cmake/grpc/modules"
 ...

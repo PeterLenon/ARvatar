@@ -1,0 +1,6 @@
+/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/voxel_proto.dir
+/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/vortex_renderer.dir
+/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/voxel_grpc.dir
+/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/device_client.dir
+/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/edit_cache.dir
+/Users/pgoshomi/Code/arvatar/vortex_device/build/CMakeFiles/rebuild_cache.dir
