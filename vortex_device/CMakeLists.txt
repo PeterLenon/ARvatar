@@ -108,6 +108,8 @@ add_executable(device_client
         src/device_client.cc
         src/models/CylinderVox.cpp
         src/models/CylinderVox.h
+        src/GrpcClient.cpp
+        src/GrpcClient.h
 )
 target_include_directories(device_client PRIVATE ${GEN_DIR})
 target_link_libraries(device_client PRIVATE vortex_renderer voxel_grpc)
