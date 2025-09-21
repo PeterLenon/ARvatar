@@ -1,0 +1,38 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+grpc:
+  server:
+    port: 9090
+
+spring:
+  application:
+    name: vortex-service
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.arvatar.vortex: DEBUG
+    org.springframework.web: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Custom application properties
+vortex:
+  assets:
+    storage-path: /tmp/vortex-assets
+    max-file-size: 10MB
+  dialogue:
+    ai-model: gpt-3.5-turbo
+    max-conversation-history: 10

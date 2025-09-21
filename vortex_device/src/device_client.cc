@@ -3,9 +3,13 @@
 #include "voxel/common/v1/types.pb.h"
 #include "voxel/asset/v1/asset_service.grpc.pb.h"
 #include "voxel/dialogue/v1/dialogue_service.grpc.pb.h"
+#include "GrpcClient.h"
+#include "VoxelRenderer.h"
 
 int main(int argc, char** argv) {
-  const std::string target = (argc > 1) ? argv[1] : "localhost:50051";
+  const std::string target = (argc > 1) ? argv[1] : "localhost:9090";
+  const std::string guru_id = (argc > 2) ? argv[2] : "demo-guru";
+  GrpcClient client(target);
 
   // Create channel
   auto channel = grpc::CreateChannel(target, grpc::InsecureChannelCredentials());
@@ -20,6 +24,8 @@ int main(int argc, char** argv) {
   asset_request.set_variant("neutral");
   asset_request.set_include_mesh(true);
 
+  voxel::assets::v1::GetPointCloudResponse asset_response;
+
   voxel::dialogue::v1::AskRequest ask_request;
   ask_request.set_guru_id("demo-guru");
   ask_request.set_user_query("Hello Guru!");
@@ -31,6 +37,18 @@ int main(int argc, char** argv) {
   profile.set_guru_id("demo-guru");
   profile.set_display_name("Demo Guru");
 
-  std::cout << "Device client compiled. Channel to " << target << " created.\n";
+
+  grpc::Status response = client.fetch_point_cloud(
+    asset_request,
+    &asset_response
+    );
+
+  if (!response.ok()) {
+    std::cout << response.error_code() << ": " << response.error_message() << std::endl;
+  }
+  else {
+    voxel::assets::v1::PointCloudAsset asset =  asset_response.asset();
+    std::cout<< "Asset received!" <<std::endl;
+  }
   return 0;
 }
