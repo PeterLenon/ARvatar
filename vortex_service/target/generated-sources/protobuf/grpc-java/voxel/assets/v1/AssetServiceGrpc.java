@@ -77,6 +77,37 @@ public final class AssetServiceGrpc {
     return getGetPointCloudMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest,
+      voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse> getUploadGuruVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UploadGuruVideo",
+      requestType = voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest.class,
+      responseType = voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest,
+      voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse> getUploadGuruVideoMethod() {
+    io.grpc.MethodDescriptor<voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest, voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse> getUploadGuruVideoMethod;
+    if ((getUploadGuruVideoMethod = AssetServiceGrpc.getUploadGuruVideoMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getUploadGuruVideoMethod = AssetServiceGrpc.getUploadGuruVideoMethod) == null) {
+          AssetServiceGrpc.getUploadGuruVideoMethod = getUploadGuruVideoMethod =
+              io.grpc.MethodDescriptor.<voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest, voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UploadGuruVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AssetServiceMethodDescriptorSupplier("UploadGuruVideo"))
+              .build();
+        }
+      }
+    }
+    return getUploadGuruVideoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -144,6 +175,16 @@ public final class AssetServiceGrpc {
         io.grpc.stub.StreamObserver<voxel.assets.v1.AssetServiceOuterClass.GetPointCloudResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPointCloudMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Upload Guru video that will be processed and converted into a PCD and stored along with
+     * </pre>
+     */
+    default void uploadGuruVideo(voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest request,
+        io.grpc.stub.StreamObserver<voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUploadGuruVideoMethod(), responseObserver);
+    }
   }
 
   /**
@@ -194,6 +235,17 @@ public final class AssetServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPointCloudMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Upload Guru video that will be processed and converted into a PCD and stored along with
+     * </pre>
+     */
+    public void uploadGuruVideo(voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest request,
+        io.grpc.stub.StreamObserver<voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUploadGuruVideoMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -230,6 +282,16 @@ public final class AssetServiceGrpc {
     public voxel.assets.v1.AssetServiceOuterClass.GetPointCloudResponse getPointCloud(voxel.assets.v1.AssetServiceOuterClass.GetPointCloudRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPointCloudMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Upload Guru video that will be processed and converted into a PCD and stored along with
+     * </pre>
+     */
+    public voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse uploadGuruVideo(voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUploadGuruVideoMethod(), getCallOptions(), request);
     }
   }
 
@@ -270,10 +332,22 @@ public final class AssetServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPointCloudMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Upload Guru video that will be processed and converted into a PCD and stored along with
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse> uploadGuruVideo(
+        voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUploadGuruVideoMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_POINT_CLOUDS = 0;
   private static final int METHODID_GET_POINT_CLOUD = 1;
+  private static final int METHODID_UPLOAD_GURU_VIDEO = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -299,6 +373,10 @@ public final class AssetServiceGrpc {
         case METHODID_GET_POINT_CLOUD:
           serviceImpl.getPointCloud((voxel.assets.v1.AssetServiceOuterClass.GetPointCloudRequest) request,
               (io.grpc.stub.StreamObserver<voxel.assets.v1.AssetServiceOuterClass.GetPointCloudResponse>) responseObserver);
+          break;
+        case METHODID_UPLOAD_GURU_VIDEO:
+          serviceImpl.uploadGuruVideo((voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest) request,
+              (io.grpc.stub.StreamObserver<voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -332,6 +410,13 @@ public final class AssetServiceGrpc {
               voxel.assets.v1.AssetServiceOuterClass.GetPointCloudRequest,
               voxel.assets.v1.AssetServiceOuterClass.GetPointCloudResponse>(
                 service, METHODID_GET_POINT_CLOUD)))
+        .addMethod(
+          getUploadGuruVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest,
+              voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse>(
+                service, METHODID_UPLOAD_GURU_VIDEO)))
         .build();
   }
 
@@ -382,6 +467,7 @@ public final class AssetServiceGrpc {
               .setSchemaDescriptor(new AssetServiceFileDescriptorSupplier())
               .addMethod(getListPointCloudsMethod())
               .addMethod(getGetPointCloudMethod())
+              .addMethod(getUploadGuruVideoMethod())
               .build();
         }
       }

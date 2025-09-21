@@ -3,6 +3,11 @@ server:
   servlet:
     context-path: /
 
+# gRPC Server Configuration
+grpc:
+  server:
+    port: 9090
+
 spring:
   application:
     name: vortex-service

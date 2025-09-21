@@ -3861,6 +3861,2466 @@ public final class AssetServiceOuterClass {
 
   }
 
+  public interface UploadGuruVideoRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:voxel.assets.v1.UploadGuruVideoRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * ID of the guru this content belongs to
+     * </pre>
+     *
+     * <code>string guru_id = 1;</code>
+     * @return The guruId.
+     */
+    java.lang.String getGuruId();
+    /**
+     * <pre>
+     * ID of the guru this content belongs to
+     * </pre>
+     *
+     * <code>string guru_id = 1;</code>
+     * @return The bytes for guruId.
+     */
+    com.google.protobuf.ByteString
+        getGuruIdBytes();
+
+    /**
+     * <pre>
+     * Single video file for processing
+     * </pre>
+     *
+     * <code>.voxel.common.v1.Video video = 2;</code>
+     * @return Whether the video field is set.
+     */
+    boolean hasVideo();
+    /**
+     * <pre>
+     * Single video file for processing
+     * </pre>
+     *
+     * <code>.voxel.common.v1.Video video = 2;</code>
+     * @return The video.
+     */
+    voxel.common.v1.Types.Video getVideo();
+    /**
+     * <pre>
+     * Single video file for processing
+     * </pre>
+     *
+     * <code>.voxel.common.v1.Video video = 2;</code>
+     */
+    voxel.common.v1.Types.VideoOrBuilder getVideoOrBuilder();
+
+    /**
+     * <pre>
+     * Multiple images (jpeg, png, heic only)
+     * </pre>
+     *
+     * <code>repeated .voxel.common.v1.Image images = 3;</code>
+     */
+    java.util.List<voxel.common.v1.Types.Image> 
+        getImagesList();
+    /**
+     * <pre>
+     * Multiple images (jpeg, png, heic only)
+     * </pre>
+     *
+     * <code>repeated .voxel.common.v1.Image images = 3;</code>
+     */
+    voxel.common.v1.Types.Image getImages(int index);
+    /**
+     * <pre>
+     * Multiple images (jpeg, png, heic only)
+     * </pre>
+     *
+     * <code>repeated .voxel.common.v1.Image images = 3;</code>
+     */
+    int getImagesCount();
+    /**
+     * <pre>
+     * Multiple images (jpeg, png, heic only)
+     * </pre>
+     *
+     * <code>repeated .voxel.common.v1.Image images = 3;</code>
+     */
+    java.util.List<? extends voxel.common.v1.Types.ImageOrBuilder> 
+        getImagesOrBuilderList();
+    /**
+     * <pre>
+     * Multiple images (jpeg, png, heic only)
+     * </pre>
+     *
+     * <code>repeated .voxel.common.v1.Image images = 3;</code>
+     */
+    voxel.common.v1.Types.ImageOrBuilder getImagesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code voxel.assets.v1.UploadGuruVideoRequest}
+   */
+  public static final class UploadGuruVideoRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:voxel.assets.v1.UploadGuruVideoRequest)
+      UploadGuruVideoRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UploadGuruVideoRequest.newBuilder() to construct.
+    private UploadGuruVideoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UploadGuruVideoRequest() {
+      guruId_ = "";
+      images_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UploadGuruVideoRequest();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return voxel.assets.v1.AssetServiceOuterClass.internal_static_voxel_assets_v1_UploadGuruVideoRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return voxel.assets.v1.AssetServiceOuterClass.internal_static_voxel_assets_v1_UploadGuruVideoRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest.class, voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int GURU_ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object guruId_ = "";
+    /**
+     * <pre>
+     * ID of the guru this content belongs to
+     * </pre>
+     *
+     * <code>string guru_id = 1;</code>
+     * @return The guruId.
+     */
+    @java.lang.Override
+    public java.lang.String getGuruId() {
+      java.lang.Object ref = guruId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        guruId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * ID of the guru this content belongs to
+     * </pre>
+     *
+     * <code>string guru_id = 1;</code>
+     * @return The bytes for guruId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGuruIdBytes() {
+      java.lang.Object ref = guruId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        guruId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VIDEO_FIELD_NUMBER = 2;
+    private voxel.common.v1.Types.Video video_;
+    /**
+     * <pre>
+     * Single video file for processing
+     * </pre>
+     *
+     * <code>.voxel.common.v1.Video video = 2;</code>
+     * @return Whether the video field is set.
+     */
+    @java.lang.Override
+    public boolean hasVideo() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * Single video file for processing
+     * </pre>
+     *
+     * <code>.voxel.common.v1.Video video = 2;</code>
+     * @return The video.
+     */
+    @java.lang.Override
+    public voxel.common.v1.Types.Video getVideo() {
+      return video_ == null ? voxel.common.v1.Types.Video.getDefaultInstance() : video_;
+    }
+    /**
+     * <pre>
+     * Single video file for processing
+     * </pre>
+     *
+     * <code>.voxel.common.v1.Video video = 2;</code>
+     */
+    @java.lang.Override
+    public voxel.common.v1.Types.VideoOrBuilder getVideoOrBuilder() {
+      return video_ == null ? voxel.common.v1.Types.Video.getDefaultInstance() : video_;
+    }
+
+    public static final int IMAGES_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private java.util.List<voxel.common.v1.Types.Image> images_;
+    /**
+     * <pre>
+     * Multiple images (jpeg, png, heic only)
+     * </pre>
+     *
+     * <code>repeated .voxel.common.v1.Image images = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<voxel.common.v1.Types.Image> getImagesList() {
+      return images_;
+    }
+    /**
+     * <pre>
+     * Multiple images (jpeg, png, heic only)
+     * </pre>
+     *
+     * <code>repeated .voxel.common.v1.Image images = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends voxel.common.v1.Types.ImageOrBuilder> 
+        getImagesOrBuilderList() {
+      return images_;
+    }
+    /**
+     * <pre>
+     * Multiple images (jpeg, png, heic only)
+     * </pre>
+     *
+     * <code>repeated .voxel.common.v1.Image images = 3;</code>
+     */
+    @java.lang.Override
+    public int getImagesCount() {
+      return images_.size();
+    }
+    /**
+     * <pre>
+     * Multiple images (jpeg, png, heic only)
+     * </pre>
+     *
+     * <code>repeated .voxel.common.v1.Image images = 3;</code>
+     */
+    @java.lang.Override
+    public voxel.common.v1.Types.Image getImages(int index) {
+      return images_.get(index);
+    }
+    /**
+     * <pre>
+     * Multiple images (jpeg, png, heic only)
+     * </pre>
+     *
+     * <code>repeated .voxel.common.v1.Image images = 3;</code>
+     */
+    @java.lang.Override
+    public voxel.common.v1.Types.ImageOrBuilder getImagesOrBuilder(
+        int index) {
+      return images_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(guruId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, guruId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getVideo());
+      }
+      for (int i = 0; i < images_.size(); i++) {
+        output.writeMessage(3, images_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(guruId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, guruId_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getVideo());
+      }
+      for (int i = 0; i < images_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, images_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest)) {
+        return super.equals(obj);
+      }
+      voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest other = (voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest) obj;
+
+      if (!getGuruId()
+          .equals(other.getGuruId())) return false;
+      if (hasVideo() != other.hasVideo()) return false;
+      if (hasVideo()) {
+        if (!getVideo()
+            .equals(other.getVideo())) return false;
+      }
+      if (!getImagesList()
+          .equals(other.getImagesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GURU_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGuruId().hashCode();
+      if (hasVideo()) {
+        hash = (37 * hash) + VIDEO_FIELD_NUMBER;
+        hash = (53 * hash) + getVideo().hashCode();
+      }
+      if (getImagesCount() > 0) {
+        hash = (37 * hash) + IMAGES_FIELD_NUMBER;
+        hash = (53 * hash) + getImagesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code voxel.assets.v1.UploadGuruVideoRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:voxel.assets.v1.UploadGuruVideoRequest)
+        voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return voxel.assets.v1.AssetServiceOuterClass.internal_static_voxel_assets_v1_UploadGuruVideoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return voxel.assets.v1.AssetServiceOuterClass.internal_static_voxel_assets_v1_UploadGuruVideoRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest.class, voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest.Builder.class);
+      }
+
+      // Construct using voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getVideoFieldBuilder();
+          getImagesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        guruId_ = "";
+        video_ = null;
+        if (videoBuilder_ != null) {
+          videoBuilder_.dispose();
+          videoBuilder_ = null;
+        }
+        if (imagesBuilder_ == null) {
+          images_ = java.util.Collections.emptyList();
+        } else {
+          images_ = null;
+          imagesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return voxel.assets.v1.AssetServiceOuterClass.internal_static_voxel_assets_v1_UploadGuruVideoRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest getDefaultInstanceForType() {
+        return voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest build() {
+        voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest buildPartial() {
+        voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest result = new voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest result) {
+        if (imagesBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            images_ = java.util.Collections.unmodifiableList(images_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.images_ = images_;
+        } else {
+          result.images_ = imagesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.guruId_ = guruId_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.video_ = videoBuilder_ == null
+              ? video_
+              : videoBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest) {
+          return mergeFrom((voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest other) {
+        if (other == voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest.getDefaultInstance()) return this;
+        if (!other.getGuruId().isEmpty()) {
+          guruId_ = other.guruId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasVideo()) {
+          mergeVideo(other.getVideo());
+        }
+        if (imagesBuilder_ == null) {
+          if (!other.images_.isEmpty()) {
+            if (images_.isEmpty()) {
+              images_ = other.images_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureImagesIsMutable();
+              images_.addAll(other.images_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.images_.isEmpty()) {
+            if (imagesBuilder_.isEmpty()) {
+              imagesBuilder_.dispose();
+              imagesBuilder_ = null;
+              images_ = other.images_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              imagesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getImagesFieldBuilder() : null;
+            } else {
+              imagesBuilder_.addAllMessages(other.images_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                guruId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getVideoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                voxel.common.v1.Types.Image m =
+                    input.readMessage(
+                        voxel.common.v1.Types.Image.parser(),
+                        extensionRegistry);
+                if (imagesBuilder_ == null) {
+                  ensureImagesIsMutable();
+                  images_.add(m);
+                } else {
+                  imagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object guruId_ = "";
+      /**
+       * <pre>
+       * ID of the guru this content belongs to
+       * </pre>
+       *
+       * <code>string guru_id = 1;</code>
+       * @return The guruId.
+       */
+      public java.lang.String getGuruId() {
+        java.lang.Object ref = guruId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          guruId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ID of the guru this content belongs to
+       * </pre>
+       *
+       * <code>string guru_id = 1;</code>
+       * @return The bytes for guruId.
+       */
+      public com.google.protobuf.ByteString
+          getGuruIdBytes() {
+        java.lang.Object ref = guruId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          guruId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ID of the guru this content belongs to
+       * </pre>
+       *
+       * <code>string guru_id = 1;</code>
+       * @param value The guruId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGuruId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        guruId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ID of the guru this content belongs to
+       * </pre>
+       *
+       * <code>string guru_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGuruId() {
+        guruId_ = getDefaultInstance().getGuruId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ID of the guru this content belongs to
+       * </pre>
+       *
+       * <code>string guru_id = 1;</code>
+       * @param value The bytes for guruId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGuruIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        guruId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private voxel.common.v1.Types.Video video_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          voxel.common.v1.Types.Video, voxel.common.v1.Types.Video.Builder, voxel.common.v1.Types.VideoOrBuilder> videoBuilder_;
+      /**
+       * <pre>
+       * Single video file for processing
+       * </pre>
+       *
+       * <code>.voxel.common.v1.Video video = 2;</code>
+       * @return Whether the video field is set.
+       */
+      public boolean hasVideo() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <pre>
+       * Single video file for processing
+       * </pre>
+       *
+       * <code>.voxel.common.v1.Video video = 2;</code>
+       * @return The video.
+       */
+      public voxel.common.v1.Types.Video getVideo() {
+        if (videoBuilder_ == null) {
+          return video_ == null ? voxel.common.v1.Types.Video.getDefaultInstance() : video_;
+        } else {
+          return videoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Single video file for processing
+       * </pre>
+       *
+       * <code>.voxel.common.v1.Video video = 2;</code>
+       */
+      public Builder setVideo(voxel.common.v1.Types.Video value) {
+        if (videoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          video_ = value;
+        } else {
+          videoBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Single video file for processing
+       * </pre>
+       *
+       * <code>.voxel.common.v1.Video video = 2;</code>
+       */
+      public Builder setVideo(
+          voxel.common.v1.Types.Video.Builder builderForValue) {
+        if (videoBuilder_ == null) {
+          video_ = builderForValue.build();
+        } else {
+          videoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Single video file for processing
+       * </pre>
+       *
+       * <code>.voxel.common.v1.Video video = 2;</code>
+       */
+      public Builder mergeVideo(voxel.common.v1.Types.Video value) {
+        if (videoBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0) &&
+            video_ != null &&
+            video_ != voxel.common.v1.Types.Video.getDefaultInstance()) {
+            getVideoBuilder().mergeFrom(value);
+          } else {
+            video_ = value;
+          }
+        } else {
+          videoBuilder_.mergeFrom(value);
+        }
+        if (video_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Single video file for processing
+       * </pre>
+       *
+       * <code>.voxel.common.v1.Video video = 2;</code>
+       */
+      public Builder clearVideo() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        video_ = null;
+        if (videoBuilder_ != null) {
+          videoBuilder_.dispose();
+          videoBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Single video file for processing
+       * </pre>
+       *
+       * <code>.voxel.common.v1.Video video = 2;</code>
+       */
+      public voxel.common.v1.Types.Video.Builder getVideoBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getVideoFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Single video file for processing
+       * </pre>
+       *
+       * <code>.voxel.common.v1.Video video = 2;</code>
+       */
+      public voxel.common.v1.Types.VideoOrBuilder getVideoOrBuilder() {
+        if (videoBuilder_ != null) {
+          return videoBuilder_.getMessageOrBuilder();
+        } else {
+          return video_ == null ?
+              voxel.common.v1.Types.Video.getDefaultInstance() : video_;
+        }
+      }
+      /**
+       * <pre>
+       * Single video file for processing
+       * </pre>
+       *
+       * <code>.voxel.common.v1.Video video = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          voxel.common.v1.Types.Video, voxel.common.v1.Types.Video.Builder, voxel.common.v1.Types.VideoOrBuilder> 
+          getVideoFieldBuilder() {
+        if (videoBuilder_ == null) {
+          videoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              voxel.common.v1.Types.Video, voxel.common.v1.Types.Video.Builder, voxel.common.v1.Types.VideoOrBuilder>(
+                  getVideo(),
+                  getParentForChildren(),
+                  isClean());
+          video_ = null;
+        }
+        return videoBuilder_;
+      }
+
+      private java.util.List<voxel.common.v1.Types.Image> images_ =
+        java.util.Collections.emptyList();
+      private void ensureImagesIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          images_ = new java.util.ArrayList<voxel.common.v1.Types.Image>(images_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          voxel.common.v1.Types.Image, voxel.common.v1.Types.Image.Builder, voxel.common.v1.Types.ImageOrBuilder> imagesBuilder_;
+
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public java.util.List<voxel.common.v1.Types.Image> getImagesList() {
+        if (imagesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(images_);
+        } else {
+          return imagesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public int getImagesCount() {
+        if (imagesBuilder_ == null) {
+          return images_.size();
+        } else {
+          return imagesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public voxel.common.v1.Types.Image getImages(int index) {
+        if (imagesBuilder_ == null) {
+          return images_.get(index);
+        } else {
+          return imagesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public Builder setImages(
+          int index, voxel.common.v1.Types.Image value) {
+        if (imagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureImagesIsMutable();
+          images_.set(index, value);
+          onChanged();
+        } else {
+          imagesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public Builder setImages(
+          int index, voxel.common.v1.Types.Image.Builder builderForValue) {
+        if (imagesBuilder_ == null) {
+          ensureImagesIsMutable();
+          images_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          imagesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public Builder addImages(voxel.common.v1.Types.Image value) {
+        if (imagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureImagesIsMutable();
+          images_.add(value);
+          onChanged();
+        } else {
+          imagesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public Builder addImages(
+          int index, voxel.common.v1.Types.Image value) {
+        if (imagesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureImagesIsMutable();
+          images_.add(index, value);
+          onChanged();
+        } else {
+          imagesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public Builder addImages(
+          voxel.common.v1.Types.Image.Builder builderForValue) {
+        if (imagesBuilder_ == null) {
+          ensureImagesIsMutable();
+          images_.add(builderForValue.build());
+          onChanged();
+        } else {
+          imagesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public Builder addImages(
+          int index, voxel.common.v1.Types.Image.Builder builderForValue) {
+        if (imagesBuilder_ == null) {
+          ensureImagesIsMutable();
+          images_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          imagesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public Builder addAllImages(
+          java.lang.Iterable<? extends voxel.common.v1.Types.Image> values) {
+        if (imagesBuilder_ == null) {
+          ensureImagesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, images_);
+          onChanged();
+        } else {
+          imagesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public Builder clearImages() {
+        if (imagesBuilder_ == null) {
+          images_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          imagesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public Builder removeImages(int index) {
+        if (imagesBuilder_ == null) {
+          ensureImagesIsMutable();
+          images_.remove(index);
+          onChanged();
+        } else {
+          imagesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public voxel.common.v1.Types.Image.Builder getImagesBuilder(
+          int index) {
+        return getImagesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public voxel.common.v1.Types.ImageOrBuilder getImagesOrBuilder(
+          int index) {
+        if (imagesBuilder_ == null) {
+          return images_.get(index);  } else {
+          return imagesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public java.util.List<? extends voxel.common.v1.Types.ImageOrBuilder> 
+           getImagesOrBuilderList() {
+        if (imagesBuilder_ != null) {
+          return imagesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(images_);
+        }
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public voxel.common.v1.Types.Image.Builder addImagesBuilder() {
+        return getImagesFieldBuilder().addBuilder(
+            voxel.common.v1.Types.Image.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public voxel.common.v1.Types.Image.Builder addImagesBuilder(
+          int index) {
+        return getImagesFieldBuilder().addBuilder(
+            index, voxel.common.v1.Types.Image.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Multiple images (jpeg, png, heic only)
+       * </pre>
+       *
+       * <code>repeated .voxel.common.v1.Image images = 3;</code>
+       */
+      public java.util.List<voxel.common.v1.Types.Image.Builder> 
+           getImagesBuilderList() {
+        return getImagesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          voxel.common.v1.Types.Image, voxel.common.v1.Types.Image.Builder, voxel.common.v1.Types.ImageOrBuilder> 
+          getImagesFieldBuilder() {
+        if (imagesBuilder_ == null) {
+          imagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              voxel.common.v1.Types.Image, voxel.common.v1.Types.Image.Builder, voxel.common.v1.Types.ImageOrBuilder>(
+                  images_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          images_ = null;
+        }
+        return imagesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:voxel.assets.v1.UploadGuruVideoRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:voxel.assets.v1.UploadGuruVideoRequest)
+    private static final voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest();
+    }
+
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UploadGuruVideoRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UploadGuruVideoRequest>() {
+      @java.lang.Override
+      public UploadGuruVideoRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UploadGuruVideoRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UploadGuruVideoRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UploadGuruVideoResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:voxel.assets.v1.UploadGuruVideoResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool success = 1;</code>
+     * @return The success.
+     */
+    boolean getSuccess();
+
+    /**
+     * <pre>
+     * Success/error message
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <pre>
+     * Success/error message
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <pre>
+     * Variant name of the generated point cloud (e.g., "neutral")
+     * </pre>
+     *
+     * <code>string point_cloud_variant = 3;</code>
+     * @return The pointCloudVariant.
+     */
+    java.lang.String getPointCloudVariant();
+    /**
+     * <pre>
+     * Variant name of the generated point cloud (e.g., "neutral")
+     * </pre>
+     *
+     * <code>string point_cloud_variant = 3;</code>
+     * @return The bytes for pointCloudVariant.
+     */
+    com.google.protobuf.ByteString
+        getPointCloudVariantBytes();
+
+    /**
+     * <pre>
+     * When the processing completed
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+     * @return Whether the processedAt field is set.
+     */
+    boolean hasProcessedAt();
+    /**
+     * <pre>
+     * When the processing completed
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+     * @return The processedAt.
+     */
+    com.google.protobuf.Timestamp getProcessedAt();
+    /**
+     * <pre>
+     * When the processing completed
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getProcessedAtOrBuilder();
+  }
+  /**
+   * Protobuf type {@code voxel.assets.v1.UploadGuruVideoResponse}
+   */
+  public static final class UploadGuruVideoResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:voxel.assets.v1.UploadGuruVideoResponse)
+      UploadGuruVideoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UploadGuruVideoResponse.newBuilder() to construct.
+    private UploadGuruVideoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UploadGuruVideoResponse() {
+      message_ = "";
+      pointCloudVariant_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UploadGuruVideoResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return voxel.assets.v1.AssetServiceOuterClass.internal_static_voxel_assets_v1_UploadGuruVideoResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return voxel.assets.v1.AssetServiceOuterClass.internal_static_voxel_assets_v1_UploadGuruVideoResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse.class, voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int SUCCESS_FIELD_NUMBER = 1;
+    private boolean success_ = false;
+    /**
+     * <code>bool success = 1;</code>
+     * @return The success.
+     */
+    @java.lang.Override
+    public boolean getSuccess() {
+      return success_;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     * <pre>
+     * Success/error message
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Success/error message
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int POINT_CLOUD_VARIANT_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pointCloudVariant_ = "";
+    /**
+     * <pre>
+     * Variant name of the generated point cloud (e.g., "neutral")
+     * </pre>
+     *
+     * <code>string point_cloud_variant = 3;</code>
+     * @return The pointCloudVariant.
+     */
+    @java.lang.Override
+    public java.lang.String getPointCloudVariant() {
+      java.lang.Object ref = pointCloudVariant_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pointCloudVariant_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Variant name of the generated point cloud (e.g., "neutral")
+     * </pre>
+     *
+     * <code>string point_cloud_variant = 3;</code>
+     * @return The bytes for pointCloudVariant.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPointCloudVariantBytes() {
+      java.lang.Object ref = pointCloudVariant_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pointCloudVariant_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROCESSED_AT_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp processedAt_;
+    /**
+     * <pre>
+     * When the processing completed
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+     * @return Whether the processedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasProcessedAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * When the processing completed
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+     * @return The processedAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getProcessedAt() {
+      return processedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : processedAt_;
+    }
+    /**
+     * <pre>
+     * When the processing completed
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getProcessedAtOrBuilder() {
+      return processedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : processedAt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (success_ != false) {
+        output.writeBool(1, success_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pointCloudVariant_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pointCloudVariant_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(4, getProcessedAt());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (success_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, success_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pointCloudVariant_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pointCloudVariant_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getProcessedAt());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse)) {
+        return super.equals(obj);
+      }
+      voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse other = (voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse) obj;
+
+      if (getSuccess()
+          != other.getSuccess()) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (!getPointCloudVariant()
+          .equals(other.getPointCloudVariant())) return false;
+      if (hasProcessedAt() != other.hasProcessedAt()) return false;
+      if (hasProcessedAt()) {
+        if (!getProcessedAt()
+            .equals(other.getProcessedAt())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSuccess());
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + POINT_CLOUD_VARIANT_FIELD_NUMBER;
+      hash = (53 * hash) + getPointCloudVariant().hashCode();
+      if (hasProcessedAt()) {
+        hash = (37 * hash) + PROCESSED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getProcessedAt().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code voxel.assets.v1.UploadGuruVideoResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:voxel.assets.v1.UploadGuruVideoResponse)
+        voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return voxel.assets.v1.AssetServiceOuterClass.internal_static_voxel_assets_v1_UploadGuruVideoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return voxel.assets.v1.AssetServiceOuterClass.internal_static_voxel_assets_v1_UploadGuruVideoResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse.class, voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse.Builder.class);
+      }
+
+      // Construct using voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getProcessedAtFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        success_ = false;
+        message_ = "";
+        pointCloudVariant_ = "";
+        processedAt_ = null;
+        if (processedAtBuilder_ != null) {
+          processedAtBuilder_.dispose();
+          processedAtBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return voxel.assets.v1.AssetServiceOuterClass.internal_static_voxel_assets_v1_UploadGuruVideoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse getDefaultInstanceForType() {
+        return voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse build() {
+        voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse buildPartial() {
+        voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse result = new voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.success_ = success_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.message_ = message_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pointCloudVariant_ = pointCloudVariant_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.processedAt_ = processedAtBuilder_ == null
+              ? processedAt_
+              : processedAtBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse) {
+          return mergeFrom((voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse other) {
+        if (other == voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse.getDefaultInstance()) return this;
+        if (other.getSuccess() != false) {
+          setSuccess(other.getSuccess());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getPointCloudVariant().isEmpty()) {
+          pointCloudVariant_ = other.pointCloudVariant_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.hasProcessedAt()) {
+          mergeProcessedAt(other.getProcessedAt());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                success_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                message_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                pointCloudVariant_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getProcessedAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private boolean success_ ;
+      /**
+       * <code>bool success = 1;</code>
+       * @return The success.
+       */
+      @java.lang.Override
+      public boolean getSuccess() {
+        return success_;
+      }
+      /**
+       * <code>bool success = 1;</code>
+       * @param value The success to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuccess(boolean value) {
+
+        success_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool success = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSuccess() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        success_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <pre>
+       * Success/error message
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Success/error message
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Success/error message
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Success/error message
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Success/error message
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pointCloudVariant_ = "";
+      /**
+       * <pre>
+       * Variant name of the generated point cloud (e.g., "neutral")
+       * </pre>
+       *
+       * <code>string point_cloud_variant = 3;</code>
+       * @return The pointCloudVariant.
+       */
+      public java.lang.String getPointCloudVariant() {
+        java.lang.Object ref = pointCloudVariant_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pointCloudVariant_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Variant name of the generated point cloud (e.g., "neutral")
+       * </pre>
+       *
+       * <code>string point_cloud_variant = 3;</code>
+       * @return The bytes for pointCloudVariant.
+       */
+      public com.google.protobuf.ByteString
+          getPointCloudVariantBytes() {
+        java.lang.Object ref = pointCloudVariant_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pointCloudVariant_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Variant name of the generated point cloud (e.g., "neutral")
+       * </pre>
+       *
+       * <code>string point_cloud_variant = 3;</code>
+       * @param value The pointCloudVariant to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPointCloudVariant(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        pointCloudVariant_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Variant name of the generated point cloud (e.g., "neutral")
+       * </pre>
+       *
+       * <code>string point_cloud_variant = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPointCloudVariant() {
+        pointCloudVariant_ = getDefaultInstance().getPointCloudVariant();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Variant name of the generated point cloud (e.g., "neutral")
+       * </pre>
+       *
+       * <code>string point_cloud_variant = 3;</code>
+       * @param value The bytes for pointCloudVariant to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPointCloudVariantBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        pointCloudVariant_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp processedAt_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> processedAtBuilder_;
+      /**
+       * <pre>
+       * When the processing completed
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+       * @return Whether the processedAt field is set.
+       */
+      public boolean hasProcessedAt() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <pre>
+       * When the processing completed
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+       * @return The processedAt.
+       */
+      public com.google.protobuf.Timestamp getProcessedAt() {
+        if (processedAtBuilder_ == null) {
+          return processedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : processedAt_;
+        } else {
+          return processedAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * When the processing completed
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+       */
+      public Builder setProcessedAt(com.google.protobuf.Timestamp value) {
+        if (processedAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          processedAt_ = value;
+        } else {
+          processedAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * When the processing completed
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+       */
+      public Builder setProcessedAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (processedAtBuilder_ == null) {
+          processedAt_ = builderForValue.build();
+        } else {
+          processedAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * When the processing completed
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+       */
+      public Builder mergeProcessedAt(com.google.protobuf.Timestamp value) {
+        if (processedAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0) &&
+            processedAt_ != null &&
+            processedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getProcessedAtBuilder().mergeFrom(value);
+          } else {
+            processedAt_ = value;
+          }
+        } else {
+          processedAtBuilder_.mergeFrom(value);
+        }
+        if (processedAt_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * When the processing completed
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+       */
+      public Builder clearProcessedAt() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        processedAt_ = null;
+        if (processedAtBuilder_ != null) {
+          processedAtBuilder_.dispose();
+          processedAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * When the processing completed
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getProcessedAtBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getProcessedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * When the processing completed
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getProcessedAtOrBuilder() {
+        if (processedAtBuilder_ != null) {
+          return processedAtBuilder_.getMessageOrBuilder();
+        } else {
+          return processedAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : processedAt_;
+        }
+      }
+      /**
+       * <pre>
+       * When the processing completed
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp processed_at = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getProcessedAtFieldBuilder() {
+        if (processedAtBuilder_ == null) {
+          processedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getProcessedAt(),
+                  getParentForChildren(),
+                  isClean());
+          processedAt_ = null;
+        }
+        return processedAtBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:voxel.assets.v1.UploadGuruVideoResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:voxel.assets.v1.UploadGuruVideoResponse)
+    private static final voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse();
+    }
+
+    public static voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UploadGuruVideoResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UploadGuruVideoResponse>() {
+      @java.lang.Override
+      public UploadGuruVideoResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UploadGuruVideoResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UploadGuruVideoResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public voxel.assets.v1.AssetServiceOuterClass.UploadGuruVideoResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_voxel_assets_v1_ListPointCloudsRequest_descriptor;
   private static final 
@@ -3886,6 +6346,16 @@ public final class AssetServiceOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_voxel_assets_v1_GetPointCloudResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_voxel_assets_v1_UploadGuruVideoRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_voxel_assets_v1_UploadGuruVideoRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_voxel_assets_v1_UploadGuruVideoResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_voxel_assets_v1_UploadGuruVideoResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3897,28 +6367,39 @@ public final class AssetServiceOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"voxel/asset/v1/asset_service.proto\022\017vo" +
       "xel.assets.v1\032\033voxel/common/v1/types.pro" +
-      "to\")\n\026ListPointCloudsRequest\022\017\n\007guru_id\030" +
-      "\001 \001(\t\"T\n\027ListPointCloudsResponse\0229\n\014poin" +
-      "t_clouds\030\001 \003(\0132#.voxel.common.v1.PointCl" +
-      "oudMetadata\"N\n\024GetPointCloudRequest\022\017\n\007g" +
-      "uru_id\030\001 \001(\t\022\017\n\007variant\030\002 \001(\t\022\024\n\014include" +
-      "_mesh\030\003 \001(\010\"\230\001\n\017PointCloudAsset\0225\n\010metad" +
-      "ata\030\001 \001(\0132#.voxel.common.v1.PointCloudMe" +
-      "tadata\022)\n\013point_cloud\030\002 \001(\0132\024.voxel.comm" +
-      "on.v1.Pcd\022#\n\004mesh\030\003 \001(\0132\025.voxel.common.v" +
-      "1.Mesh\"H\n\025GetPointCloudResponse\022/\n\005asset" +
-      "\030\001 \001(\0132 .voxel.assets.v1.PointCloudAsset" +
-      "2\324\001\n\014AssetService\022d\n\017ListPointClouds\022\'.v" +
-      "oxel.assets.v1.ListPointCloudsRequest\032(." +
-      "voxel.assets.v1.ListPointCloudsResponse\022" +
-      "^\n\rGetPointCloud\022%.voxel.assets.v1.GetPo" +
-      "intCloudRequest\032&.voxel.assets.v1.GetPoi" +
-      "ntCloudResponseb\006proto3"
+      "to\032\037google/protobuf/timestamp.proto\")\n\026L" +
+      "istPointCloudsRequest\022\017\n\007guru_id\030\001 \001(\t\"T" +
+      "\n\027ListPointCloudsResponse\0229\n\014point_cloud" +
+      "s\030\001 \003(\0132#.voxel.common.v1.PointCloudMeta" +
+      "data\"N\n\024GetPointCloudRequest\022\017\n\007guru_id\030" +
+      "\001 \001(\t\022\017\n\007variant\030\002 \001(\t\022\024\n\014include_mesh\030\003" +
+      " \001(\010\"\230\001\n\017PointCloudAsset\0225\n\010metadata\030\001 \001" +
+      "(\0132#.voxel.common.v1.PointCloudMetadata\022" +
+      ")\n\013point_cloud\030\002 \001(\0132\024.voxel.common.v1.P" +
+      "cd\022#\n\004mesh\030\003 \001(\0132\025.voxel.common.v1.Mesh\"" +
+      "H\n\025GetPointCloudResponse\022/\n\005asset\030\001 \001(\0132" +
+      " .voxel.assets.v1.PointCloudAsset\"x\n\026Upl" +
+      "oadGuruVideoRequest\022\017\n\007guru_id\030\001 \001(\t\022%\n\005" +
+      "video\030\002 \001(\0132\026.voxel.common.v1.Video\022&\n\006i" +
+      "mages\030\003 \003(\0132\026.voxel.common.v1.Image\"\212\001\n\027" +
+      "UploadGuruVideoResponse\022\017\n\007success\030\001 \001(\010" +
+      "\022\017\n\007message\030\002 \001(\t\022\033\n\023point_cloud_variant" +
+      "\030\003 \001(\t\0220\n\014processed_at\030\004 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp2\272\002\n\014AssetService\022d\n\017Lis" +
+      "tPointClouds\022\'.voxel.assets.v1.ListPoint" +
+      "CloudsRequest\032(.voxel.assets.v1.ListPoin" +
+      "tCloudsResponse\022^\n\rGetPointCloud\022%.voxel" +
+      ".assets.v1.GetPointCloudRequest\032&.voxel." +
+      "assets.v1.GetPointCloudResponse\022d\n\017Uploa" +
+      "dGuruVideo\022\'.voxel.assets.v1.UploadGuruV" +
+      "ideoRequest\032(.voxel.assets.v1.UploadGuru" +
+      "VideoResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           voxel.common.v1.Types.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_voxel_assets_v1_ListPointCloudsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3950,7 +6431,20 @@ public final class AssetServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_voxel_assets_v1_GetPointCloudResponse_descriptor,
         new java.lang.String[] { "Asset", });
+    internal_static_voxel_assets_v1_UploadGuruVideoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_voxel_assets_v1_UploadGuruVideoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_voxel_assets_v1_UploadGuruVideoRequest_descriptor,
+        new java.lang.String[] { "GuruId", "Video", "Images", });
+    internal_static_voxel_assets_v1_UploadGuruVideoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_voxel_assets_v1_UploadGuruVideoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_voxel_assets_v1_UploadGuruVideoResponse_descriptor,
+        new java.lang.String[] { "Success", "Message", "PointCloudVariant", "ProcessedAt", });
     voxel.common.v1.Types.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
