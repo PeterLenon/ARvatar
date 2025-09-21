@@ -1,0 +1,11 @@
+# macOS Finder metadata
+.DS_Store
+
+# IntelliJ IDEA project files
+.idea/
+
+# Build outputs
+vortex_service/target/
+vortex_device/target/
+vortex_device/**/build/
+vortex_device/**/cmake-build-debug/
