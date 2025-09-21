@@ -86,3 +86,17 @@ message Error {
   string code = 1;    // e.g., "INVALID_ARGUMENT"
   string message = 2;
 }
+
+// Video data for guru upload
+message Video {
+  string format = 1;      // "mp4", "mov", "avi", etc.
+  bytes payload = 2;      // video file content
+  string mime_type = 3;   // e.g., "video/mp4"
+}
+
+// Image data for guru upload
+message Image {
+  string format = 1;      // "jpeg", "png", "heic", etc.
+  bytes payload = 2;      // image file content
+  string mime_type = 3;   // e.g., "image/jpeg"
+}

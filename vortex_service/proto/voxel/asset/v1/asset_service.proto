@@ -2,6 +2,7 @@ syntax = "proto3";
 package voxel.assets.v1;
 
 import "voxel/common/v1/types.proto";
+import "google/protobuf/timestamp.proto";
 
 message ListPointCloudsRequest {
   string guru_id = 1;
@@ -27,10 +28,26 @@ message GetPointCloudResponse {
   PointCloudAsset asset = 1;
 }
 
+message UploadGuruVideoRequest{
+  string guru_id = 1;                    // ID of the guru this content belongs to
+  voxel.common.v1.Video video = 2;      // Single video file for processing
+  repeated voxel.common.v1.Image images = 3;  // Multiple images (jpeg, png, heic only)
+}
+
+message UploadGuruVideoResponse{
+  bool success = 1;
+  string message = 2;                    // Success/error message
+  string point_cloud_variant = 3;        // Variant name of the generated point cloud (e.g., "neutral")
+  google.protobuf.Timestamp processed_at = 4;  // When the processing completed
+}
+
 service AssetService {
   // Enumerate available point clouds (neutral, expressions, lighting variants, etc.)
   rpc ListPointClouds(ListPointCloudsRequest) returns (ListPointCloudsResponse);
 
   // Fetch the binary point cloud (and optional mesh) for a guru/variant combination
   rpc GetPointCloud(GetPointCloudRequest) returns (GetPointCloudResponse);
+
+  // Upload Guru video that will be processed and converted into a PCD and stored along with
+  rpc UploadGuruVideo(UploadGuruVideoRequest) returns (UploadGuruVideoResponse);
 }
