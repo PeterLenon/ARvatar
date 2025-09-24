@@ -95,6 +95,7 @@ voxel/common/v1/Types$PointCloudMetadata$1.class
 voxel/common/v1/Types$ContextReference$1.class
 voxel/assets/v1/AssetServiceOuterClass$PointCloudAsset$1.class
 voxel/common/v1/Types$Image$Builder.class
+com/arvatar/vortex/grpc/DialogueGrpcService.class
 voxel/common/v1/Types$Pcd$Builder.class
 voxel/dialogue/v1/DialogueServiceGrpc$DialogueServiceBaseDescriptorSupplier.class
 voxel/common/v1/Types.class

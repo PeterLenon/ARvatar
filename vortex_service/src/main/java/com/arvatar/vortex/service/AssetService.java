@@ -2,6 +2,8 @@ package com.arvatar.vortex.service;
 
 import org.springframework.stereotype.Service;
 import voxel.assets.v1.AssetServiceOuterClass.*;
+import voxel.common.v1.Types;
+import java.util.ArrayList;
 
 @Service
 public class AssetService {
@@ -31,7 +33,7 @@ public class AssetService {
     }
 
     /**
-     * Get a specific point cloud data
+     * Get a specific point cloud
      */
     public GetPointCloudResponse getPointCloud(GetPointCloudRequest request) {
         // TODO: Implement actual logic to fetch point cloud binary data
@@ -72,6 +74,23 @@ public class AssetService {
         
         responseBuilder.setAsset(pointCloudAsset.build());
         
+        return responseBuilder.build();
+    }
+
+    public UploadGuruVideoResponse uploadGuruVideo(UploadGuruVideoRequest request) {
+        Types.Video video = request.getVideo();
+        String guru_id = request.getGuruId();
+        ArrayList<Types.Image> images = new ArrayList<>();
+        images.addAll(request.getImagesList());
+
+        UploadGuruVideoResponse.Builder responseBuilder = UploadGuruVideoResponse.newBuilder();
+
+        responseBuilder.setSuccess(true);
+        responseBuilder.setMessage("Video upload received successfully");
+        responseBuilder.setPointCloudVariant("neutral");
+        responseBuilder.setProcessedAt(com.google.protobuf.Timestamp.newBuilder()
+                .setSeconds(System.currentTimeMillis() / 1000)
+                .build());
         return responseBuilder.build();
     }
 }
