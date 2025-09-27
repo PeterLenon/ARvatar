@@ -1,5 +1,7 @@
 package com.arvatar.vortex.service;
 
+import com.arvatar.vortex.dto.MinIOS3Client;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import voxel.assets.v1.AssetServiceOuterClass.*;
 import voxel.common.v1.Types;
@@ -7,6 +9,7 @@ import java.util.ArrayList;
 
 @Service
 public class AssetService {
+    private final MinIOS3Client minIOS3Client = new MinIOS3Client();
 
     /**
      * List available point clouds for a guru
@@ -77,20 +80,43 @@ public class AssetService {
         return responseBuilder.build();
     }
 
-    public UploadGuruVideoResponse uploadGuruVideo(UploadGuruVideoRequest request) {
+    public UploadGuruVideoResponse uploadGuruVideo(@org.jetbrains.annotations.NotNull UploadGuruVideoRequest request) {
         Types.Video video = request.getVideo();
         String guru_id = request.getGuruId();
         ArrayList<Types.Image> images = new ArrayList<>();
         images.addAll(request.getImagesList());
+        boolean published_raw_images = false;
+        boolean published_raw_video = false;
 
         UploadGuruVideoResponse.Builder responseBuilder = UploadGuruVideoResponse.newBuilder();
-
-        responseBuilder.setSuccess(true);
-        responseBuilder.setMessage("Video upload received successfully");
-        responseBuilder.setPointCloudVariant("neutral");
-        responseBuilder.setProcessedAt(com.google.protobuf.Timestamp.newBuilder()
-                .setSeconds(System.currentTimeMillis() / 1000)
-                .build());
+        try {
+            published_raw_video = this.minIOS3Client.putVideo(guru_id, video);
+            published_raw_images = this.minIOS3Client.putImages(guru_id, images);
+            if (published_raw_images || published_raw_video) {
+                //todo: register this event to the worker nodes so that they can work these events
+                responseBuilder.setSuccess(true);
+                responseBuilder.setMessage("Training asset(s) upload received successfully");
+                responseBuilder.setPointCloudVariant("neutral");
+                responseBuilder.setProcessedAt(com.google.protobuf.Timestamp.newBuilder()
+                        .setSeconds(System.currentTimeMillis() / 1000)
+                        .build());
+            } else {
+                //todo: add retry technology
+                responseBuilder.setSuccess(false);
+                responseBuilder.setMessage("Video upload received unsuccessfully");
+                responseBuilder.setPointCloudVariant("neutral");
+                responseBuilder.setProcessedAt(com.google.protobuf.Timestamp.newBuilder()
+                        .setSeconds(System.currentTimeMillis() / 1000)
+                        .build());
+            }
+        }catch(Exception e) {
+            responseBuilder.setSuccess(false);
+                responseBuilder.setMessage(e.getMessage());
+                responseBuilder.setPointCloudVariant(e.getClass().getSimpleName());
+                responseBuilder.setProcessedAt(com.google.protobuf.Timestamp.newBuilder()
+                        .setSeconds(System.currentTimeMillis() / 1000)
+                        .build());
+        }
         return responseBuilder.build();
     }
 }

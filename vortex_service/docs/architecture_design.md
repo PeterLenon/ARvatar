@@ -15,7 +15,7 @@
 - Designed for streaming from object storage like S3. 
 - Lets clients request only the parts of the point cloud they need (specific tiles / resolution), rather than downloading the whole file. 
 - Very efficient for edge devices like your Vortex Guru since you can cache selectively.
-- 
+
 ```mermaid
 flowchart LR
   %% --- Device ---
@@ -96,7 +96,7 @@ sequenceDiagram
   ASR-->>S3: Update jobs/asr/{job_id}.json → succeeded
   ASR->>NQ: Enqueue photogrammetry
   NQ->>PC: Start PC build per viseme (staging prefix)
-  PC->>S3: Write pointclouds/{guru}/_staging/{version}/... .copc.laz
+  PC->>S3: Write pointClouds/{guru}/_staging/{version}/... .copc.laz
   PC-->>S3: jobs/photogrammetry/{job}.json → succeeded
   PC->>NQ: Enqueue map/manifest
   NQ->>MM: Build phoneme_map + manifest
