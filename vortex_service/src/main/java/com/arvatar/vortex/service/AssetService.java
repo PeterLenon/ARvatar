@@ -1,15 +1,19 @@
 package com.arvatar.vortex.service;
 
+import com.arvatar.vortex.dto.ASRJob;
 import com.arvatar.vortex.dto.MinIOS3Client;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import voxel.assets.v1.AssetServiceOuterClass.*;
 import voxel.common.v1.Types;
+
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.UUID;
 
 @Service
 public class AssetService {
     private final MinIOS3Client minIOS3Client = new MinIOS3Client();
+    private final AutomaticTranscriptionService automaticTranscriptionService = new AutomaticTranscriptionService();
 
     /**
      * List available point clouds for a guru
@@ -83,32 +87,27 @@ public class AssetService {
     public UploadGuruVideoResponse uploadGuruVideo(@org.jetbrains.annotations.NotNull UploadGuruVideoRequest request) {
         Types.Video video = request.getVideo();
         String guru_id = request.getGuruId();
-        ArrayList<Types.Image> images = new ArrayList<>();
-        images.addAll(request.getImagesList());
-        boolean published_raw_images = false;
-        boolean published_raw_video = false;
-
+        String published_raw_video;
         UploadGuruVideoResponse.Builder responseBuilder = UploadGuruVideoResponse.newBuilder();
         try {
             published_raw_video = this.minIOS3Client.putVideo(guru_id, video);
-            published_raw_images = this.minIOS3Client.putImages(guru_id, images);
-            if (published_raw_images || published_raw_video) {
-                //todo: register this event to the worker nodes so that they can work these events
-                responseBuilder.setSuccess(true);
-                responseBuilder.setMessage("Training asset(s) upload received successfully");
-                responseBuilder.setPointCloudVariant("neutral");
-                responseBuilder.setProcessedAt(com.google.protobuf.Timestamp.newBuilder()
-                        .setSeconds(System.currentTimeMillis() / 1000)
-                        .build());
-            } else {
-                //todo: add retry technology
-                responseBuilder.setSuccess(false);
-                responseBuilder.setMessage("Video upload received unsuccessfully");
-                responseBuilder.setPointCloudVariant("neutral");
-                responseBuilder.setProcessedAt(com.google.protobuf.Timestamp.newBuilder()
-                        .setSeconds(System.currentTimeMillis() / 1000)
-                        .build());
+            boolean success = published_raw_video != null;
+
+            if (success) {
+                ASRJob videoJob = new ASRJob();
+                videoJob.video_id = published_raw_video;
+                videoJob.guru_id = guru_id;
+                videoJob.status = "queued";
+                videoJob.job_id = UUID.randomUUID().toString();
+                videoJob.queued_at = Instant.now().toString();
+                String txn_id = this.automaticTranscriptionService.enlistASRjob(videoJob);
             }
+            responseBuilder.setSuccess(success);
+            responseBuilder.setMessage(success ? "Training asset(s) upload received successfully" : "Training asset(s) upload failed");
+            responseBuilder.setPointCloudVariant("neutral");
+            responseBuilder.setProcessedAt(com.google.protobuf.Timestamp.newBuilder()
+                    .setSeconds(System.currentTimeMillis() / 1000)
+                    .build());
         }catch(Exception e) {
             responseBuilder.setSuccess(false);
                 responseBuilder.setMessage(e.getMessage());
