@@ -13,7 +13,11 @@ import java.util.UUID;
 @Service
 public class AssetService {
     private final MinIOS3Client minIOS3Client = new MinIOS3Client();
-    private final AutomaticTranscriptionService automaticTranscriptionService = new AutomaticTranscriptionService();
+    private final AutomaticTranscriptionService automaticTranscriptionService;
+
+    public AssetService(AutomaticTranscriptionService automaticTranscriptionService) {
+        this.automaticTranscriptionService = automaticTranscriptionService;
+    }
 
     /**
      * List available point clouds for a guru
