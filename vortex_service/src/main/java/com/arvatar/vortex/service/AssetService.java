@@ -1,6 +1,7 @@
 package com.arvatar.vortex.service;
 
 import com.arvatar.vortex.dto.ASRJob;
+import com.arvatar.vortex.dto.JobStatus;
 import com.arvatar.vortex.dto.MinIOS3Client;
 import org.springframework.stereotype.Service;
 import voxel.assets.v1.AssetServiceOuterClass.*;
@@ -12,8 +13,12 @@ import java.util.UUID;
 
 @Service
 public class AssetService {
-    private final MinIOS3Client minIOS3Client = new MinIOS3Client();
+    private static final MinIOS3Client minIOS3Client = new MinIOS3Client();
     private final AutomaticTranscriptionService automaticTranscriptionService;
+
+    private static boolean updateJob(ASRJob job){
+       return minIOS3Client.updateASRJob(job);
+    }
 
     public AssetService(AutomaticTranscriptionService automaticTranscriptionService) {
         this.automaticTranscriptionService = automaticTranscriptionService;
@@ -101,10 +106,11 @@ public class AssetService {
                 ASRJob videoJob = new ASRJob();
                 videoJob.video_id = published_raw_video;
                 videoJob.guru_id = guru_id;
-                videoJob.status = "queued";
+                videoJob.status = JobStatus.ASR_QUEUED;
                 videoJob.job_id = UUID.randomUUID().toString();
                 videoJob.queued_at = Instant.now().toString();
-                String txn_id = this.automaticTranscriptionService.enlistASRjob(videoJob);
+                videoJob.workflow_id = this.automaticTranscriptionService.enlistASRjob(videoJob);
+                success = updateJob(videoJob);
             }
             responseBuilder.setSuccess(success);
             responseBuilder.setMessage(success ? "Training asset(s) upload received successfully" : "Training asset(s) upload failed");
@@ -122,4 +128,5 @@ public class AssetService {
         }
         return responseBuilder.build();
     }
+
 }

@@ -1,8 +1,11 @@
 package com.arvatar.vortex.dto;
 
+import com.google.protobuf.ByteString;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+import software.amazon.awssdk.core.ResponseBytes;
 import software.amazon.awssdk.core.async.AsyncRequestBody;
+import software.amazon.awssdk.core.async.AsyncResponseTransformer;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.core.waiters.WaiterResponse;
 import software.amazon.awssdk.regions.Region;
@@ -109,6 +112,45 @@ public class MinIOS3Client {
             System.err.println(e.getMessage());
             return null;
         }
+    }
+
+    public Types.Video fetchVideo(String video_object_key) {
+        String videos_bucket = "videos";
+        if(video_object_key.contains(videos_bucket)){
+            video_object_key = video_object_key.substring(videos_bucket.length());
+        }
+        GetObjectRequest request = GetObjectRequest.builder()
+                .bucket(videos_bucket)
+                .key(video_object_key)
+                .build();
+        CompletableFuture<ResponseBytes<GetObjectResponse>> result = s3AsyncClient.getObject(request, AsyncResponseTransformer.toBytes());
+        try {
+            ResponseBytes<GetObjectResponse> responseBytes = result.get();
+            GetObjectResponse response = responseBytes.response();
+            byte[] bytes = responseBytes.asByteArray();
+            String mimeType = response.contentType();
+            String format = mimeType != null && mimeType.contains("/") ? mimeType.substring(mimeType.indexOf('/') + 1) : "";
+
+            return Types.Video.newBuilder()
+                    .setPayload(ByteString.copyFrom(bytes))
+                    .setMimeType(mimeType == null ? "" : mimeType)
+                    .setFormat(format)
+                    .build();
+        }catch(Exception e) {
+            return null;
+        }
+    }
+
+    public boolean updateASRJob(ASRJob asrJob) {
+        String jobsBucket = "asr-jobs";
+        String objectKey = asrJob.job_id;
+        PutObjectRequest request = PutObjectRequest.builder()
+                .bucket(jobsBucket)
+                .key(objectKey)
+                .contentType("text/plain")
+                .build();
+        CompletableFuture<PutObjectResponse> res = s3AsyncClient.putObject(request, AsyncRequestBody.fromString(asrJob.toString()));
+        return !res.isCompletedExceptionally();
     }
 }
 

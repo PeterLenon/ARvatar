@@ -1,6 +1,7 @@
 package com.arvatar.vortex.service;
 
 import com.arvatar.vortex.dto.ASRJob;
+import com.arvatar.vortex.dto.MinIOS3Client;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.lettuce.core.RedisClient;
@@ -24,7 +25,6 @@ import com.arvatar.vortex.workflow.ASRWorkflow;
 @Service
 public class AutomaticTranscriptionService {
     private static final Logger LOGGER = LoggerFactory.getLogger(AutomaticTranscriptionService.class);
-
     private final ObjectMapper objectMapper;
     private final RedisClient redisClient;
     private final StatefulRedisConnection<String, String> redisConnection;
@@ -33,6 +33,7 @@ public class AutomaticTranscriptionService {
     private final Object redisLock = new Object();
     private final WorkflowClient workflowClient;
     private final String taskQueue;
+    private final MinIOS3Client minIOS3Client = new MinIOS3Client();
 
     public AutomaticTranscriptionService(
             ObjectMapper objectMapper,
@@ -59,7 +60,6 @@ public class AutomaticTranscriptionService {
 
     public String enlistASRjob(ASRJob asrJob) {
         try {
-            markJobQueued(asrJob);
             String workflowId = determineWorkflowId(asrJob);
             WorkflowOptions options = WorkflowOptions.newBuilder()
                     .setTaskQueue(taskQueue)
@@ -76,78 +76,6 @@ public class AutomaticTranscriptionService {
                     asrJob.job_id);
             return alreadyStarted.getExecution().getWorkflowId();
         }
-    }
-
-    public String getASRjobStatus(String jobId) {
-        if (jobId == null) {
-            return null;
-        }
-        synchronized (redisLock) {
-            return redisCommands.get(jobStatusKey(jobId));
-        }
-    }
-
-    public void processJob(ASRJob asrJob) {
-        markJobStarted(asrJob);
-        try {
-            LOGGER.info("Processing ASR job {} for guru {}", asrJob.job_id, asrJob.guru_id);
-            // Placeholder for actual transcription logic. In a real implementation this would invoke
-            // the ASR engine and populate outputs (transcripts, phonemes, etc.).
-            markJobCompleted(asrJob);
-        } catch (RuntimeException e) {
-            markJobFailed(asrJob, e);
-            throw e;
-        } catch (Exception e) {
-            markJobFailed(asrJob, e);
-            throw new IllegalStateException("Unexpected error while processing ASR job", e);
-        }
-    }
-
-    public void markJobQueued(ASRJob asrJob) {
-        asrJob.status = "queued";
-        asrJob.queued_at = Instant.now().toString();
-        asrJob.error = null;
-        persistJob(asrJob);
-    }
-
-    public void markJobStarted(ASRJob asrJob) {
-        asrJob.status = "running";
-        asrJob.started_at = Instant.now().toString();
-        asrJob.error = null;
-        persistJob(asrJob);
-    }
-
-    public void markJobFailed(ASRJob asrJob, Exception exception) {
-        asrJob.status = "failed";
-        asrJob.error = exception.getMessage();
-        asrJob.finished_at = Instant.now().toString();
-        persistJob(asrJob);
-    }
-
-    public void markJobCompleted(ASRJob asrJob) {
-        asrJob.status = "succeeded";
-        asrJob.finished_at = Instant.now().toString();
-        asrJob.error = null;
-        persistJob(asrJob);
-    }
-
-    private void persistJob(ASRJob asrJob) {
-        if (asrJob == null || asrJob.job_id == null) {
-            LOGGER.warn("Skipping job persistence because job or job_id is null");
-            return;
-        }
-        try {
-            String serialized = objectMapper.writeValueAsString(asrJob);
-            synchronized (redisLock) {
-                redisCommands.set(jobStatusKey(asrJob.job_id), serialized);
-            }
-        } catch (JsonProcessingException e) {
-            LOGGER.error("Failed to persist ASR job status for {}", asrJob.job_id, e);
-        }
-    }
-
-    private String jobStatusKey(String jobId) {
-        return String.format("JOB:ASR:%s", jobId);
     }
 
     private String determineWorkflowId(ASRJob asrJob) {
