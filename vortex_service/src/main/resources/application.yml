@@ -10,6 +10,9 @@ grpc:
 spring:
   application:
     name: vortex-service
+  redis:
+    host: localhost
+    port: 6379
   
 management:
   endpoints:
@@ -36,3 +39,15 @@ vortex:
   dialogue:
     ai-model: gpt-3.5-turbo
     max-conversation-history: 10
+  storage:
+    video-bucket: videos
+    job-bucket: jobs
+    minio:
+      endpoint: http://127.0.0.1:9000
+      region: us-east-1
+      access-key: minio
+      secret-key: minio123
+      path-style-access: true
+  workflow:
+    asr-stream: asr-jobs
+    pcd-stream: pcd-jobs
