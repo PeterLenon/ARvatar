@@ -33,6 +33,8 @@ import java.util.concurrent.Executors;
 public class AsrService {
     private final MinIOS3Client objectStoreClient;
     private RedisAsyncCommands<String, String> asyncCommands;
+    private final RedisClient redisClient;
+    private StatefulRedisConnection<String, String> connection;
     private final ObjectMapper objectMapper;
     private final Logger logger = org.slf4j.LoggerFactory.getLogger(AsrService.class);
     private final ExecutorService workerExecutor = Executors.newSingleThreadExecutor();
@@ -40,8 +42,8 @@ public class AsrService {
     public AsrService() {
         objectMapper = new ObjectMapper();
         objectStoreClient = new MinIOS3Client();
-        RedisClient redisClient = RedisClient.create("redis://localhost:6379");
-        StatefulRedisConnection<String, String> connection = redisClient.connect();
+        redisClient = RedisClient.create("redis://localhost:6379");
+        connection = redisClient.connect();
         asyncCommands = connection.async();
     }
 
@@ -88,7 +90,12 @@ public class AsrService {
                     }
                 }
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                if (e instanceof InterruptedException || e.getCause() instanceof InterruptedException) {
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+                logger.error("ASR stream processing failed, attempting to recover", e);
+                rebuildRedisConnection();
             }
         }
     }
@@ -96,6 +103,33 @@ public class AsrService {
     @PreDestroy
     public void shutdown() {
         workerExecutor.shutdownNow();
+        if (connection != null) {
+            connection.close();
+        }
+        if (redisClient != null) {
+            redisClient.shutdown();
+        }
+    }
+
+    private synchronized void rebuildRedisConnection() {
+        try {
+            if (connection != null && connection.isOpen()) {
+                connection.close();
+            }
+        } catch (Exception closeException) {
+            logger.warn("Failed to close existing Redis connection during rebuild", closeException);
+        }
+        try {
+            connection = redisClient.connect();
+            asyncCommands = connection.async();
+        } catch (Exception connectionException) {
+            logger.error("Failed to rebuild Redis connection", connectionException);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+        }
     }
 
     private JsonNode transcribe(String jobId, byte[] videoPayload) throws IOException {
