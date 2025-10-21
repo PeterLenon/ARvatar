@@ -14,6 +14,7 @@ import io.lettuce.core.api.async.RedisAsyncCommands;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -26,6 +27,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.databind.JsonNode;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Service
 public class PcdService {
@@ -33,6 +36,7 @@ public class PcdService {
     private RedisAsyncCommands<String, String> asyncCommands;
     private final ObjectMapper objectMapper;
     private final Logger logger = org.slf4j.LoggerFactory.getLogger(PcdService.class);
+    private final ExecutorService workerExecutor = Executors.newSingleThreadExecutor();
 
     PcdService(){
         objectMapper = new ObjectMapper();
@@ -43,7 +47,11 @@ public class PcdService {
     }
 
     @PostConstruct
-    public void run(){
+    public void start(){
+        workerExecutor.submit(this::run);
+    }
+
+    private void run(){
         String pcdJobRedisStream = "pcd_jobs";
         String pcdJobRedisStreamGroup = "pcd_jobs_workers";
         String pcdJobRedisStreamConsumer = "pcd_jobs_consumer";
@@ -81,6 +89,11 @@ public class PcdService {
                 e.printStackTrace();
             }
         }
+    }
+
+    @PreDestroy
+    public void shutdown() {
+        workerExecutor.shutdownNow();
     }
 
     private Map<String, List<JsonNode>> getVisemeBounds(JsonNode transcription){

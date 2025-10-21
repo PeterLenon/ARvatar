@@ -22,9 +22,12 @@ import java.nio.file.Path;
 import java.nio.file.Files;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Service
 public class AsrService {
@@ -32,6 +35,7 @@ public class AsrService {
     private RedisAsyncCommands<String, String> asyncCommands;
     private final ObjectMapper objectMapper;
     private final Logger logger = org.slf4j.LoggerFactory.getLogger(AsrService.class);
+    private final ExecutorService workerExecutor = Executors.newSingleThreadExecutor();
 
     public AsrService() {
         objectMapper = new ObjectMapper();
@@ -42,7 +46,11 @@ public class AsrService {
     }
 
     @PostConstruct
-    public void run(){
+    public void start() {
+        workerExecutor.submit(this::run);
+    }
+
+    private void run(){
         String asrJobRedisStream = "asr_jobs";
         String asrJobRedisStreamGroup = "asr_jobs_workers";
         String asrJobRedisStreamConsumer = "asr_jobs_consumer";
@@ -83,6 +91,11 @@ public class AsrService {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    @PreDestroy
+    public void shutdown() {
+        workerExecutor.shutdownNow();
     }
 
     private JsonNode transcribe(String jobId, byte[] videoPayload) throws IOException {

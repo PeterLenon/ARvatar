@@ -42,7 +42,7 @@ public class MinIOS3Client {
                             .build(),
                     AsyncRequestBody.fromBytes(videoData)
             );
-            response.thenAccept(r -> System.out.println("Video uploaded successfully"));
+            response.join();
             return videoKey;
         }catch (Exception e){
             throw new RuntimeException(e);
@@ -74,7 +74,7 @@ public class MinIOS3Client {
                             .build(),
                     AsyncRequestBody.fromString(job.toString())
             );
-            response.thenAccept(r -> System.out.println("Job updated successfully"));
+            response.join();
         }catch (Exception e){
             throw new RuntimeException(e);
         }
@@ -91,6 +91,7 @@ public class MinIOS3Client {
                             .build(),
                     AsyncRequestBody.fromFile(file)
             );
+            response.join();
         }catch (Exception e){
             throw new RuntimeException(e);
         }
