@@ -156,7 +156,7 @@ public class PcdService {
 
     private void createAndPublishPcdFromFrames(String guruId, Map<String, Path> visemeFrameDirMap) throws IOException, InterruptedException {
         try {
-            String finalFusedPlyFilePath = guruId + "dense/fused.ply";
+            String finalFusedPlyFilePath = guruId + "/dense/fused.ply";
             for (Map.Entry<String, Path> entry : visemeFrameDirMap.entrySet()) {
                 String visemeId = entry.getKey();
                 Path visemeFrameDir = entry.getValue();
