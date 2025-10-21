@@ -5,6 +5,8 @@ import com.arvatar.vortex.dto.JobStatus;
 import com.arvatar.vortex.dto.MinIOS3Client;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.lettuce.core.Consumer;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.StreamMessage;
@@ -41,6 +43,8 @@ public class AsrService {
 
     public AsrService() {
         objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectStoreClient = new MinIOS3Client();
         redisClient = RedisClient.create("redis://localhost:6379");
         connection = redisClient.connect();

@@ -3,6 +3,8 @@ package com.arvatar.vortex.service;
 import com.arvatar.vortex.dto.AsrPcdJob;
 import com.arvatar.vortex.dto.MinIOS3Client;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.lettuce.core.api.async.RedisAsyncCommands;
 import org.springframework.stereotype.Service;
 import voxel.assets.v1.AssetServiceOuterClass.*;
@@ -20,7 +22,9 @@ public class AssetService {
     private RedisClient redisClient = RedisClient.create("redis://localhost:6379");
     private StatefulRedisConnection<String, String> connection = redisClient.connect();
     private RedisAsyncCommands<String, String> asyncCommands = connection.async();
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper()
+            .registerModule(new JavaTimeModule())
+            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
     private String publishJobToStream(AsrPcdJob job){
         String asrJobRedisStream = "asr_jobs";
