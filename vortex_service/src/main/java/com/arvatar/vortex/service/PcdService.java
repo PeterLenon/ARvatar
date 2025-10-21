@@ -62,7 +62,7 @@ public class PcdService {
                         XReadArgs.Builder.block(Duration.ofSeconds(5)),
                         XReadArgs.StreamOffset.lastConsumed(pcdJobRedisStream)
                 ).get();
-                if(jobs.isEmpty()) continue;
+                if(jobs == null || jobs.isEmpty()) continue;
                 for(StreamMessage<String,String> message : jobs) {
                     String messageId = message.getId();
                     try {

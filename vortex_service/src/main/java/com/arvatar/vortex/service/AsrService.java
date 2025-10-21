@@ -61,7 +61,7 @@ public class AsrService {
                         XReadArgs.Builder.block(Duration.ofSeconds(5)),
                         XReadArgs.StreamOffset.lastConsumed(asrJobRedisStream)
                 ).get();
-                if (jobs.isEmpty()) {
+                if (jobs == null || jobs.isEmpty()) {
                     continue;
                 }
                 for (StreamMessage<String, String> message : jobs) {
