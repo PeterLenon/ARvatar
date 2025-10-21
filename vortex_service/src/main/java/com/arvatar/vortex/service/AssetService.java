@@ -1,12 +1,51 @@
 package com.arvatar.vortex.service;
 
+import com.arvatar.vortex.dto.AsrPcdJob;
+import com.arvatar.vortex.dto.MinIOS3Client;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import io.lettuce.core.api.async.RedisAsyncCommands;
 import org.springframework.stereotype.Service;
 import voxel.assets.v1.AssetServiceOuterClass.*;
 import voxel.common.v1.Types;
-import java.util.ArrayList;
+import io.lettuce.core.RedisClient;
+import io.lettuce.core.api.StatefulRedisConnection;
+import io.lettuce.core.api.sync.RedisCommands;
+
+import java.util.Map;
 
 @Service
 public class AssetService {
+
+    private final MinIOS3Client objectStoreClient = new MinIOS3Client();
+    private RedisClient redisClient = RedisClient.create("redis://localhost:6379");
+    private StatefulRedisConnection<String, String> connection = redisClient.connect();
+    private RedisAsyncCommands<String, String> asyncCommands = connection.async();
+    private final ObjectMapper objectMapper = new ObjectMapper()
+            .registerModule(new JavaTimeModule())
+            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+
+    private String publishJobToStream(AsrPcdJob job){
+        String asrJobRedisStream = "asr_jobs";
+        try {
+            String payload = objectMapper.writeValueAsString(job);
+            return awaitXAdd(asrJobRedisStream, payload);
+        } catch (com.fasterxml.jackson.core.JsonProcessingException e) {
+            throw new RuntimeException("Failed to serialize job", e);
+        }
+    }
+
+    private String awaitXAdd(String stream, String payload) {
+        try {
+            return asyncCommands.xadd(stream, Map.of("job", payload)).get();
+        } catch (InterruptedException ie) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException("Interrupted while publishing job to Redis", ie);
+        } catch (java.util.concurrent.ExecutionException ee) {
+            throw new RuntimeException("Failed to publish job to Redis", ee.getCause());
+        }
+    }
 
     /**
      * List available point clouds for a guru
@@ -80,13 +119,15 @@ public class AssetService {
     public UploadGuruVideoResponse uploadGuruVideo(UploadGuruVideoRequest request) {
         Types.Video video = request.getVideo();
         String guru_id = request.getGuruId();
-        ArrayList<Types.Image> images = new ArrayList<>();
-        images.addAll(request.getImagesList());
+        String s3VideoKey = objectStoreClient.putVideo(guru_id, video.getPayload().toByteArray());
+        AsrPcdJob job = new AsrPcdJob(guru_id, s3VideoKey);
+        objectStoreClient.updateJob(job);
+        publishJobToStream(job);
 
+        boolean success = s3VideoKey != null;
         UploadGuruVideoResponse.Builder responseBuilder = UploadGuruVideoResponse.newBuilder();
-
-        responseBuilder.setSuccess(true);
-        responseBuilder.setMessage("Video upload received successfully");
+        responseBuilder.setSuccess(success);
+        responseBuilder.setMessage(success ? "Video upload received successfully" : "Video upload failed");
         responseBuilder.setPointCloudVariant("neutral");
         responseBuilder.setProcessedAt(com.google.protobuf.Timestamp.newBuilder()
                 .setSeconds(System.currentTimeMillis() / 1000)
