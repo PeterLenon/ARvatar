@@ -26,9 +26,20 @@ public class AssetService {
         String asrJobRedisStream = "asr_jobs";
         try {
             String payload = objectMapper.writeValueAsString(job);
-            return String.valueOf(asyncCommands.xadd(asrJobRedisStream, Map.of("job", payload)));
-        } catch (Exception e) {
+            return awaitXAdd(asrJobRedisStream, payload);
+        } catch (com.fasterxml.jackson.core.JsonProcessingException e) {
             throw new RuntimeException("Failed to serialize job", e);
+        }
+    }
+
+    private String awaitXAdd(String stream, String payload) {
+        try {
+            return asyncCommands.xadd(stream, Map.of("job", payload)).get();
+        } catch (InterruptedException ie) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException("Interrupted while publishing job to Redis", ie);
+        } catch (java.util.concurrent.ExecutionException ee) {
+            throw new RuntimeException("Failed to publish job to Redis", ee.getCause());
         }
     }
 

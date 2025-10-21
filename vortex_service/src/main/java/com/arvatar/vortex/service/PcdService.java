@@ -133,7 +133,7 @@ public class PcdService {
 
                     ProcessBuilder processBuilder = new ProcessBuilder(
                             "ffmpeg", "-y", "-i", videoFile.toString(), "-ss", String.valueOf(start), "-t", String.valueOf(duration), "-c", "copy", snipFile.toString()
-                    ).redirectErrorStream(true);
+                    ).redirectErrorStream(true).redirectOutput(ProcessBuilder.Redirect.DISCARD);
                     Process process = processBuilder.start();
                     process.waitFor();
                     if(!visemeSnippetFileMap.containsKey(visemeId)) visemeSnippetFileMap.put(visemeId, new ArrayList<>());
@@ -158,7 +158,7 @@ public class PcdService {
                 ProcessBuilder processBuilder = new ProcessBuilder(
                         "ffmpeg", "-y", "-i", file.toString(), "-vf", "fps=5", "-q:v", "2",
                         visemeFrameDir + "/frame" + index++ + "_%04d.jpg"
-                ).redirectErrorStream(true);
+                ).redirectErrorStream(true).redirectOutput(ProcessBuilder.Redirect.DISCARD);
                 Process process = processBuilder.start();
                 process.waitFor();
             }
