@@ -1,6 +1,7 @@
 package com.arvatar.vortex.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -15,7 +16,7 @@ public class AsrPcdJob{
     public LocalDateTime createdAt;
 
     @JsonCreator
-    public AsrPcdJob (String guru_id, String video_key){
+    public AsrPcdJob (@JsonProperty("guruId") String guru_id, @JsonProperty("videoKey") String video_key){
         jobId = UUID.randomUUID();
         guruId = guru_id;
         videoKey = video_key;
