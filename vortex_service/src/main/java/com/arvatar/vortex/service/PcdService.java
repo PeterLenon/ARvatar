@@ -65,11 +65,11 @@ public class PcdService {
                 if(jobs == null || jobs.isEmpty()) continue;
                 for(StreamMessage<String,String> message : jobs) {
                     String messageId = message.getId();
+                    Map<String, String> jobEntry = message.getBody();
+                    String job = jobEntry.get("job");
+                    AsrPcdJob asrPcdJob = objectMapper.readValue(job, AsrPcdJob.class);
+                    asrPcdJob.status = JobStatus.PCD_STARTED;
                     try {
-                        Map<String, String> jobEntry = message.getBody();
-                        String job = jobEntry.get("job");
-                        AsrPcdJob asrPcdJob = objectMapper.readValue(job, AsrPcdJob.class);
-                        asrPcdJob.status = JobStatus.PCD_STARTED;
                         objectStoreClient.updateJob(asrPcdJob);
                         JsonNode transcription = objectMapper.readTree(asrPcdJob.asrResultJsonString);
                         Map<String, List<JsonNode>> visemeAudioBoundariesMap = getVisemeBounds(transcription);
@@ -82,11 +82,19 @@ public class PcdService {
                         asyncCommands.xdel(pcdJobRedisStream, messageId).get();
                         logger.info("Pcd job completed for guruId: {} pcd job {}", asrPcdJob.guruId, asrPcdJob.jobId);
                     } catch (Exception processingException) {
-                        logger.error("Failed to process PCD job from stream", processingException);
+                        asrPcdJob.status = JobStatus.PCD_FAILED;
+                        objectStoreClient.updateJob(asrPcdJob);
+                        asyncCommands.xack(pcdJobRedisStream, pcdJobRedisStreamGroup, messageId).get();
+                        asyncCommands.xdel(pcdJobRedisStream, messageId).get();
+                        logger.error("PCD job failed for guruId: {} pcd job {} with exception {}", asrPcdJob.guruId, asrPcdJob.jobId, processingException.getMessage());
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                if (e instanceof InterruptedException || e.getCause() instanceof InterruptedException) {
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+                logger.error("ASR stream processing failed, attempting to recover", e);
             }
         }
     }

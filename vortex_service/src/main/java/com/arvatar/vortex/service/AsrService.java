@@ -68,11 +68,11 @@ public class AsrService {
                 }
                 for (StreamMessage<String, String> message : jobs) {
                     String messageId = message.getId();
-                    try {
-                        Map<String, String> jobEntry = message.getBody();
+                    Map<String, String> jobEntry = message.getBody();
                         String job = jobEntry.get("job");
                         AsrPcdJob asrPcdJob = objectMapper.readValue(job, AsrPcdJob.class);
                         asrPcdJob.status = JobStatus.ASR_STARTED;
+                    try {
                         objectStoreClient.updateJob(asrPcdJob);
                         String guruId = asrPcdJob.guruId;
                         String videoKey = asrPcdJob.videoKey;
@@ -86,7 +86,11 @@ public class AsrService {
                         asyncCommands.xdel(asrJobRedisStream, messageId).get();
                         logger.info("Transcription job completed for guruId: {} pcd job txn_id: {}", guruId, txn_id);
                     } catch (Exception processingException) {
-                        logger.error("Failed to process ASR job from stream", processingException);
+                        asrPcdJob.status = JobStatus.ASR_FAILED;
+                        objectStoreClient.updateJob(asrPcdJob);
+                        asyncCommands.xack(asrJobRedisStream, asrJobRedisStreamGroup, messageId).get();
+                        asyncCommands.xdel(asrJobRedisStream, messageId).get();
+                        logger.error("ASR job failed for guruId: {} pcd job {}, with exception {}", asrPcdJob.guruId, asrPcdJob.jobId, processingException.getMessage());
                     }
                 }
             } catch (Exception e) {
