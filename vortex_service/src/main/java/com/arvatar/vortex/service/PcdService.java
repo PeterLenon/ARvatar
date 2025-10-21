@@ -56,19 +56,26 @@ public class PcdService {
                 ).get();
                 if(jobs.isEmpty()) continue;
                 for(StreamMessage<String,String> message : jobs) {
-                    Map<String, String> jobEntry = message.getBody();
-                    String job = jobEntry.get("job");
-                    AsrPcdJob asrPcdJob = objectMapper.readValue(job, AsrPcdJob.class);
-                    asrPcdJob.status = JobStatus.PCD_STARTED;
-                    objectStoreClient.updateJob(asrPcdJob);
-                    JsonNode transcription = objectMapper.readTree(asrPcdJob.asrResultJsonString);
-                    Map<String, List<JsonNode>> visemeAudioBoundariesMap = getVisemeBounds(transcription);
-                    Map<String, List<Path>> visemeSnippetFileMap = visemeAudioSnipFileMap(asrPcdJob.guruId, objectStoreClient.getVideo(asrPcdJob.videoKey), visemeAudioBoundariesMap);
-                    Map<String, Path> visemeExtractedFramesMap = extractFrameByFrameFromSnippet(asrPcdJob.guruId, visemeSnippetFileMap);
-                    createAndPublishPcdFromFrames(asrPcdJob.guruId, visemeExtractedFramesMap);
-                    asrPcdJob.status = JobStatus.PCD_COMPLETED;
-                    objectStoreClient.updateJob(asrPcdJob);
-                    logger.info("Pcd job completed for guruId: {} pcd job {}", asrPcdJob.guruId, asrPcdJob.jobId);
+                    String messageId = message.getId();
+                    try {
+                        Map<String, String> jobEntry = message.getBody();
+                        String job = jobEntry.get("job");
+                        AsrPcdJob asrPcdJob = objectMapper.readValue(job, AsrPcdJob.class);
+                        asrPcdJob.status = JobStatus.PCD_STARTED;
+                        objectStoreClient.updateJob(asrPcdJob);
+                        JsonNode transcription = objectMapper.readTree(asrPcdJob.asrResultJsonString);
+                        Map<String, List<JsonNode>> visemeAudioBoundariesMap = getVisemeBounds(transcription);
+                        Map<String, List<Path>> visemeSnippetFileMap = visemeAudioSnipFileMap(asrPcdJob.guruId, objectStoreClient.getVideo(asrPcdJob.videoKey), visemeAudioBoundariesMap);
+                        Map<String, Path> visemeExtractedFramesMap = extractFrameByFrameFromSnippet(asrPcdJob.guruId, visemeSnippetFileMap);
+                        createAndPublishPcdFromFrames(asrPcdJob.guruId, visemeExtractedFramesMap);
+                        asrPcdJob.status = JobStatus.PCD_COMPLETED;
+                        objectStoreClient.updateJob(asrPcdJob);
+                        asyncCommands.xack(pcdJobRedisStream, pcdJobRedisStreamGroup, messageId).get();
+                        asyncCommands.xdel(pcdJobRedisStream, messageId).get();
+                        logger.info("Pcd job completed for guruId: {} pcd job {}", asrPcdJob.guruId, asrPcdJob.jobId);
+                    } catch (Exception processingException) {
+                        logger.error("Failed to process PCD job from stream", processingException);
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -131,13 +138,12 @@ public class PcdService {
         for(Map.Entry<String, List<Path>> entry : visemeSnippetFileMap.entrySet()){
             String visemeId = entry.getKey();
             List<Path> snippetFiles = entry.getValue();
-            Path outputDir = Files.createTempDirectory(guruId);
-            Path visemeFrameDir = outputDir.resolve(outputDir);
-            Files.createDirectory(visemeFrameDir);
+            Path outputDir = Files.createTempDirectory(guruId + "_frames");
+            Path visemeFrameDir = Files.createDirectories(outputDir.resolve(visemeId));
             int index = 0;
             for(Path file : snippetFiles){
                 ProcessBuilder processBuilder = new ProcessBuilder(
-                        "ffmpeg", "-i", file.toString(), "-vf", "-q:v", "2", "-vf","fps=5",
+                        "ffmpeg", "-y", "-i", file.toString(), "-vf", "fps=5", "-q:v", "2",
                         visemeFrameDir + "/frame" + index++ + "_%04d.jpg"
                 ).redirectErrorStream(true);
                 Process process = processBuilder.start();

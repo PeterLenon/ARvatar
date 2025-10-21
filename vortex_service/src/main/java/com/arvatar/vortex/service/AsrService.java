@@ -5,7 +5,6 @@ import com.arvatar.vortex.dto.JobStatus;
 import com.arvatar.vortex.dto.MinIOS3Client;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import io.lettuce.core.Consumer;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.StreamMessage;
@@ -58,20 +57,27 @@ public class AsrService {
                     continue;
                 }
                 for (StreamMessage<String, String> message : jobs) {
-                    Map<String, String> jobEntry = message.getBody();
-                    String job = jobEntry.get("job");
-                    AsrPcdJob asrPcdJob = objectMapper.readValue(job, AsrPcdJob.class);
-                    asrPcdJob.status = JobStatus.ASR_STARTED;
-                    objectStoreClient.updateJob(asrPcdJob);
-                    String guruId = asrPcdJob.guruId;
-                    String videoKey = asrPcdJob.videoKey;
-                    byte[] videoPayload = objectStoreClient.getVideo(videoKey);
-                    JsonNode json = transcribe(guruId, videoPayload);
-                    asrPcdJob.asrResultJsonString = json.toString();
-                    asrPcdJob.status = JobStatus.ASR_COMPLETED;
-                    objectStoreClient.updateJob(asrPcdJob);
-                    String txn_id = publishJobToStream(asrPcdJob);
-                    logger.info("Transcription job completed for guruId: {} pcd job txn_id: {}", guruId, txn_id);
+                    String messageId = message.getId();
+                    try {
+                        Map<String, String> jobEntry = message.getBody();
+                        String job = jobEntry.get("job");
+                        AsrPcdJob asrPcdJob = objectMapper.readValue(job, AsrPcdJob.class);
+                        asrPcdJob.status = JobStatus.ASR_STARTED;
+                        objectStoreClient.updateJob(asrPcdJob);
+                        String guruId = asrPcdJob.guruId;
+                        String videoKey = asrPcdJob.videoKey;
+                        byte[] videoPayload = objectStoreClient.getVideo(videoKey);
+                        JsonNode json = transcribe(guruId, videoPayload);
+                        asrPcdJob.asrResultJsonString = json.toString();
+                        asrPcdJob.status = JobStatus.ASR_COMPLETED;
+                        objectStoreClient.updateJob(asrPcdJob);
+                        String txn_id = publishJobToStream(asrPcdJob);
+                        asyncCommands.xack(asrJobRedisStream, asrJobRedisStreamGroup, messageId).get();
+                        asyncCommands.xdel(asrJobRedisStream, messageId).get();
+                        logger.info("Transcription job completed for guruId: {} pcd job txn_id: {}", guruId, txn_id);
+                    } catch (Exception processingException) {
+                        logger.error("Failed to process ASR job from stream", processingException);
+                    }
                 }
             } catch (Exception e) {
                 throw new RuntimeException(e);
@@ -121,6 +127,11 @@ public class AsrService {
 
   private String publishJobToStream(AsrPcdJob job){
         String pcdJobRedisStream = "pcd_jobs";
-        return String.valueOf(asyncCommands.xadd(pcdJobRedisStream, Map.of("job", job.toString())));
+        try {
+            String payload = objectMapper.writeValueAsString(job);
+            return String.valueOf(asyncCommands.xadd(pcdJobRedisStream, Map.of("job", payload)));
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to serialize PCD job", e);
+        }
     }
 }
