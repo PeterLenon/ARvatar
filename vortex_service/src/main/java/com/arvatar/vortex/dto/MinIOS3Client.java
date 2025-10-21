@@ -2,8 +2,9 @@ package com.arvatar.vortex.dto;
 
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+import software.amazon.awssdk.core.ResponseBytes;
 import software.amazon.awssdk.core.async.AsyncRequestBody;
-import software.amazon.awssdk.core.sync.RequestBody;
+import software.amazon.awssdk.core.async.AsyncResponseTransformer;
 import software.amazon.awssdk.http.nio.netty.NettyNioAsyncHttpClient;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3AsyncClient;
@@ -11,14 +12,12 @@ import software.amazon.awssdk.services.s3.model.*;
 import software.amazon.awssdk.services.s3.S3Configuration;
 import java.nio.file.Path;
 import java.net.URI;
-import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.util.concurrent.CompletableFuture;
 
 public class MinIOS3Client {
     private final String endpoint = "http://127.0.0.1:9000";
-    private final S3AsyncClient asynS3cClient = S3AsyncClient.builder()
+    private final S3AsyncClient asyncS3Client = S3AsyncClient.builder()
             .endpointOverride(URI.create(endpoint))
             .credentialsProvider(StaticCredentialsProvider.create(
                 AwsBasicCredentials.create("admin", "admin123")))
@@ -36,7 +35,7 @@ public class MinIOS3Client {
         String videosBucket = "videos";
         try {
             String videoKey = guruId + "/" + Instant.now().toEpochMilli();
-            CompletableFuture<PutObjectResponse> response = asynS3cClient.putObject(
+            CompletableFuture<PutObjectResponse> response = asyncS3Client.putObject(
                     PutObjectRequest.builder()
                             .bucket(videosBucket)
                             .key(videoKey)
@@ -46,22 +45,29 @@ public class MinIOS3Client {
             response.thenAccept(r -> System.out.println("Video uploaded successfully"));
             return videoKey;
         }catch (Exception e){
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException(e);
         }
     }
 
-    public byte[] getVideo(String videoKey){
-        String videosBucket = "videos";
-        //todo: implement get video logic
-        return new byte[0];
+    public byte[] getVideo(String videoKey) {
+        String bucket = "videos";
+        try {
+            GetObjectRequest request = GetObjectRequest.builder()
+                    .bucket(bucket)
+                    .key(videoKey)
+                    .build();
+            ResponseBytes<GetObjectResponse> response = asyncS3Client.getObject(request, AsyncResponseTransformer.toBytes()).join();
+            return response.asByteArray();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to fetch video bytes", e);
+        }
     }
 
     public void updateJob(AsrPcdJob job){
         String jobsBucket = "jobs";
         try{
             String jobKey = job.jobId.toString();
-            CompletableFuture<PutObjectResponse> response = asynS3cClient.putObject(
+            CompletableFuture<PutObjectResponse> response = asyncS3Client.putObject(
                     PutObjectRequest.builder()
                             .bucket(jobsBucket)
                             .key(jobKey)
@@ -70,7 +76,7 @@ public class MinIOS3Client {
             );
             response.thenAccept(r -> System.out.println("Job updated successfully"));
         }catch (Exception e){
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -78,7 +84,7 @@ public class MinIOS3Client {
         String bucket = "assets";
         String key = guruId + "/" + file.getFileName();
         try{
-            CompletableFuture<PutObjectResponse> response = asynS3cClient.putObject(
+            CompletableFuture<PutObjectResponse> response = asyncS3Client.putObject(
                     PutObjectRequest.builder()
                             .bucket(bucket)
                             .key(key)
@@ -86,7 +92,6 @@ public class MinIOS3Client {
                     AsyncRequestBody.fromFile(file)
             );
         }catch (Exception e){
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
