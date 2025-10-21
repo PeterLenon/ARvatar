@@ -2,35 +2,93 @@ package com.arvatar.vortex.dto;
 
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+import software.amazon.awssdk.core.async.AsyncRequestBody;
 import software.amazon.awssdk.core.sync.RequestBody;
+import software.amazon.awssdk.http.nio.netty.NettyNioAsyncHttpClient;
 import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.s3.S3Client;
-import software.amazon.awssdk.services.s3.model.PutObjectRequest;
+import software.amazon.awssdk.services.s3.S3AsyncClient;
+import software.amazon.awssdk.services.s3.model.*;
+import software.amazon.awssdk.services.s3.S3Configuration;
+import java.nio.file.Path;
 import java.net.URI;
-import java.nio.file.Paths;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
+import java.time.Instant;
+import java.util.concurrent.CompletableFuture;
 
 public class MinIOS3Client {
-    private String endpoint = "http://127.0.0.1:9000";
-    private String bucket = "my-bucket";
-    private String defaultRegion = "us-east-1";
-    private String key = "uploads/example.txt";
-    private String path = "/path/to/example.txt";
-
-    private S3Client s3Client = S3Client.builder()
-            .region(Region.US_EAST_1)
+    private final String endpoint = "http://127.0.0.1:9000";
+    private final S3AsyncClient asynS3cClient = S3AsyncClient.builder()
             .endpointOverride(URI.create(endpoint))
             .credentialsProvider(StaticCredentialsProvider.create(
-                    AwsBasicCredentials.create(,
-                            System.getenv("peterlenon_access_key"))))
-            .forcePathStyle(true)
+                AwsBasicCredentials.create("admin", "admin123")))
+            .region(Region.US_EAST_1)
+            .serviceConfiguration(S3Configuration.builder()
+                .pathStyleAccessEnabled(true)
+                .build())
+            .httpClientBuilder(NettyNioAsyncHttpClient.builder())
             .build();
 
-    public MinIOS3Client(String endpoint, String bucket, String defaultRegion) {
-        this.endpoint = endpoint;
-        this.bucket = bucket;
-        this.defaultRegion = defaultRegion;
+    public MinIOS3Client() {
     }
 
-    public putVideo(String guruId, )
+    public String putVideo(String guruId, byte[] videoData){
+        String videosBucket = "videos";
+        try {
+            String videoKey = guruId + "/" + Instant.now().toEpochMilli();
+            CompletableFuture<PutObjectResponse> response = asynS3cClient.putObject(
+                    PutObjectRequest.builder()
+                            .bucket(videosBucket)
+                            .key(videoKey)
+                            .build(),
+                    AsyncRequestBody.fromBytes(videoData)
+            );
+            response.thenAccept(r -> System.out.println("Video uploaded successfully"));
+            return videoKey;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public byte[] getVideo(String videoKey){
+        String videosBucket = "videos";
+        //todo: implement get video logic
+        return new byte[0];
+    }
+
+    public void updateJob(AsrPcdJob job){
+        String jobsBucket = "jobs";
+        try{
+            String jobKey = job.jobId.toString();
+            CompletableFuture<PutObjectResponse> response = asynS3cClient.putObject(
+                    PutObjectRequest.builder()
+                            .bucket(jobsBucket)
+                            .key(jobKey)
+                            .build(),
+                    AsyncRequestBody.fromString(job.toString())
+            );
+            response.thenAccept(r -> System.out.println("Job updated successfully"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void updateGuruAssetInventory(String guruId, Path file){
+        String bucket = "assets";
+        String key = guruId + "/" + file.getFileName();
+        try{
+            CompletableFuture<PutObjectResponse> response = asynS3cClient.putObject(
+                    PutObjectRequest.builder()
+                            .bucket(bucket)
+                            .key(key)
+                            .build(),
+                    AsyncRequestBody.fromFile(file)
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
 }
 
