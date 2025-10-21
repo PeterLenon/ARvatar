@@ -11,8 +11,10 @@ import io.lettuce.core.Consumer;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.StreamMessage;
 import io.lettuce.core.XReadArgs;
+import io.lettuce.core.XGroupCreateArgs;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.async.RedisAsyncCommands;
+import io.lettuce.core.api.sync.RedisCommands;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
@@ -53,7 +55,25 @@ public class AsrService {
 
     @PostConstruct
     public void start() {
+        initializeRedisStreamGroup();
         workerExecutor.submit(this::run);
+    }
+
+    private void initializeRedisStreamGroup() {
+        String asrJobRedisStream = "asr_jobs";
+        String asrJobRedisStreamGroup = "asr_jobs_workers";
+        
+        try {
+            RedisCommands<String, String> syncCommands = connection.sync();
+            syncCommands.xgroupCreate(XReadArgs.StreamOffset.from(asrJobRedisStream, "0"), asrJobRedisStreamGroup, XGroupCreateArgs.Builder.mkstream());
+            logger.info("Created Redis stream group: {} for stream: {}", asrJobRedisStreamGroup, asrJobRedisStream);
+        } catch (Exception e) {
+            if (e.getMessage() != null && e.getMessage().contains("BUSYGROUP")) {
+                logger.info("Redis stream group already exists: {} for stream: {}", asrJobRedisStreamGroup, asrJobRedisStream);
+            } else {
+                logger.warn("Failed to create Redis stream group: {} for stream: {}, error: {}", asrJobRedisStreamGroup, asrJobRedisStream, e.getMessage());
+            }
+        }
     }
 
     private void run(){

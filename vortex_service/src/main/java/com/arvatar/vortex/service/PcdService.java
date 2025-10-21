@@ -9,8 +9,10 @@ import io.lettuce.core.Consumer;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.StreamMessage;
 import io.lettuce.core.XReadArgs;
+import io.lettuce.core.XGroupCreateArgs;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.async.RedisAsyncCommands;
+import io.lettuce.core.api.sync.RedisCommands;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
@@ -34,6 +36,7 @@ import java.util.concurrent.Executors;
 public class PcdService {
     private final MinIOS3Client objectStoreClient;
     private RedisAsyncCommands<String, String> asyncCommands;
+    private StatefulRedisConnection<String, String> connection;
     private final ObjectMapper objectMapper;
     private final Logger logger = org.slf4j.LoggerFactory.getLogger(PcdService.class);
     private final ExecutorService workerExecutor = Executors.newSingleThreadExecutor();
@@ -42,13 +45,31 @@ public class PcdService {
         objectMapper = new ObjectMapper();
         objectStoreClient = new MinIOS3Client();
         RedisClient redisClient = RedisClient.create("redis://localhost:6379");
-        StatefulRedisConnection<String, String> connection = redisClient.connect();
+        connection = redisClient.connect();
         asyncCommands = connection.async();
     }
 
     @PostConstruct
     public void start(){
+        initializeRedisStreamGroup();
         workerExecutor.submit(this::run);
+    }
+
+    private void initializeRedisStreamGroup() {
+        String pcdJobRedisStream = "pcd_jobs";
+        String pcdJobRedisStreamGroup = "pcd_jobs_workers";
+        
+        try {
+            RedisCommands<String, String> syncCommands = connection.sync();
+            syncCommands.xgroupCreate(XReadArgs.StreamOffset.from(pcdJobRedisStream, "0"), pcdJobRedisStreamGroup, XGroupCreateArgs.Builder.mkstream());
+            logger.info("Created Redis stream group: {} for stream: {}", pcdJobRedisStreamGroup, pcdJobRedisStream);
+        } catch (Exception e) {
+            if (e.getMessage() != null && e.getMessage().contains("BUSYGROUP")) {
+                logger.info("Redis stream group already exists: {} for stream: {}", pcdJobRedisStreamGroup, pcdJobRedisStream);
+            } else {
+                logger.warn("Failed to create Redis stream group: {} for stream: {}, error: {}", pcdJobRedisStreamGroup, pcdJobRedisStream, e.getMessage());
+            }
+        }
     }
 
     private void run(){
