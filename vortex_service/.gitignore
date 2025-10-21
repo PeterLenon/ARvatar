@@ -1,3 +1,21 @@
 /target
 .idea
 .gitignore
+
+# IDE files
+*.iml
+*.ipr
+*.iws
+
+# Data directories
+data/
+minio/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
