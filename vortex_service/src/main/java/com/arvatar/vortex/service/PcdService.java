@@ -18,10 +18,8 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -219,7 +217,25 @@ public class PcdService {
         } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {
-            try { Files.deleteIfExists(Paths.get(guruId)); } catch (Exception ignore) {}
+            try { deleteRecursively(Paths.get(guruId)); } catch (Exception ignore) {};
         }
+    }
+
+    private static void deleteRecursively(Path path) throws IOException {
+        if (Files.notExists(path)) return;
+
+        Files.walkFileTree(path, new SimpleFileVisitor<>() {
+            @Override
+            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                Files.deleteIfExists(file);
+                return FileVisitResult.CONTINUE;
+            }
+
+            @Override
+            public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+                Files.deleteIfExists(dir);
+                return FileVisitResult.CONTINUE;
+            }
+        });
     }
 }

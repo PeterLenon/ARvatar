@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac7914bc-5ef3-460a-a881-d5d30ff9399b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/arvatar/vortex/service/AsrService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arvatar/vortex/service/AsrService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/arvatar/vortex/service/PcdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/arvatar/vortex/service/PcdService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vortex-service.iws" beforeDir="false" afterPath="$PROJECT_DIR$/vortex-service.iws" afterDir="false" />
     </list>
@@ -363,7 +362,7 @@
       <workItem from="1760457798481" duration="13262000" />
       <workItem from="1760816520372" duration="36991000" />
       <workItem from="1761026738928" duration="1155000" />
-      <workItem from="1761054719967" duration="4056000" />
+      <workItem from="1761054719967" duration="5714000" />
     </task>
     <servers />
   </component>
