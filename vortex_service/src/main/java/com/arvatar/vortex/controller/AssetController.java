@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import voxel.assets.v1.AssetServiceOuterClass.*;
+import voxel.common.v1.Types;
 
 @RestController
 @RequestMapping("/api/v1/assets")
@@ -20,7 +21,6 @@ public class AssetController {
     @GetMapping("/point-clouds")
     public ResponseEntity<ListPointCloudsResponse> listPointClouds(
             @RequestParam(required = true) String guruId) {
-        
         ListPointCloudsRequest request = ListPointCloudsRequest.newBuilder()
                 .setGuruId(guruId)
                 .build();
@@ -45,6 +45,18 @@ public class AssetController {
                 .build();
         
         GetPointCloudResponse response = assetService.getPointCloud(request);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/point-clouds/upload-video")
+    public ResponseEntity<UploadGuruVideoResponse> uploadGuruVideo(
+            @RequestBody(required = true) String guruId,
+            @RequestBody(required = true) voxel.common.v1.Types.Video video){
+        UploadGuruVideoRequest request = UploadGuruVideoRequest.newBuilder()
+                .setGuruId(guruId)
+                .setVideo(video)
+                .build();
+        UploadGuruVideoResponse response = assetService.uploadGuruVideo(request);
         return ResponseEntity.ok(response);
     }
 }
