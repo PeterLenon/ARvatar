@@ -2,10 +2,12 @@ package com.arvatar.vortex.service;
 
 import com.arvatar.vortex.dto.AsrPcdJob;
 import com.arvatar.vortex.dto.MinIOS3Client;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.lettuce.core.api.async.RedisAsyncCommands;
+import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 import voxel.assets.v1.AssetServiceOuterClass.*;
 import voxel.common.v1.Types;
@@ -13,6 +15,7 @@ import io.lettuce.core.RedisClient;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.sync.RedisCommands;
 
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -25,6 +28,7 @@ public class AssetService {
     private final ObjectMapper objectMapper = new ObjectMapper()
             .registerModule(new JavaTimeModule())
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    private final Logger logger = org.slf4j.LoggerFactory.getLogger(AssetService.class);
 
     private String publishJobToStream(AsrPcdJob job){
         String asrJobRedisStream = "asr_jobs";
@@ -47,36 +51,29 @@ public class AssetService {
         }
     }
 
-    /**
-     * List available point clouds for a guru
-     */
     public ListPointCloudsResponse listPointClouds(ListPointCloudsRequest request) {
-        // TODO: Implement actual logic to fetch point clouds from storage
-        // This is a skeleton implementation
-        
+        List<String> availableVisemes = null;
+        try{
+            availableVisemes = objectStoreClient.listAvailableGuruAssets(request.getGuruId());
+        }catch (Exception e){
+            logger.error("Failed to list available point clouds for guru " + request.getGuruId(), e);
+        }
+        JsonNode availableVisemesJson = availableVisemes != null ? objectMapper.valueToTree(availableVisemes) : objectMapper.createObjectNode();
         ListPointCloudsResponse.Builder responseBuilder = ListPointCloudsResponse.newBuilder();
-        
-        // Add some mock data for now using common types
         voxel.common.v1.Types.PointCloudMetadata.Builder pointCloudMetadata = voxel.common.v1.Types.PointCloudMetadata.newBuilder()
                 .setGuruId(request.getGuruId())
                 .setVariant("neutral")
-                .setDescription("Default neutral expression point cloud")
-                .setHasMesh(true)
+                .setDescription(availableVisemesJson.toString())
+                .setHasMesh(false)
                 .setUpdatedAt(com.google.protobuf.Timestamp.newBuilder()
                         .setSeconds(System.currentTimeMillis() / 1000)
                         .build());
-        
         responseBuilder.addPointClouds(pointCloudMetadata.build());
-        
         return responseBuilder.build();
     }
 
-    /**
-     * Get a specific point cloud
-     */
     public GetPointCloudResponse getPointCloud(GetPointCloudRequest request) {
-        // TODO: Implement actual logic to fetch point cloud binary data
-        // This is a skeleton implementation
+        // TODO: remove this method all together
         
         GetPointCloudResponse.Builder responseBuilder = GetPointCloudResponse.newBuilder();
         
@@ -123,7 +120,6 @@ public class AssetService {
         AsrPcdJob job = new AsrPcdJob(guru_id, s3VideoKey);
         objectStoreClient.updateJob(job);
         publishJobToStream(job);
-
         boolean success = s3VideoKey != null;
         UploadGuruVideoResponse.Builder responseBuilder = UploadGuruVideoResponse.newBuilder();
         responseBuilder.setSuccess(success);

@@ -214,6 +214,8 @@ public class PcdService {
                 Files.move(finalFusedPlyFile, s3FinalPcFile, StandardCopyOption.REPLACE_EXISTING);
                 objectStoreClient.updateGuruAssetInventory(guruId, s3FinalPcFile);
             }
+            List<String> availableVisemes = new ArrayList<>(visemeFrameDirMap.keySet());
+            objectStoreClient.updateGuruAssetInventory(guruId, availableVisemes);
         } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {

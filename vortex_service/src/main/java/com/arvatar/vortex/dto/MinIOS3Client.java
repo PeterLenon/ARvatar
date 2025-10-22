@@ -13,6 +13,8 @@ import software.amazon.awssdk.services.s3.S3Configuration;
 import java.nio.file.Path;
 import java.net.URI;
 import java.time.Instant;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public class MinIOS3Client {
@@ -92,6 +94,38 @@ public class MinIOS3Client {
                     AsyncRequestBody.fromFile(file)
             );
             response.join();
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void updateGuruAssetInventory(String guruId, List<String> assetIds){
+        String bucket = "assets";
+        String key = guruId + "/assetIds.txt";
+        try{
+            CompletableFuture<PutObjectResponse> response = asyncS3Client.putObject(
+                    PutObjectRequest.builder()
+                            .bucket(bucket)
+                            .key(key)
+                            .build(),
+                    AsyncRequestBody.fromString(String.join("\n", assetIds))
+            );
+            response.join();
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<String> listAvailableGuruAssets(String guruId){
+        String bucket = "assets";
+        String key = guruId + "/assetIds.txt";
+        try{
+            GetObjectRequest request = GetObjectRequest.builder()
+                    .bucket(bucket)
+                    .key(key)
+                    .build();
+            ResponseBytes<GetObjectResponse> response = asyncS3Client.getObject(request, AsyncResponseTransformer.toBytes()).join();
+            return List.of(response.asUtf8String().split("\n"));
         }catch (Exception e){
             throw new RuntimeException(e);
         }

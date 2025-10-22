@@ -19,10 +19,10 @@ public class AssetController {
      */
     @GetMapping("/point-clouds")
     public ResponseEntity<ListPointCloudsResponse> listPointClouds(
-            @RequestParam(required = false) String guruId) {
+            @RequestParam(required = true) String guruId) {
         
         ListPointCloudsRequest request = ListPointCloudsRequest.newBuilder()
-                .setGuruId(guruId != null ? guruId : "")
+                .setGuruId(guruId)
                 .build();
         
         ListPointCloudsResponse response = assetService.listPointClouds(request);
