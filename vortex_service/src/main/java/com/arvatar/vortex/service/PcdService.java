@@ -102,6 +102,12 @@ public class PcdService {
                         logger.info("Started PCD workflow for guruId: {} job {} run {}", asrPcdJob.guruId, asrPcdJob.jobId, execution.getRunId());
                     } catch (WorkflowServiceException workflowException) {
                         logger.error("Failed to start PCD workflow for guruId: {} job {}", asrPcdJob.guruId, asrPcdJob.jobId, workflowException);
+                        try {
+                            asyncCommands.xack(pcdJobRedisStream, pcdJobRedisStreamGroup, messageId).get();
+                            asyncCommands.xdel(pcdJobRedisStream, messageId).get();
+                        } catch (Exception ackException) {
+                            logger.error("Failed to acknowledge PCD job {} after workflow start failure", messageId, ackException);
+                        }
                     }
                 }
             } catch (Exception e) {
