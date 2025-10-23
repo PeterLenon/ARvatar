@@ -1,9 +1,12 @@
 package com.arvatar.vortex.service;
 
 import com.arvatar.vortex.dto.AsrPcdJob;
-import com.arvatar.vortex.dto.JobStatus;
-import com.arvatar.vortex.dto.MinIOS3Client;
-import com.fasterxml.jackson.databind.JsonNode;
+import com.arvatar.vortex.temporal.TemporalProperties;
+import com.arvatar.vortex.temporal.workflow.AsrWorkflow;
+import io.temporal.api.common.v1.WorkflowExecution;
+import io.temporal.client.WorkflowClient;
+import io.temporal.client.WorkflowOptions;
+import io.temporal.client.WorkflowServiceException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -18,13 +21,6 @@ import io.lettuce.core.api.sync.RedisCommands;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.file.Path;
-import java.nio.file.Files;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.time.Duration;
@@ -35,22 +31,24 @@ import java.util.concurrent.Executors;
 
 @Service
 public class AsrService {
-    private final MinIOS3Client objectStoreClient;
     private RedisAsyncCommands<String, String> asyncCommands;
     private final RedisClient redisClient;
     private StatefulRedisConnection<String, String> connection;
     private final ObjectMapper objectMapper;
     private final Logger logger = org.slf4j.LoggerFactory.getLogger(AsrService.class);
     private final ExecutorService workerExecutor = Executors.newSingleThreadExecutor();
+    private final WorkflowClient workflowClient;
+    private final TemporalProperties temporalProperties;
 
-    public AsrService() {
+    public AsrService(WorkflowClient workflowClient, TemporalProperties temporalProperties) {
         objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        objectStoreClient = new MinIOS3Client();
         redisClient = RedisClient.create("redis://localhost:6379");
         connection = redisClient.connect();
         asyncCommands = connection.async();
+        this.workflowClient = workflowClient;
+        this.temporalProperties = temporalProperties;
     }
 
     @PostConstruct
@@ -94,27 +92,19 @@ public class AsrService {
                     String messageId = message.getId();
                     Map<String, String> jobEntry = message.getBody();
                         String job = jobEntry.get("job");
-                        AsrPcdJob asrPcdJob = objectMapper.readValue(job, AsrPcdJob.class);
-                        asrPcdJob.status = JobStatus.ASR_STARTED;
+                    AsrPcdJob asrPcdJob = objectMapper.readValue(job, AsrPcdJob.class);
                     try {
-                        objectStoreClient.updateJob(asrPcdJob);
-                        String guruId = asrPcdJob.guruId;
-                        String videoKey = asrPcdJob.videoKey;
-                        byte[] videoPayload = objectStoreClient.getVideo(videoKey);
-                        JsonNode json = transcribe(guruId, videoPayload);
-                        asrPcdJob.asrResultJsonString = json.toString();
-                        asrPcdJob.status = JobStatus.ASR_COMPLETED;
-                        objectStoreClient.updateJob(asrPcdJob);
-                        String txn_id = publishJobToStream(asrPcdJob);
+                        WorkflowOptions options = WorkflowOptions.newBuilder()
+                                .setTaskQueue(temporalProperties.getTaskQueues().getAsr())
+                                .setWorkflowId("asr-" + asrPcdJob.jobId)
+                                .build();
+                        AsrWorkflow workflow = workflowClient.newWorkflowStub(AsrWorkflow.class, options);
+                        WorkflowExecution execution = WorkflowClient.start(workflow::run, asrPcdJob);
                         asyncCommands.xack(asrJobRedisStream, asrJobRedisStreamGroup, messageId).get();
                         asyncCommands.xdel(asrJobRedisStream, messageId).get();
-                        logger.info("Transcription job completed for guruId: {} pcd job txn_id: {}", guruId, txn_id);
-                    } catch (Exception processingException) {
-                        asrPcdJob.status = JobStatus.ASR_FAILED;
-                        objectStoreClient.updateJob(asrPcdJob);
-                        asyncCommands.xack(asrJobRedisStream, asrJobRedisStreamGroup, messageId).get();
-                        asyncCommands.xdel(asrJobRedisStream, messageId).get();
-                        logger.error("ASR job failed for guruId: {} pcd job {}, with exception {}", asrPcdJob.guruId, asrPcdJob.jobId, processingException.getMessage());
+                        logger.info("Started ASR workflow for guruId: {} job {} run {}", asrPcdJob.guruId, asrPcdJob.jobId, execution.getRunId());
+                    } catch (WorkflowServiceException workflowException) {
+                        logger.error("Failed to start ASR workflow for guruId: {} job {}", asrPcdJob.guruId, asrPcdJob.jobId, workflowException);
                     }
                 }
             } catch (Exception e) {
@@ -160,64 +150,4 @@ public class AsrService {
         }
     }
 
-    private JsonNode transcribe(String jobId, byte[] videoPayload) throws IOException {
-        Path tempDir = Files.createTempDirectory("asr"+ jobId);
-        Path videoFile = tempDir.resolve(jobId + ".mp4");
-        Path audioFile = tempDir.resolve(jobId + ".wav");
-        Path jsonFile = tempDir.resolve(jobId + ".json");
-        try {
-            Files.write(videoFile, videoPayload);
-            runOrThrow(
-                    new ProcessBuilder(
-                    "ffmpeg", "-y", "-i", videoFile.toString(),
-                            "-vn", "-ac", "1", "-ar", "16000", "-acodec", "pcm_s16le", audioFile.toString()
-                    ).redirectErrorStream(true)
-            );
-            runOrThrow(
-                    new ProcessBuilder(
-                            "rhubarb", "-f", "json", "-o", jsonFile.toString(), audioFile.toString()
-                    )
-            );
-            try(InputStream reader = Files.newInputStream(jsonFile)){
-                return objectMapper.readTree(reader);
-            }
-        }catch(Exception e){
-            throw new RuntimeException(e);
-        }finally {
-            try { Files.deleteIfExists(videoFile); } catch (Exception ignore) {}
-            try { Files.deleteIfExists(audioFile);   } catch (Exception ignore) {}
-            try { Files.deleteIfExists(jsonFile);  } catch (Exception ignore) {}
-            try { Files.deleteIfExists(tempDir);    } catch (Exception ignore) {}
-        }
-    }
-
-    private static void runOrThrow(ProcessBuilder pb) throws Exception {
-    Process p = pb.start();
-    try (BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()))) {
-      while (r.readLine() != null) {}
-    }
-    int code = p.waitFor();
-    if (code != 0) throw new RuntimeException("Command failed: " + String.join(" ", pb.command()));
-  }
-
-  private String publishJobToStream(AsrPcdJob job){
-        String pcdJobRedisStream = "pcd_jobs";
-        try {
-            String payload = objectMapper.writeValueAsString(job);
-            return awaitXAdd(pcdJobRedisStream, payload);
-        } catch (com.fasterxml.jackson.core.JsonProcessingException e) {
-            throw new RuntimeException("Failed to serialize PCD job", e);
-        }
-    }
-
-    private String awaitXAdd(String stream, String payload) {
-        try {
-            return asyncCommands.xadd(stream, Map.of("job", payload)).get();
-        } catch (InterruptedException ie) {
-            Thread.currentThread().interrupt();
-            throw new RuntimeException("Interrupted while publishing job to Redis", ie);
-        } catch (java.util.concurrent.ExecutionException ee) {
-            throw new RuntimeException("Failed to publish job to Redis", ee.getCause());
-        }
-    }
 }
