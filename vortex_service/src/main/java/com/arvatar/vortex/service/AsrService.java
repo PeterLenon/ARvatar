@@ -106,6 +106,7 @@ public class AsrService {
                     } catch (WorkflowServiceException workflowException) {
                         logger.error("Failed to start ASR workflow for guruId: {} job {}", asrPcdJob.guruId, asrPcdJob.jobId, workflowException);
                         try {
+                            asyncCommands.xadd(asrJobRedisStream, Map.of("job", job)).get();
                             asyncCommands.xack(asrJobRedisStream, asrJobRedisStreamGroup, messageId).get();
                             asyncCommands.xdel(asrJobRedisStream, messageId).get();
                         } catch (Exception ackException) {
