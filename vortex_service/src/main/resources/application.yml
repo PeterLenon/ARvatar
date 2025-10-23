@@ -36,3 +36,10 @@ vortex:
   dialogue:
     ai-model: gpt-3.5-turbo
     max-conversation-history: 10
+
+temporal:
+  target: ${TEMPORAL_ADDRESS:127.0.0.1:7233}
+  namespace: ${TEMPORAL_NAMESPACE:default}
+  task-queues:
+    asr: ${TEMPORAL_ASR_TASK_QUEUE:asr-jobs}
+    pcd: ${TEMPORAL_PCD_TASK_QUEUE:pcd-jobs}
