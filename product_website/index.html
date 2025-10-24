@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vortex Guru | Volumetric Avatar Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">Vortex Guru</div>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#hero">Overview</a>
+        <a href="#features">Technology</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#storyboard">How it works</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="cta-group">
+        <a class="btn secondary" href="#docs">View Docs</a>
+        <a class="btn primary" href="#contact">Book a Demo</a>
+      </div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+      <a href="#hero">Overview</a>
+      <a href="#features">Technology</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#storyboard">How it works</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn secondary" href="#docs">View Docs</a>
+      <a class="btn primary" href="#contact">Book a Demo</a>
+    </nav>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">Volumetric Avatar Platform</p>
+          <h1>Bring holographic humans to any space in real time.</h1>
+          <p class="lead">
+            Vortex Guru fuses precision robotics, high-fidelity LED rendering, and
+            cloud orchestration into a turnkey system for immersive volumetric
+            avatars.
+          </p>
+          <div class="hero__cta">
+            <a class="btn primary" href="#contact">Book a live demo</a>
+            <a class="btn ghost" href="#storyboard">See how it works</a>
+          </div>
+          <ul class="hero__meta">
+            <li><strong>&lt;30s</strong> device provisioning</li>
+            <li><strong>99.95%</strong> cloud uptime</li>
+            <li><strong>Secure</strong> end-to-end mTLS</li>
+          </ul>
+        </div>
+        <div class="hero__visual" role="presentation">
+          <div class="halo"></div>
+          <div class="orbital"></div>
+          <div class="device-card">
+            <p class="tag">Live hologram</p>
+            <h2>120x120x240 voxel canvas</h2>
+            <p>
+              LED matrix synchronized with sub-millimeter encoder feedback. Stream
+              dynamic avatars at 60 FPS.
+            </p>
+            <div class="status">
+              <span class="dot"></span>
+              <span>Showtime: Aurora Summit</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <h2 class="section-title">Technology that blends hardware + cloud</h2>
+        <div class="feature-grid">
+          <article>
+            <h3>Precision Motion Control</h3>
+            <p>
+              Brushless motor choreography with 18-bit encoders keeps every voxel in
+              perfect alignment for crystal-clear projections.
+            </p>
+            <ul>
+              <li>Adaptive RPM management</li>
+              <li>Automatic calibration routines</li>
+              <li>Safety-first thermal monitoring</li>
+            </ul>
+          </article>
+          <article>
+            <h3>High-Fidelity Voxel Rendering</h3>
+            <p>
+              Double-buffered LED drivers and on-device caching deliver smooth,
+              tear-free volumetric frames—even offline.
+            </p>
+            <ul>
+              <li>16-bit color depth</li>
+              <li>Temporal dithering pipeline</li>
+              <li>Lossless asset delivery</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Cloud Orchestration</h3>
+            <p>
+              Temporal workflows coordinate assets, schedules, and health telemetry
+              across fleets of devices worldwide.
+            </p>
+            <ul>
+              <li>Calendar-based show scheduling</li>
+              <li>Automatic retries & rollbacks</li>
+              <li>Real-time insights dashboard</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Developer-first APIs</h3>
+            <p>
+              Secure gRPC + REST endpoints for dynamic avatar control, telemetry,
+              and integrations with your immersive experiences.
+            </p>
+            <ul>
+              <li>OpenAPI & SDKs</li>
+              <li>Webhooks + realtime events</li>
+              <li>Granular RBAC + audit logs</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="solutions" class="solutions">
+        <h2 class="section-title">Solutions tailored to your industry</h2>
+        <div class="solution-grid">
+          <article>
+            <h3>Events & Installations</h3>
+            <p>
+              Launch unforgettable keynote moments with holographic presenters,
+              synchronized lighting, and remote cueing.
+            </p>
+            <p class="metric">Setup time reduced by 40%.</p>
+          </article>
+          <article>
+            <h3>Retail Experiences</h3>
+            <p>
+              Boost dwell time with interactive volumetric merchandisers that update
+              in real time from your CMS.
+            </p>
+            <p class="metric">Average engagement 3.2× longer.</p>
+          </article>
+          <article>
+            <h3>Research Labs</h3>
+            <p>
+              Visualize complex datasets and avatars with precise spatial fidelity
+              using programmatic control.
+            </p>
+            <p class="metric">Data refresh latency &lt;200ms.</p>
+          </article>
+          <article>
+            <h3>Interactive Art</h3>
+            <p>
+              Collaborate with creators to stream volumetric performances, motion
+              capture, and generative sculptures.
+            </p>
+            <p class="metric">Supports real-time shader scripting.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="dual" class="dual">
+        <div class="dual__device">
+          <h2>Device &amp; Service in harmony</h2>
+          <p>
+            The Vortex Guru hardware tower combines a Raspberry Pi compute core, LED
+            rotor, and encoder suite inside a travel-ready enclosure.
+          </p>
+          <ul>
+            <li>Local control touchscreen</li>
+            <li>OTA firmware with fail-safe rollback</li>
+            <li>Edge caching for offline playback</li>
+          </ul>
+        </div>
+        <div class="dual__service">
+          <h3>Cloud Console</h3>
+          <p>
+            Manage fleets, schedule shows, and monitor health in a unified dashboard.
+          </p>
+          <div class="console-card">
+            <h4>Tonight's lineup</h4>
+            <ul>
+              <li><span>19:00</span>City Skylines Launch</li>
+              <li><span>21:30</span>Immersive DJ Session</li>
+              <li><span>23:00</span>Late Night Q&amp;A</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="storyboard" class="storyboard">
+        <h2 class="section-title">From asset upload to standing ovation</h2>
+        <div class="storyboard__track" role="list">
+          <article class="story-step" data-step="1" role="listitem">
+            <h3>1. Start Show</h3>
+            <p>
+              Kick off with a single API call or scheduled trigger. Devices wake up,
+              run diagnostics, and prepare the LED rotor.
+            </p>
+          </article>
+          <article class="story-step" data-step="2" role="listitem">
+            <h3>2. Fetch Assets</h3>
+            <p>
+              Cloud workflows deliver volumetric assets via secure CDN with checksum
+              validation and local caching.
+            </p>
+          </article>
+          <article class="story-step" data-step="3" role="listitem">
+            <h3>3. Render &amp; Sync</h3>
+            <p>
+              The renderer synchronizes motion control and LED frames using double
+              buffering and predictive timing.
+            </p>
+          </article>
+          <article class="story-step" data-step="4" role="listitem">
+            <h3>4. Health Insights</h3>
+            <p>
+              Telemetry streams to the Vortex dashboard for live status, alerts, and
+              post-show analytics.
+            </p>
+          </article>
+        </div>
+        <div class="storyboard__detail" aria-live="polite">
+          <h3 data-label>1. Start Show</h3>
+          <p data-description>
+            Kick off with a single API call or scheduled trigger. Devices wake up,
+            run diagnostics, and prepare the LED rotor.
+          </p>
+        </div>
+      </section>
+
+      <section id="cases" class="cases">
+        <h2 class="section-title">Case studies</h2>
+        <div class="case-slider" role="region" aria-label="Case studies">
+          <button class="slider-btn prev" aria-label="Previous case">&#10094;</button>
+          <div class="slides">
+            <article class="slide active">
+              <h3>Aurora Summit</h3>
+              <p>
+                Deployed 12 Vortex Guru towers to stream live volumetric presenters
+                with zero onsite engineers.
+              </p>
+              <ul>
+                <li>12-city synchronized launch</li>
+                <li>98% audience satisfaction</li>
+                <li>Integrated with broadcast AR graphics</li>
+              </ul>
+            </article>
+            <article class="slide">
+              <h3>Nova Retail Labs</h3>
+              <p>
+                Connected to Shopify catalog for dynamic holographic merchandisers
+                updated every 5 minutes.
+              </p>
+              <ul>
+                <li>3.2× increase in dwell time</li>
+                <li>Real-time personalization via API</li>
+                <li>Edge cache ensured uptime during outages</li>
+              </ul>
+            </article>
+            <article class="slide">
+              <h3>Helios Research</h3>
+              <p>
+                Visualized molecular simulations in 3D space with sub-200ms latency
+                for collaborative teams.
+              </p>
+              <ul>
+                <li>Secure lab-to-cloud connection</li>
+                <li>Custom shader integration</li>
+                <li>Time-to-insight reduced by 45%</li>
+              </ul>
+            </article>
+          </div>
+          <button class="slider-btn next" aria-label="Next case">&#10095;</button>
+        </div>
+      </section>
+
+      <section id="docs" class="docs">
+        <h2 class="section-title">Developer resources</h2>
+        <div class="docs__grid">
+          <a class="doc-card" href="#">
+            <h3>OpenAPI reference</h3>
+            <p>Explore REST + gRPC endpoints for orchestrating volumetric shows.</p>
+          </a>
+          <a class="doc-card" href="#">
+            <h3>Hardware integration guide</h3>
+            <p>Provision devices, run diagnostics, and deploy firmware updates.</p>
+          </a>
+          <a class="doc-card" href="#">
+            <h3>Temporal workflow templates</h3>
+            <p>Automate scheduling, asset ingest, and fleet management.</p>
+          </a>
+          <a class="doc-card" href="#">
+            <h3>Sample applications</h3>
+            <p>Download interactive demos for Unity, Unreal, and WebXR.</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="roadmap" class="roadmap">
+        <h2 class="section-title">Roadmap</h2>
+        <ol class="roadmap__timeline">
+          <li>
+            <h3>Q2 · Scheduling Suite</h3>
+            <p>Audience segmentation, regional blackout dates, and auto fallback.</p>
+          </li>
+          <li>
+            <h3>Q3 · Analytics &amp; Insights</h3>
+            <p>Engagement heatmaps, KPI dashboards, and anomaly detection.</p>
+          </li>
+          <li>
+            <h3>Q4 · Interactive Avatars</h3>
+            <p>Bidirectional WebRTC streaming, gesture response, and voice AI.</p>
+          </li>
+          <li>
+            <h3>Beyond · Creative Tools</h3>
+            <p>On-device shaders, ML-driven effects, and open plugin SDK.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2 class="section-title">Frequently asked questions</h2>
+        <details>
+          <summary>How portable is the Vortex Guru hardware?</summary>
+          <p>
+            Each tower ships in a protective flight case with quick-lock assembly.
+            Typical setup takes under 15 minutes.
+          </p>
+        </details>
+        <details>
+          <summary>Can Vortex Guru operate offline?</summary>
+          <p>
+            Yes. Edge caching keeps critical assets available, while secure sync
+            restores full functionality once online.
+          </p>
+        </details>
+        <details>
+          <summary>Which file formats do you support?</summary>
+          <p>
+            Upload OBJ, GLB, and point cloud volumes. Our pipeline optimizes them
+            into proprietary voxel frames.
+          </p>
+        </details>
+        <details>
+          <summary>How do I integrate with existing systems?</summary>
+          <p>
+            Use our REST, gRPC, or WebSocket APIs. SDKs for Unity, Unreal, and Node
+            streamline setup.
+          </p>
+        </details>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="contact__content">
+          <h2>See Vortex Guru in action.</h2>
+          <p>
+            Tell us about your upcoming activation and we will tailor a live demo to
+            your audience.
+          </p>
+        </div>
+        <form class="contact__form">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Ada Lovelace" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@company.com" required />
+          </label>
+          <label>
+            Company
+            <input type="text" name="company" placeholder="Vortex Labs" />
+          </label>
+          <label>
+            Project details
+            <textarea name="details" rows="4" placeholder="Tell us about your activation"></textarea>
+          </label>
+          <button type="submit" class="btn primary">Request demo</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <span class="logo">Vortex Guru</span>
+        <p>Volumetric avatars made real.</p>
+      </div>
+      <nav aria-label="Secondary">
+        <a href="#docs">Docs</a>
+        <a href="#faq">Support</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="copyright">© <span id="year"></span> Vortex Guru. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
