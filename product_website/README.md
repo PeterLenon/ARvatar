@@ -9,3 +9,6 @@ Static marketing site concept for the Vortex Guru volumetric avatar platform. Bu
 
 ## Preview
 Open `index.html` in any modern browser. No additional setup is necessary.
+
+## Deployments
+Cloudflare [deployment](https://arvatar.pages.dev/)
