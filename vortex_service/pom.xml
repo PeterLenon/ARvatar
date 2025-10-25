@@ -28,6 +28,7 @@
         <protoc.version>3.24.4</protoc.version>
         <grpc.protoc.plugin.version>1.58.0</grpc.protoc.plugin.version>
         <djl.version>0.35.0</djl.version>
+        <djl.native.classifier>linux-x86_64</djl.native.classifier>
     </properties>
 
     <dependencyManagement>
@@ -39,7 +40,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-        </dependencies>
+    </dependencies>
     </dependencyManagement>
 
     <dependencies>
@@ -183,17 +184,13 @@
             <version>0.34.0</version>
         </dependency>
 
-        <!-- PyTorch native runtime for Apple Silicon CPU (libtorch).
-             This is not versioned like 0.34.x; it uses the upstream PyTorch versioning.
-             Use 'osx-aarch64' because your machine reported os.detected.arch = aarch_64.
-             If this exact artifact doesn't resolve, we'll confirm the available classifier in Central
-             and adjust to 'osx-aarch64' vs 'osx-aarch_64' vs 'osx-x86_64'.
-        -->
+        <!-- PyTorch native runtime (libtorch). The classifier is supplied via the djl.native.classifier
+             property so builds resolve the correct binary for the current platform. -->
         <dependency>
             <groupId>ai.djl.pytorch</groupId>
             <artifactId>pytorch-native-cpu</artifactId>
             <version>2.5.1</version>
-            <classifier>osx-aarch64</classifier>
+            <classifier>${djl.native.classifier}</classifier>
             <scope>runtime</scope>
         </dependency>
 
@@ -203,8 +200,45 @@
             <version>42.7.4</version>
         </dependency>
 
+        </dependencies>
 
-    </dependencies>
+    <profiles>
+        <profile>
+            <id>macos-aarch64</id>
+            <activation>
+                <os>
+                    <family>mac</family>
+                    <arch>aarch64</arch>
+                </os>
+            </activation>
+            <properties>
+                <djl.native.classifier>osx-aarch64</djl.native.classifier>
+            </properties>
+        </profile>
+        <profile>
+            <id>macos-x86_64</id>
+            <activation>
+                <os>
+                    <family>mac</family>
+                    <arch>x86_64</arch>
+                </os>
+            </activation>
+            <properties>
+                <djl.native.classifier>osx-x86_64</djl.native.classifier>
+            </properties>
+        </profile>
+        <profile>
+            <id>windows-x86_64</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <djl.native.classifier>win-x86_64</djl.native.classifier>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <extensions>

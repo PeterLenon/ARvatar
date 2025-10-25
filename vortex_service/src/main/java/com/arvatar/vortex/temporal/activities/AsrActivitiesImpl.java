@@ -17,6 +17,7 @@ import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.async.RedisAsyncCommands;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
@@ -52,7 +53,7 @@ public class AsrActivitiesImpl implements AsrActivities {
     private final Logger logger = LoggerFactory.getLogger(AsrActivitiesImpl.class);
     private final DatabaseWriter databaseWriter;
 
-    public AsrActivitiesImpl() throws SQLException {
+    public AsrActivitiesImpl(ObjectProvider<DatabaseWriter> databaseWriterProvider) {
         this.objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
@@ -60,11 +61,10 @@ public class AsrActivitiesImpl implements AsrActivities {
         this.redisClient = RedisClient.create("redis://localhost:6379");
         this.connection = redisClient.connect();
         this.asyncCommands = connection.async();
-        this.databaseWriter = new DatabaseWriter(
-                "jdbc:postgresql://localhost:5432/postgres",
-                "peterlenon",
-                "p3t3rl3n0n"
-        );
+        this.databaseWriter = databaseWriterProvider.getIfAvailable();
+        if (this.databaseWriter == null) {
+            logger.warn("Database writer is not configured; embeddings will not be persisted.");
+        }
     }
 
     @Override
@@ -173,6 +173,10 @@ public class AsrActivitiesImpl implements AsrActivities {
     }
 
     private void writeToPgVectorDatabase(String guruId, String videoKey, List<ChunkWithEmbedding> chunksWithEmbeddings) {
+        if (databaseWriter == null) {
+            logger.debug("Skipping pgvector persistence for guruId {} because no database writer is configured.", guruId);
+            return;
+        }
         try {
             databaseWriter.insertPersonIfNotExists(guruId, guruId);
             logger.info("Ensured person record exists for guruId: {}", guruId);
@@ -201,11 +205,6 @@ public class AsrActivitiesImpl implements AsrActivities {
             connection.close();
         } finally {
             redisClient.shutdown();
-        }
-        try {
-            databaseWriter.close();
-        } catch (SQLException e) {
-            logger.warn("Failed to close database writer", e);
         }
     }
 }

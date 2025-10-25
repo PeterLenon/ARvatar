@@ -36,6 +36,12 @@ vortex:
   dialogue:
     ai-model: gpt-3.5-turbo
     max-conversation-history: 10
+  database:
+    enabled: ${VORTEX_DB_ENABLED:false}
+    url: ${VORTEX_DB_URL:}
+    username: ${VORTEX_DB_USERNAME:}
+    password: ${VORTEX_DB_PASSWORD:}
+    initialize-schema: ${VORTEX_DB_INITIALIZE_SCHEMA:true}
 
 temporal:
   target: ${TEMPORAL_ADDRESS:127.0.0.1:7233}
