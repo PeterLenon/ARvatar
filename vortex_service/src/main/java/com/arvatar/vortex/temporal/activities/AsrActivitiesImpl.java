@@ -141,9 +141,10 @@ public class AsrActivitiesImpl implements AsrActivities {
                     .optEngine("Pytorch")
                     .optModelUrls("djl://ai.djl.huggingface/speech-recognition/openai/whisper-small")
                     .build();
-            ZooModel<Path, String> model = ModelZoo.loadModel(criteria);
-            Predictor<Path, String> predictor = model.newPredictor();
-            return predictor.predict(audioFile);
+            try (ZooModel<Path, String> model = ModelZoo.loadModel(criteria);
+                 Predictor<Path, String> predictor = model.newPredictor()) {
+                return predictor.predict(audioFile);
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -158,11 +159,12 @@ public class AsrActivitiesImpl implements AsrActivities {
                     .optModelUrls("djl://ai.djl.huggingface/text-embedding/sentence-transformers/all-MiniLM-L6-v2")
                     .optEngine("Pytorch")
                     .build();
-            ZooModel<String, float[]> embedModel = ModelZoo.loadModel(embedCriteria);
-            Predictor<String, float[]> embedPredictor = embedModel.newPredictor();
-            for (String chunk : chunks) {
-                float[] embedding = embedPredictor.predict(chunk);
-                chunksWithEmbeddings.add(new ChunkWithEmbedding(chunk, embedding));
+            try (ZooModel<String, float[]> embedModel = ModelZoo.loadModel(embedCriteria);
+                 Predictor<String, float[]> embedPredictor = embedModel.newPredictor()) {
+                for (String chunk : chunks) {
+                    float[] embedding = embedPredictor.predict(chunk);
+                    chunksWithEmbeddings.add(new ChunkWithEmbedding(chunk, embedding));
+                }
             }
             return chunksWithEmbeddings;
         }catch (Exception e){
@@ -199,6 +201,11 @@ public class AsrActivitiesImpl implements AsrActivities {
             connection.close();
         } finally {
             redisClient.shutdown();
+        }
+        try {
+            databaseWriter.close();
+        } catch (SQLException e) {
+            logger.warn("Failed to close database writer", e);
         }
     }
 }
