@@ -1,5 +1,6 @@
 package com.arvatar.vortex.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 import voxel.dialogue.v1.DialogueServiceOuterClass.*;
 
@@ -26,9 +27,7 @@ public class DialogueService {
                 .setUpdatedAt(com.google.protobuf.Timestamp.newBuilder()
                         .setSeconds(System.currentTimeMillis() / 1000)
                         .build());
-        
         responseBuilder.setProfile(guruProfile.build());
-        
         return responseBuilder.build();
     }
 

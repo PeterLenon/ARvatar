@@ -132,6 +132,7 @@ public class PcdActivitiesImpl implements PcdActivities {
             throws IOException, InterruptedException {
         try {
             String finalFusedPlyFilePath = guruId + "/dense/fused.ply";
+            List<String> extractedVisemeIds = new ArrayList<>();
             for (Map.Entry<String, Path> entry : visemeFrameDirMap.entrySet()) {
                 String visemeId = entry.getKey();
                 Path visemeFrameDir = entry.getValue();
@@ -147,8 +148,10 @@ public class PcdActivitiesImpl implements PcdActivities {
                 Path finalFusedPlyFile = Paths.get(finalFusedPlyFilePath);
                 Path s3FinalPcFile = finalFusedPlyFile.resolveSibling(visemeId + ".ply");
                 Files.move(finalFusedPlyFile, s3FinalPcFile, StandardCopyOption.REPLACE_EXISTING);
+                extractedVisemeIds.add(visemeId);
                 objectStoreClient.updateGuruAssetInventory(guruId, s3FinalPcFile);
             }
+            objectStoreClient.updateGuruAssetInventory(guruId, extractedVisemeIds);
         } catch (Exception e) {
             throw new RuntimeException(e);
         } finally {
