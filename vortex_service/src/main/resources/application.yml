@@ -38,9 +38,9 @@ vortex:
     max-conversation-history: 10
     embedding-model: "djl://ai.djl.huggingface/text-embedding/sentence-transformers/all-MiniLM-L6-v2"
     rag-top-k: 5
-    max-context-length: 2000
+    max-context-length: 5000
   database:
-    enabled: ${VORTEX_DB_ENABLED:false}
+    enabled: ${VORTEX_DB_ENABLED:true}
     url: ${VORTEX_DB_URL:}
     username: ${VORTEX_DB_USERNAME:}
     password: ${VORTEX_DB_PASSWORD:}

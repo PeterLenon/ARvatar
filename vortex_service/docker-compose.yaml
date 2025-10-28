@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: vortex-minio
+    network_mode: host
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: admin123
+    command: server /data --console-address "0.0.0.0:9001"
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: vortex-ollama
+    network_mode: host
+    volumes:
+      - ollama_data:/root/.ollama
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:11434/api/tags" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    entrypoint: >
+      /bin/sh -c "
+        ollama serve &                  
+        sleep 5 &&                      
+        ollama pull llama3:instruct &&  
+        wait"                            
+
+  vortex-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vortex-service
+    network_mode: host
+    environment:
+      - TEMPORAL_ADDRESS=127.0.0.1:7233
+      - TEMPORAL_NAMESPACE=default
+      - TEMPORAL_ASR_TASK_QUEUE=asr-jobs
+      - TEMPORAL_PCD_TASK_QUEUE=pcd-jobs
+
+      - VORTEX_DB_ENABLED=${VORTEX_DB_ENABLED:true}
+      - VORTEX_DB_URL=jdbc:postgresql://127.0.0.1:5432/arvatar
+      - VORTEX_DB_USERNAME=${VORTEX_DB_USERNAME:peterlenon}
+      - VORTEX_DB_PASSWORD=${VORTEX_DB_PASSWORD:p3t3rl3n0n}
+      - VORTEX_DB_INITIALIZE_SCHEMA=${VORTEX_DB_INITIALIZE_SCHEMA:true}
+
+      - MINIO_ENDPOINT=http://127.0.0.1:9000
+    volumes:
+      - ./assets:/tmp/vortex-assets
+volumes:
+  minio_data:
