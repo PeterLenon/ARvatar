@@ -1,4 +1,4 @@
-package com.arvatar.vortex.dto;
+package com.arvatar.vortex.models;
 
 
 public enum JobStatus {

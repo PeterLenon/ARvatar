@@ -1,4 +1,4 @@
-package com.arvatar.vortex.dto;
+package com.arvatar.vortex.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,5 +1,6 @@
 package com.arvatar.vortex.dto;
 
+import com.arvatar.vortex.models.AsrPcdJob;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.core.ResponseBytes;
@@ -13,8 +14,7 @@ import software.amazon.awssdk.services.s3.S3Configuration;
 import java.nio.file.Path;
 import java.net.URI;
 import java.time.Instant;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
 public class MinIOS3Client {
@@ -102,6 +102,14 @@ public class MinIOS3Client {
     public void updateGuruAssetInventory(String guruId, List<String> assetIds){
         String bucket = "assets";
         String key = guruId + "/assetIds.txt";
+        List<String> storedAssetIds = new ArrayList<>();
+        try{
+            storedAssetIds.addAll(this.listAvailableGuruAssets(guruId));
+        }catch (Exception ignored){}
+        storedAssetIds.addAll(assetIds);
+        Set<String> assetIdSet = new HashSet<>(storedAssetIds);
+        assetIds.clear();
+        assetIds.addAll(assetIdSet);
         try{
             CompletableFuture<PutObjectResponse> response = asyncS3Client.putObject(
                     PutObjectRequest.builder()

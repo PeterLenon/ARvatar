@@ -1,7 +1,7 @@
 package com.arvatar.vortex.temporal.activities;
 
-import com.arvatar.vortex.dto.AsrPcdJob;
-import com.arvatar.vortex.dto.JobStatus;
+import com.arvatar.vortex.models.AsrPcdJob;
+import com.arvatar.vortex.models.JobStatus;
 import com.arvatar.vortex.dto.MinIOS3Client;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

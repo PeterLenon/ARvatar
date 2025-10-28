@@ -1,6 +1,6 @@
 package com.arvatar.vortex.service;
 
-import com.arvatar.vortex.dto.AsrPcdJob;
+import com.arvatar.vortex.models.AsrPcdJob;
 import com.arvatar.vortex.temporal.TemporalProperties;
 import com.arvatar.vortex.temporal.workflow.PcdWorkflow;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,7 +11,6 @@ import io.lettuce.core.RedisClient;
 import io.lettuce.core.StreamMessage;
 import io.lettuce.core.XReadArgs;
 import io.lettuce.core.XGroupCreateArgs;
-import io.lettuce.core.XReadArgs;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.async.RedisAsyncCommands;
 import io.lettuce.core.api.sync.RedisCommands;
@@ -25,12 +24,8 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.time.Duration;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.databind.JsonNode;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

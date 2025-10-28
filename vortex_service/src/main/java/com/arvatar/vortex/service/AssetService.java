@@ -1,6 +1,6 @@
 package com.arvatar.vortex.service;
 
-import com.arvatar.vortex.dto.AsrPcdJob;
+import com.arvatar.vortex.models.AsrPcdJob;
 import com.arvatar.vortex.dto.MinIOS3Client;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,7 +13,6 @@ import voxel.assets.v1.AssetServiceOuterClass.*;
 import voxel.common.v1.Types;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.api.StatefulRedisConnection;
-import io.lettuce.core.api.sync.RedisCommands;
 
 import java.util.List;
 import java.util.Map;
