@@ -186,8 +186,7 @@ public class AsrActivitiesImpl implements AsrActivities {
                 UUID chunkId = databaseWriter.insertChunk(
                     guruId, 
                     videoId, 
-                    chunkWithEmbedding.chunk, 
-                    true,
+                    chunkWithEmbedding.chunk,
                     chunkWithEmbedding.embedding
                 );
                 logger.debug("Inserted chunk with ID: {} for guruId: {}", chunkId, guruId);

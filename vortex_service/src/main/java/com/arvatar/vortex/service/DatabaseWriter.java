@@ -59,7 +59,6 @@ public class DatabaseWriter {
                         "guru_id TEXT NOT NULL REFERENCES person(guru_id)," +
                         "video_id  UUID NOT NULL REFERENCES video(video_id)," +
                         "transcript TEXT," +
-                        "public_ok BOOLEAN DEFAULT true," +
                         "embedding vector(384)," +
                         "created_at TIMESTAMPTZ DEFAULT NOW()" +
                         ");");
@@ -107,8 +106,7 @@ public class DatabaseWriter {
     }
 
     public UUID insertChunk(String guruId, UUID videoId,
-                            String transcript,
-                            boolean publicOk, float[] embedding) throws SQLException {
+                            String transcript, float[] embedding) throws SQLException {
         UUID chunkId = UUID.randomUUID();
         String sql = "INSERT INTO persona_chunk " +
                 "(chunk_id, guru_id, video_id, transcript, public_ok, embedding) " +
@@ -120,14 +118,13 @@ public class DatabaseWriter {
             ps.setString(2, guruId);
             ps.setObject(3, videoId);
             ps.setString(4, transcript);
-            ps.setBoolean(5, publicOk);
-            ps.setString(6, toPgVectorLiteral(embedding));
+            ps.setString(5, toPgVectorLiteral(embedding));
             ps.executeUpdate();
         }
         return chunkId;
     }
 
-    public void updateChunk(UUID chunkId, String newTranscript, boolean publicOk) throws SQLException {
+    public void updateChunk(UUID chunkId, String newTranscript) throws SQLException {
         String sql = "UPDATE persona_chunk " +
                 "SET transcript = ?, public_ok = ? " +
                 "WHERE chunk_id = ?";
@@ -135,8 +132,7 @@ public class DatabaseWriter {
              PreparedStatement ps = connection.prepareStatement(sql)) {
             initializeSchemaIfNecessary(connection);
             ps.setString(1, newTranscript);
-            ps.setBoolean(2, publicOk);
-            ps.setObject(3, chunkId);
+            ps.setObject(2, chunkId);
             ps.executeUpdate();
         }
     }
