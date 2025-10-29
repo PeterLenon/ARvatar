@@ -109,7 +109,7 @@ public class DatabaseWriter {
                             String transcript, float[] embedding) throws SQLException {
         UUID chunkId = UUID.randomUUID();
         String sql = "INSERT INTO persona_chunk " +
-                "(chunk_id, guru_id, video_id, transcript, public_ok, embedding) " +
+                "(chunk_id, guru_id, video_id, transcript, embedding) " +
                 "VALUES (?, ?, ?, ?, ?, ?::vector)";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
@@ -126,7 +126,7 @@ public class DatabaseWriter {
 
     public void updateChunk(UUID chunkId, String newTranscript) throws SQLException {
         String sql = "UPDATE persona_chunk " +
-                "SET transcript = ?, public_ok = ? " +
+                "SET transcript = ? " +
                 "WHERE chunk_id = ?";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
