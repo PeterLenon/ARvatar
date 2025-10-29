@@ -110,7 +110,7 @@ public class DatabaseWriter {
         UUID chunkId = UUID.randomUUID();
         String sql = "INSERT INTO persona_chunk " +
                 "(chunk_id, guru_id, video_id, transcript, embedding) " +
-                "VALUES (?, ?, ?, ?, ?, ?::vector)";
+                "VALUES (?, ?, ?, ?,?::vector)";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
             initializeSchemaIfNecessary(connection);
