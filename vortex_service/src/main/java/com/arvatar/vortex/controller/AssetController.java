@@ -50,7 +50,7 @@ public class AssetController {
 
     @PostMapping("/point-clouds/upload-video")
     public ResponseEntity<UploadGuruVideoResponse> uploadGuruVideo(
-            @RequestBody(required = true) String guruId,
+            @RequestParam(required = true) String guruId,
             @RequestBody(required = true) voxel.common.v1.Types.Video video){
         UploadGuruVideoRequest request = UploadGuruVideoRequest.newBuilder()
                 .setGuruId(guruId)
