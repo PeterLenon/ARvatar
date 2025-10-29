@@ -40,7 +40,6 @@ vortex:
     rag-top-k: 5
     max-context-length: 5000
   database:
-    enabled: ${VORTEX_DB_ENABLED:true}
     url: ${VORTEX_DB_URL:}
     username: ${VORTEX_DB_USERNAME:}
     password: ${VORTEX_DB_PASSWORD:}

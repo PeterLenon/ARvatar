@@ -80,7 +80,7 @@ public class LLMService {
                 context,
                 "FINAL ANSWER:");
         ObjectNode body = MAPPER.createObjectNode();
-        body.put("model", "llama3:instruct");                // e.g. "llama3:instruct"
+        body.put("model", "llama3:instruct");           
         body.put("prompt", prompt);
         body.put("stream", false);
         String requestJson = body.toString();
