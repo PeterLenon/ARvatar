@@ -76,8 +76,7 @@ public class LLMService {
                 "QUESTION:",
                 query,
                 "CONTEXT:",
-                context,
-                "FINAL ANSWER:");
+                context);
         ObjectNode body = MAPPER.createObjectNode();
         body.put("model", "llama3:instruct");           
         body.put("prompt", prompt);
