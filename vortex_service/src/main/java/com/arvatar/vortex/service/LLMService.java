@@ -26,7 +26,6 @@ public class LLMService {
     private static final Logger logger = LoggerFactory.getLogger(LLMService.class);
     private static final int MAX_CONTEXT_LENGTH = 5000;
     private ZooModel<String, float[]> model;
-    private Predictor<String, float[]> predictor;
     private static final String OLLAMA_URL = "http://localhost:11434/api/generate";
     private static final ObjectMapper MAPPER = new ObjectMapper();
     private final HttpClient httpClient = HttpClient.newHttpClient();
@@ -41,7 +40,6 @@ public class LLMService {
                     .optEngine("Pytorch")
                     .build();
             model = ModelZoo.loadModel(criteria);
-            predictor = model.newPredictor();
             logger.info("Embedding model loaded successfully");
         } catch (Exception e) {
             logger.error("Failed to load embedding model", e);
@@ -50,7 +48,7 @@ public class LLMService {
     }
 
     public float[] embedText(String text) {
-        try {
+        try (Predictor<String, float[]> predictor = model.newPredictor()) {
             return predictor.predict(text);
         } catch (Exception e) {
             logger.error("Failed to generate embedding for text: {}", text, e);
@@ -120,9 +118,6 @@ public class LLMService {
 
      @PreDestroy
     public void cleanup() {
-        if (predictor != null) {
-            predictor.close();
-        }
         if (model != null) {
             model.close();
         }
