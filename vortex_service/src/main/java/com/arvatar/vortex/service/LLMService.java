@@ -73,7 +73,6 @@ public class LLMService {
                 "Answer the question using ONLY the context below.",
                 "If the context does not contain the answer, say:",
                 "I don't have enough information in the provided documents.",
-                "Always cite the source chunk like [0], [1], etc. right after each claim.",
                 "QUESTION:",
                 query,
                 "CONTEXT:",
