@@ -1,6 +1,6 @@
 package com.arvatar.vortex.service;
 
-import com.arvatar.vortex.dto.AsrPcdJob;
+import com.arvatar.vortex.models.AsrPcdJob;
 import com.arvatar.vortex.temporal.TemporalProperties;
 import com.arvatar.vortex.temporal.workflow.PcdWorkflow;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,8 +9,8 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.lettuce.core.Consumer;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.StreamMessage;
-import io.lettuce.core.XGroupCreateArgs;
 import io.lettuce.core.XReadArgs;
+import io.lettuce.core.XGroupCreateArgs;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.async.RedisAsyncCommands;
 import io.lettuce.core.api.sync.RedisCommands;
@@ -73,13 +73,13 @@ public class PcdService {
         }
     }
 
-    private void run() {
+    private void run(){
         String pcdJobRedisStream = "pcd_jobs";
         String pcdJobRedisStreamGroup = "pcd_jobs_workers";
         String pcdJobRedisStreamConsumer = "pcd_jobs_consumer";
         while (!Thread.currentThread().isInterrupted()) {
             try {
-                List<StreamMessage<String, String>> jobs = asyncCommands.xreadgroup(
+                List<StreamMessage<String,String>> jobs = asyncCommands.xreadgroup(
                         Consumer.from(pcdJobRedisStreamGroup, pcdJobRedisStreamConsumer),
                         XReadArgs.Builder.block(Duration.ofSeconds(5)),
                         XReadArgs.StreamOffset.lastConsumed(pcdJobRedisStream)

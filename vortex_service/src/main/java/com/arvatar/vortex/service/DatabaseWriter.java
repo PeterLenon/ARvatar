@@ -1,8 +1,12 @@
 package com.arvatar.vortex.service;
 
+import com.arvatar.vortex.models.PersonProfile;
+import com.arvatar.vortex.models.PersonaChunk;
+import java.util.List;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.StringJoiner;
@@ -36,6 +40,7 @@ public class DatabaseWriter {
                 stmt.execute("CREATE TABLE IF NOT EXISTS person (" +
                         "guru_id TEXT PRIMARY KEY," +
                         "display_name TEXT NOT NULL," +
+                        "biography TEXT," +
                         "created_at TIMESTAMPTZ DEFAULT NOW()" +
                         ");");
 
@@ -54,7 +59,6 @@ public class DatabaseWriter {
                         "guru_id TEXT NOT NULL REFERENCES person(guru_id)," +
                         "video_id  UUID NOT NULL REFERENCES video(video_id)," +
                         "transcript TEXT," +
-                        "public_ok BOOLEAN DEFAULT true," +
                         "embedding vector(384)," +
                         "created_at TIMESTAMPTZ DEFAULT NOW()" +
                         ");");
@@ -102,12 +106,11 @@ public class DatabaseWriter {
     }
 
     public UUID insertChunk(String guruId, UUID videoId,
-                            String transcript,
-                            boolean publicOk, float[] embedding) throws SQLException {
+                            String transcript, float[] embedding) throws SQLException {
         UUID chunkId = UUID.randomUUID();
         String sql = "INSERT INTO persona_chunk " +
-                "(chunk_id, guru_id, video_id, transcript, public_ok, embedding) " +
-                "VALUES (?, ?, ?, ?, ?, ?::vector)";
+                "(chunk_id, guru_id, video_id, transcript, embedding) " +
+                "VALUES (?, ?, ?, ?,?::vector)";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
             initializeSchemaIfNecessary(connection);
@@ -115,23 +118,21 @@ public class DatabaseWriter {
             ps.setString(2, guruId);
             ps.setObject(3, videoId);
             ps.setString(4, transcript);
-            ps.setBoolean(5, publicOk);
-            ps.setString(6, toPgVectorLiteral(embedding));
+            ps.setString(5, toPgVectorLiteral(embedding));
             ps.executeUpdate();
         }
         return chunkId;
     }
 
-    public void updateChunk(UUID chunkId, String newTranscript, boolean publicOk) throws SQLException {
+    public void updateChunk(UUID chunkId, String newTranscript) throws SQLException {
         String sql = "UPDATE persona_chunk " +
-                "SET transcript = ?, public_ok = ? " +
+                "SET transcript = ? " +
                 "WHERE chunk_id = ?";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
             initializeSchemaIfNecessary(connection);
             ps.setString(1, newTranscript);
-            ps.setBoolean(2, publicOk);
-            ps.setObject(3, chunkId);
+            ps.setObject(2, chunkId);
             ps.executeUpdate();
         }
     }
@@ -143,6 +144,52 @@ public class DatabaseWriter {
             ps.setObject(1, chunkId);
             ps.executeUpdate();
         }
+    }
+
+    public PersonProfile getPersonProfile(String guruId) throws SQLException {
+        String sql = "SELECT guru_id, display_name, biography, created_at FROM person WHERE guru_id = ?";
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            initializeSchemaIfNecessary(conn);
+            ps.setString(1, guruId);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return new PersonProfile(
+                        rs.getString("guru_id"),
+                        rs.getString("display_name"),
+                        rs.getString("biography"),
+                        rs.getTimestamp("created_at")
+                    );
+                }
+            }
+        }
+        return null;
+    }
+
+    public List<PersonaChunk> searchSimilarChunks(String guruId, float[] queryEmbedding, int topK) throws SQLException {
+        String sql = "SELECT chunk_id, transcript, video_id, embedding <=> ?::vector AS distance " +
+                     "FROM persona_chunk WHERE guru_id = ? ORDER BY distance LIMIT ?";
+        java.util.List<com.arvatar.vortex.models.PersonaChunk> results = new java.util.ArrayList<>();
+        
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            initializeSchemaIfNecessary(conn);
+            ps.setString(1, toPgVectorLiteral(queryEmbedding));
+            ps.setString(2, guruId);
+            ps.setInt(3, topK);
+            
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    results.add(new PersonaChunk(
+                        (UUID) rs.getObject("chunk_id"),
+                        rs.getString("transcript"),
+                        (UUID) rs.getObject("video_id"),
+                        rs.getDouble("distance")
+                    ));
+                }
+            }
+        }
+        return results;
     }
 
     private String toPgVectorLiteral(float[] embedding) {

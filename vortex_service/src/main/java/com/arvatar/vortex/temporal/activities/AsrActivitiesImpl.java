@@ -4,8 +4,8 @@ import ai.djl.inference.Predictor;
 import ai.djl.repository.zoo.Criteria;
 import ai.djl.repository.zoo.ModelZoo;
 import ai.djl.repository.zoo.ZooModel;
-import com.arvatar.vortex.dto.AsrPcdJob;
-import com.arvatar.vortex.dto.JobStatus;
+import com.arvatar.vortex.models.AsrPcdJob;
+import com.arvatar.vortex.models.JobStatus;
 import com.arvatar.vortex.dto.MinIOS3Client;
 import com.arvatar.vortex.service.DatabaseWriter;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -186,8 +186,7 @@ public class AsrActivitiesImpl implements AsrActivities {
                 UUID chunkId = databaseWriter.insertChunk(
                     guruId, 
                     videoId, 
-                    chunkWithEmbedding.chunk, 
-                    true,
+                    chunkWithEmbedding.chunk,
                     chunkWithEmbedding.embedding
                 );
                 logger.debug("Inserted chunk with ID: {} for guruId: {}", chunkId, guruId);

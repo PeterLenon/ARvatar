@@ -36,8 +36,10 @@ vortex:
   dialogue:
     ai-model: gpt-3.5-turbo
     max-conversation-history: 10
+    embedding-model: "djl://ai.djl.huggingface/text-embedding/sentence-transformers/all-MiniLM-L6-v2"
+    rag-top-k: 5
+    max-context-length: 5000
   database:
-    enabled: ${VORTEX_DB_ENABLED:false}
     url: ${VORTEX_DB_URL:}
     username: ${VORTEX_DB_USERNAME:}
     password: ${VORTEX_DB_PASSWORD:}

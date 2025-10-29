@@ -1,6 +1,6 @@
 package com.arvatar.vortex.temporal.workflow;
 
-import com.arvatar.vortex.dto.AsrPcdJob;
+import com.arvatar.vortex.models.AsrPcdJob;
 import com.arvatar.vortex.temporal.activities.AsrActivities;
 import io.temporal.activity.ActivityOptions;
 import io.temporal.workflow.Workflow;

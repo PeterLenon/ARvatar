@@ -1,6 +1,6 @@
 package com.arvatar.vortex.service;
 
-import com.arvatar.vortex.dto.AsrPcdJob;
+import com.arvatar.vortex.models.AsrPcdJob;
 import com.arvatar.vortex.temporal.TemporalProperties;
 import com.arvatar.vortex.temporal.workflow.AsrWorkflow;
 import io.temporal.api.common.v1.WorkflowExecution;
