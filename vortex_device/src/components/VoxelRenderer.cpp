@@ -4,7 +4,7 @@
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/common/centroid.h>
-#include "models/CylinderVox.h"
+#include "../models/CylinderVox.h"
 
 VoxelRenderer::VoxelRenderer() {}
 

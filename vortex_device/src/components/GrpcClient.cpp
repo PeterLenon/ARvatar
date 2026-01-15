@@ -2,7 +2,7 @@
 // Created by Peter Lenon Goshomi on 9/18/25.
 //
 
-#include "GrpcClient.h"
+#include "../GrpcClient.h"
 #include <string>
 #include <grpcpp/create_channel.h>
 #include <grpcpp/security/credentials.h>
