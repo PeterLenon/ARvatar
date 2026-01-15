@@ -1,6 +1,6 @@
-# Vortex Guru — Device Node (C++ on Raspberry Pi)
-**Engineering Deep Dive**  
-*Version: Draft v1.0 (Sept 2025)*
+# Vortex Guru — Device Node (C++ on ESP32)
+**Engineering Deep Dive: Voice-Activated Volumetric Node**  
+*Version: Draft v2.0 (Jan 2026)*
 
 ---
 

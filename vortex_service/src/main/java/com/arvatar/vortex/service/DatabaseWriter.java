@@ -34,7 +34,21 @@ public class DatabaseWriter {
             }
             try (Statement stmt = connection.createStatement()) {
                 // Enable pgvector
-                stmt.execute("CREATE EXTENSION IF NOT EXISTS vector;");
+                try {
+                    stmt.execute("CREATE EXTENSION IF NOT EXISTS vector;");
+                } catch (SQLException e) {
+                    if (e.getMessage() != null && e.getMessage().contains("extension \"vector\" is not available")) {
+                        throw new SQLException(
+                            "pgvector extension is not installed. " +
+                            "To install on macOS (Homebrew): brew install pgvector\n" +
+                            "Then connect to your database and run: CREATE EXTENSION vector;\n" +
+                            "Or use: psql -d arvatar -c \"CREATE EXTENSION vector;\"\n" +
+                            "Alternatively, use the PostgreSQL service in docker-compose.yaml which includes pgvector.",
+                            e
+                        );
+                    }
+                    throw e;
+                }
 
                 // person table
                 stmt.execute("CREATE TABLE IF NOT EXISTS person (" +

@@ -27,7 +27,7 @@
         <protobuf.version>3.24.4</protobuf.version>
         <protoc.version>3.24.4</protoc.version>
         <grpc.protoc.plugin.version>1.58.0</grpc.protoc.plugin.version>
-        <djl.version>0.35.0</djl.version>
+        <djl.version>0.34.0</djl.version>
         <djl.native.classifier>linux-x86_64</djl.native.classifier>
     </properties>
 
@@ -156,36 +156,48 @@
             <scope>test</scope>
         </dependency>
 
-                <!-- DJL Core API -->
+        <!-- DJL Core API -->
         <dependency>
             <groupId>ai.djl</groupId>
             <artifactId>api</artifactId>
-            <version>0.34.0</version>
+            <version>${djl.version}</version>
+        </dependency>
+
+        <!-- DJL Model Zoo (provides base ModelZoo functionality) -->
+        <dependency>
+            <groupId>ai.djl</groupId>
+            <artifactId>model-zoo</artifactId>
+            <version>${djl.version}</version>
         </dependency>
 
         <!-- DJL PyTorch engine (runs inference) -->
         <dependency>
             <groupId>ai.djl.pytorch</groupId>
             <artifactId>pytorch-engine</artifactId>
-            <version>0.34.0</version>
+            <version>${djl.version}</version>
+        </dependency>
+
+        <!-- DJL PyTorch Model Zoo (provides PyTorch model support) -->
+        <dependency>
+            <groupId>ai.djl.pytorch</groupId>
+            <artifactId>pytorch-model-zoo</artifactId>
+            <version>${djl.version}</version>
         </dependency>
 
         <!-- DJL audio extension (audio I/O + preprocessing for ASR models) -->
         <dependency>
             <groupId>ai.djl.audio</groupId>
             <artifactId>audio</artifactId>
-            <version>0.34.0</version>
+            <version>${djl.version}</version>
         </dependency>
 
         <!-- Hugging Face tokenizer support for DJL (used for text models / embeddings / ASR tokenization) -->
         <dependency>
             <groupId>ai.djl.huggingface</groupId>
             <artifactId>tokenizers</artifactId>
-            <version>0.34.0</version>
+            <version>${djl.version}</version>
         </dependency>
 
-        <!-- PyTorch native runtime (libtorch). The classifier is supplied via the djl.native.classifier
-             property so builds resolve the correct binary for the current platform. -->
         <dependency>
             <groupId>ai.djl.pytorch</groupId>
             <artifactId>pytorch-native-cpu</artifactId>
@@ -198,6 +210,12 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.7.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alphacephei</groupId>
+            <artifactId>vosk</artifactId>
+            <version>0.3.45</version>
         </dependency>
 
         </dependencies>

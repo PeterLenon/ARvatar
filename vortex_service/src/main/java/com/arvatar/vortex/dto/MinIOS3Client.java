@@ -18,7 +18,7 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
 public class MinIOS3Client {
-    private final String endpoint = "http://127.0.0.1:9000";
+    private final String endpoint = System.getenv().getOrDefault("MINIO_ENDPOINT", "http://localhost:9000");
     private final S3AsyncClient asyncS3Client = S3AsyncClient.builder()
             .endpointOverride(URI.create(endpoint))
             .credentialsProvider(StaticCredentialsProvider.create(
@@ -30,11 +30,20 @@ public class MinIOS3Client {
             .httpClientBuilder(NettyNioAsyncHttpClient.builder())
             .build();
 
+    private void ensureBucketExists(String bucketName){
+        try{
+            asyncS3Client.headBucket(HeadBucketRequest.builder().bucket(bucketName).build()).join();
+        }catch (Exception e){
+            asyncS3Client.createBucket(CreateBucketRequest.builder().bucket(bucketName).build()).join();
+        }
+    }
+
     public MinIOS3Client() {
     }
 
     public String putVideo(String guruId, byte[] videoData){
         String videosBucket = "videos";
+        ensureBucketExists(videosBucket);
         try {
             String videoKey = guruId + "/" + Instant.now().toEpochMilli();
             CompletableFuture<PutObjectResponse> response = asyncS3Client.putObject(
@@ -53,6 +62,7 @@ public class MinIOS3Client {
 
     public byte[] getVideo(String videoKey) {
         String bucket = "videos";
+        ensureBucketExists(bucket);
         try {
             GetObjectRequest request = GetObjectRequest.builder()
                     .bucket(bucket)
@@ -67,6 +77,7 @@ public class MinIOS3Client {
 
     public void updateJob(AsrPcdJob job){
         String jobsBucket = "jobs";
+        ensureBucketExists(jobsBucket);
         try{
             String jobKey = job.jobId.toString();
             CompletableFuture<PutObjectResponse> response = asyncS3Client.putObject(
@@ -84,6 +95,7 @@ public class MinIOS3Client {
 
     public void updateGuruAssetInventory(String guruId, Path file){
         String bucket = "assets";
+        ensureBucketExists(bucket);
         String key = guruId + "/" + file.getFileName();
         try{
             CompletableFuture<PutObjectResponse> response = asyncS3Client.putObject(
@@ -101,6 +113,7 @@ public class MinIOS3Client {
 
     public void updateGuruAssetInventory(String guruId, List<String> assetIds){
         String bucket = "assets";
+        ensureBucketExists(bucket);
         String key = guruId + "/assetIds.txt";
         List<String> storedAssetIds = new ArrayList<>();
         try{
@@ -126,6 +139,7 @@ public class MinIOS3Client {
 
     public List<String> listAvailableGuruAssets(String guruId){
         String bucket = "assets";
+        ensureBucketExists(bucket);
         String key = guruId + "/assetIds.txt";
         try{
             GetObjectRequest request = GetObjectRequest.builder()

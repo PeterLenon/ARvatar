@@ -1,11 +1,14 @@
 server:
-  port: 8080
+  port: 8081
   servlet:
     context-path: /
 
 grpc:
   server:
-    port: 9090
+    port: 9091
+    address: 0.0.0.0
+    maxInboundMessageSize: 104857600
+    maxInboundMetadataSize: 8192     
 
 spring:
   application:
@@ -40,14 +43,17 @@ vortex:
     rag-top-k: 5
     max-context-length: 5000
   database:
-    url: ${VORTEX_DB_URL:}
-    username: ${VORTEX_DB_USERNAME:}
-    password: ${VORTEX_DB_PASSWORD:}
+    url: ${VORTEX_DB_URL:jdbc:postgresql://0.0.0.0:5432/arvatar}
+    username: ${VORTEX_DB_USERNAME:peterlenon}
+    password: ${VORTEX_DB_PASSWORD:p3t3rl3n0n}
     initialize-schema: ${VORTEX_DB_INITIALIZE_SCHEMA:true}
 
 temporal:
-  target: ${TEMPORAL_ADDRESS:127.0.0.1:7233}
+  target: ${TEMPORAL_ADDRESS:localhost:7233}
   namespace: ${TEMPORAL_NAMESPACE:default}
   task-queues:
     asr: ${TEMPORAL_ASR_TASK_QUEUE:asr-jobs}
     pcd: ${TEMPORAL_PCD_TASK_QUEUE:pcd-jobs}
+
+redis:
+  uri: ${REDIS_URI:redis://localhost:6379}

@@ -16,7 +16,7 @@ public class DatabaseProperties {
 
     /**
      * Whether the writer should attempt to create the schema on startup. Defaults to {@code true}
-     * to retain the previous behaviour for development environments.
+     * to retain the previous behavior for development environments.
      */
     private boolean initializeSchema = true;
 

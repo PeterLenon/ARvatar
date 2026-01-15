@@ -1,16 +1,19 @@
 package com.arvatar.vortex.controller;
 
 import com.arvatar.vortex.service.AssetService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import voxel.assets.v1.AssetServiceOuterClass.*;
-import voxel.common.v1.Types;
 
 @RestController
 @RequestMapping("/api/v1/assets")
 @CrossOrigin(origins = "*")
 public class AssetController {
+
+    private static final Logger logger = LoggerFactory.getLogger(AssetController.class);
 
     @Autowired
     private AssetService assetService;

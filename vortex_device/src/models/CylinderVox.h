@@ -16,7 +16,7 @@ private:
 public:
     int bin_size = 0;
     CylinderVox(int delta_theta);
-    void add_point(int theta, int x_normalized, int y_normalized);
-    std::vector<std::tuple<int, int>> get_slice(int theta);
+    void add_point(double theta, int x_normalized, int y_normalized);
+    std::vector<std::tuple<int, int>> get_slice(double theta);
 };
 #endif //VORTEXDEVICE_CYLINDERVOX_H

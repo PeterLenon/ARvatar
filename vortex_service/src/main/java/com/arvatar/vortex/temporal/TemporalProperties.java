@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "temporal")
 public class TemporalProperties {
 
-    private String target = "127.0.0.1:7233";
+    private String target = "localhost:7233";
     private String namespace = "default";
     private final TaskQueues taskQueues = new TaskQueues();
 

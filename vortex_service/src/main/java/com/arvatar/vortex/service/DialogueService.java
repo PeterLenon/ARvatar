@@ -1,5 +1,6 @@
 package com.arvatar.vortex.service;
 
+import com.arvatar.vortex.models.Intention;
 import com.arvatar.vortex.models.PersonaChunk;
 import com.arvatar.vortex.models.PersonProfile;
 import org.springframework.stereotype.Service;
@@ -54,11 +55,18 @@ public class DialogueService {
     
     public AnswerChunk askQuestion(AskRequest request) {
         try {
+            Intention userIntention = llmService.getUserIntention(request.getUserQuery(), request.getConversationId(), request.getGuruId());
+            if(userIntention != Intention.CONVERSE) {
+                return AnswerChunk.newBuilder()
+                    .setTranscriptDelta(Intention.toString(userIntention))
+                    .setIsFinal(true)
+                    .build();
+            }
             float[] queryEmbedding = llmService.embedText(request.getUserQuery());
             List<PersonaChunk> chunks = databaseWriter.searchSimilarChunks(
-                request.getGuruId(), 
-                queryEmbedding, 
-                RAG_TOP_K
+                    request.getGuruId(),
+                    queryEmbedding,
+                    RAG_TOP_K
             );
             String answer = llmService.generateAnswer(request.getUserQuery(), chunks);
             List<voxel.common.v1.Types.ContextReference> citations = buildCitations(chunks);
@@ -67,10 +75,23 @@ public class DialogueService {
                     .addAllCitations(citations)
                     .setIsFinal(true)
                     .build();
+
         } catch (SQLException e) {
             throw new RuntimeException("Failed to retrieve context for question", e);
         } catch (Exception e) {
             throw new RuntimeException("Failed to generate answer", e);
+        }
+    }
+
+    public AnswerChunk getIntent(AskRequest request) {
+        try{
+            Intention userIntention = llmService.getUserIntention(request.getUserQuery(), request.getConversationId(), request.getGuruId());
+            return AnswerChunk.newBuilder()
+                    .setTranscriptDelta(Intention.toString(userIntention))
+                    .setIsFinal(true)
+                    .build();
+        }catch (Exception e){
+            throw new RuntimeException("Failed to extract user intent", e);
         }
     }
 

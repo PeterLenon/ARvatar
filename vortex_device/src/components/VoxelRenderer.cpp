@@ -28,7 +28,7 @@ void VoxelRenderer::load_model(std::string path) {
         y_norm = (point.y - pcd_centroid[1])/this->S_Y;
         z_norm = (point.z - pcd_centroid[2])/this->S_Z;
 
-        float theta = atan2(z_norm, x_norm);
+        double theta = atan2(z_norm, x_norm);
         this->cylindricalized_voxel.add_point(theta, x_norm, y_norm);
     }
 }
