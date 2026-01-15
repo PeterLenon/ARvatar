@@ -31,6 +31,34 @@ public class PcdActivitiesImpl implements PcdActivities {
         this.objectMapper = new ObjectMapper();
     }
 
+    /**
+     * Checks if CUDA is available on the system for GPU-accelerated point cloud generation.
+     * This is informational only - we will attempt CPU-based dense reconstruction regardless.
+     * 
+     * @return true if CUDA is available, false otherwise
+     */
+    private boolean isCudaAvailable() {
+        try {
+            ProcessBuilder nvidiaSmiBuilder = new ProcessBuilder("nvidia-smi", "--query-gpu=name", "--format=csv,noheader");
+            nvidiaSmiBuilder.redirectErrorStream(true);
+            Process nvidiaSmiProcess = nvidiaSmiBuilder.start();
+            int exitCode = nvidiaSmiProcess.waitFor();
+            
+            if (exitCode == 0) {
+                try (java.io.BufferedReader reader = new java.io.BufferedReader(
+                        new java.io.InputStreamReader(nvidiaSmiProcess.getInputStream()))) {
+                    String line = reader.readLine();
+                    if (line != null && !line.trim().isEmpty()) {
+                        return true;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            // nvidia-smi not available or failed
+        }
+        return false;
+    }
+
     @Override
     public void executePcdJob(AsrPcdJob job) {
         job.status = JobStatus.PCD_STARTED;
@@ -207,6 +235,14 @@ public class PcdActivitiesImpl implements PcdActivities {
             logger.info("Starting PCD creation for {} unique viseme(s): {}", 
                 visemeFrameDirMap.size(), visemeFrameDirMap.keySet());
             
+            // Check CUDA availability for informational purposes
+            boolean cudaAvailable = isCudaAvailable();
+            if (cudaAvailable) {
+                logger.info("CUDA detected - Dense reconstruction will use GPU acceleration");
+            } else {
+                logger.info("CUDA not available - Dense reconstruction will use CPU (slower but will produce detailed point clouds)");
+            }
+            
             for (Map.Entry<String, Path> entry : visemeFrameDirMap.entrySet()) {
                 String visemeId = entry.getKey();
                 Path visemeFrameDir = entry.getValue();
@@ -373,7 +409,9 @@ public class PcdActivitiesImpl implements PcdActivities {
                     continue;
                 }
 
-                logger.info("Step 3: Running patch match stereo (may fail without CUDA)...");
+                // Step 3: Patch match stereo - attempt CPU-based dense reconstruction
+                String executionMode = cudaAvailable ? "GPU (CUDA)" : "CPU";
+                logger.info("Step 3: Running patch match stereo using {} (this may take a while on CPU)...", executionMode);
                 Path dense0Path = densePath.resolve("0");
                 ProcessBuilder stereoBuilder = new ProcessBuilder(
                         "xvfb-run", "-a", "-s", "-screen 0 1024x768x24",
@@ -381,14 +419,46 @@ public class PcdActivitiesImpl implements PcdActivities {
                         "--workspace_path", dense0Path.toAbsolutePath().toString()
                 );
                 stereoBuilder.environment().put("QT_QPA_PLATFORM", "offscreen");
-                stereoBuilder.environment().put("LIBGL_ALWAYS_SOFTWARE", "1");
-                stereoBuilder.environment().put("GALLIUM_DRIVER", "llvmpipe");
-                stereoBuilder.inheritIO();
+                // Keep software rendering flags for CPU mode, remove them if CUDA is available to allow GPU usage
+                if (cudaAvailable) {
+                    // Remove software rendering flags to allow GPU usage
+                    stereoBuilder.environment().remove("LIBGL_ALWAYS_SOFTWARE");
+                    stereoBuilder.environment().remove("GALLIUM_DRIVER");
+                } else {
+                    // Keep software rendering for CPU mode
+                    stereoBuilder.environment().put("LIBGL_ALWAYS_SOFTWARE", "1");
+                    stereoBuilder.environment().put("GALLIUM_DRIVER", "llvmpipe");
+                }
+                
+                // Redirect output to log file for CPU mode (since it will take longer)
+                java.io.File stereoLogFile = new java.io.File(visemeWorkspaceDir.toFile(), "patch_match_stereo.log");
+                stereoBuilder.redirectErrorStream(true);
+                stereoBuilder.redirectOutput(stereoLogFile);
+                
+                logger.info("Starting patch_match_stereo for viseme {} (mode: {})...", visemeId, executionMode);
+                if (!cudaAvailable) {
+                    logger.info("CPU-based dense reconstruction in progress - this step can take 30 minutes to several hours depending on image count and resolution");
+                }
+                
                 Process stereoProcess = stereoBuilder.start();
                 int stereoExitCode = stereoProcess.waitFor();
                 
                 if (stereoExitCode != 0) {
-                    logger.warn("Patch match stereo failed (expected without CUDA). Trying alternative: exporting sparse point cloud...");
+                    String errorDetails = "";
+                    try {
+                        if (Files.exists(stereoLogFile.toPath())) {
+                            errorDetails = new String(Files.readAllBytes(stereoLogFile.toPath()));
+                            logger.error("Colmap patch_match_stereo log (last 1000 chars):\n{}", 
+                                errorDetails.length() > 1000 ? errorDetails.substring(errorDetails.length() - 1000) : errorDetails);
+                        }
+                    } catch (IOException e) {
+                        logger.warn("Could not read patch_match_stereo log", e);
+                    }
+                    
+                    logger.error("Patch match stereo failed for viseme {} with exit code: {} (mode: {})", 
+                        visemeId, stereoExitCode, executionMode);
+                    logger.warn("Falling back to sparse point cloud export...");
+                    
                     // Fallback: Export sparse reconstruction as PLY
                     Path sparsePlyPath = visemeWorkspaceDir.resolve("sparse_points.ply");
                     ProcessBuilder exportBuilder = new ProcessBuilder(
@@ -407,19 +477,18 @@ public class PcdActivitiesImpl implements PcdActivities {
                     
                     if (exportExitCode == 0 && Files.exists(sparsePlyPath)) {
                         logger.info("Successfully exported sparse point cloud as fallback");
-                        // Use sparse point cloud instead
-                        Path finalFusedPlyFile = sparsePlyPath;
                         Path s3FinalPcFile = workspaceBaseDir.resolve(visemeId + ".ply");
-                        Files.move(finalFusedPlyFile, s3FinalPcFile, StandardCopyOption.REPLACE_EXISTING);
+                        Files.move(sparsePlyPath, s3FinalPcFile, StandardCopyOption.REPLACE_EXISTING);
                         logger.info("Successfully created PCD file from sparse reconstruction for viseme {}: {}", visemeId, s3FinalPcFile);
                         extractedVisemeIds.add(visemeId);
                         objectStoreClient.updateGuruAssetInventory(guruId, s3FinalPcFile);
                         continue; // Skip to next viseme
                     } else {
-                        logger.error("Both dense reconstruction and sparse export failed. " +
-                            "Dense reconstruction requires CUDA. Consider using a GPU-enabled environment.");
+                        logger.error("Both dense reconstruction and sparse export failed for viseme {}", visemeId);
                         continue;
                     }
+                } else {
+                    logger.info("Patch match stereo completed successfully for viseme {} (mode: {})", visemeId, executionMode);
                 }
                 
                 // Step 4: Stereo fusion (creates the fused point cloud)
@@ -435,13 +504,25 @@ public class PcdActivitiesImpl implements PcdActivities {
                 fusionBuilder.environment().put("QT_QPA_PLATFORM", "offscreen");
                 fusionBuilder.environment().put("LIBGL_ALWAYS_SOFTWARE", "1");
                 fusionBuilder.environment().put("GALLIUM_DRIVER", "llvmpipe");
-                fusionBuilder.inheritIO();
+                
+                java.io.File fusionLogFile = new java.io.File(visemeWorkspaceDir.toFile(), "stereo_fusion.log");
+                fusionBuilder.redirectErrorStream(true);
+                fusionBuilder.redirectOutput(fusionLogFile);
+                
                 Process fusionProcess = fusionBuilder.start();
                 int fusionExitCode = fusionProcess.waitFor();
                 
                 if (fusionExitCode != 0) {
+                    String errorDetails = "";
+                    try {
+                        if (Files.exists(fusionLogFile.toPath())) {
+                            errorDetails = new String(Files.readAllBytes(fusionLogFile.toPath()));
+                            logger.error("Colmap stereo fusion log:\n{}", errorDetails);
+                        }
+                    } catch (IOException e) {
+                        logger.warn("Could not read stereo fusion log", e);
+                    }
                     logger.error("Colmap stereo fusion failed for viseme {} with exit code: {}", visemeId, fusionExitCode);
-                    logger.error("Colmap stereo fusion failed with exit code: " + fusionExitCode);
                     continue;
                 }
 
@@ -508,7 +589,7 @@ public class PcdActivitiesImpl implements PcdActivities {
 
                 Path s3FinalPcFile = workspaceBaseDir.resolve(visemeId + ".ply");
                 Files.move(finalFusedPlyFile, s3FinalPcFile, StandardCopyOption.REPLACE_EXISTING);
-                logger.info("Successfully created PCD file for viseme {}: {}", visemeId, s3FinalPcFile);
+                logger.info("Successfully created dense PCD file for viseme {}: {}", visemeId, s3FinalPcFile);
                 
                 extractedVisemeIds.add(visemeId);
                 objectStoreClient.updateGuruAssetInventory(guruId, s3FinalPcFile);
