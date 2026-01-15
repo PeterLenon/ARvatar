@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.lettuce.core.api.async.RedisAsyncCommands;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import voxel.assets.v1.AssetServiceOuterClass.*;
 import voxel.common.v1.Types;
@@ -21,13 +22,44 @@ import java.util.Map;
 public class AssetService {
 
     private final MinIOS3Client objectStoreClient = new MinIOS3Client();
-    private RedisClient redisClient = RedisClient.create("redis://localhost:6379");
-    private StatefulRedisConnection<String, String> connection = redisClient.connect();
-    private RedisAsyncCommands<String, String> asyncCommands = connection.async();
+    private final RedisClient redisClient;
+    private final StatefulRedisConnection<String, String> connection;
+    private final RedisAsyncCommands<String, String> asyncCommands;
     private final ObjectMapper objectMapper = new ObjectMapper()
             .registerModule(new JavaTimeModule())
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
     private final Logger logger = org.slf4j.LoggerFactory.getLogger(AssetService.class);
+
+    public AssetService(@Value("${redis.uri:redis://localhost:6379}") String redisUri) {
+        this.redisClient = RedisClient.create(redisUri);
+        this.connection = connectWithRetry(redisClient);
+        this.asyncCommands = connection.async();
+    }
+
+    private StatefulRedisConnection<String, String> connectWithRetry(RedisClient client) {
+        int maxRetries = 10;
+        long initialDelayMs = 1000;
+        for (int attempt = 1; attempt <= maxRetries; attempt++) {
+            try {
+                logger.info("Attempting to connect to Redis (attempt {}/{})", attempt, maxRetries);
+                return client.connect();
+            } catch (Exception e) {
+                if (attempt == maxRetries) {
+                    logger.error("Failed to connect to Redis after {} attempts", maxRetries, e);
+                    throw new RuntimeException("Unable to connect to Redis after " + maxRetries + " attempts", e);
+                }
+                long delayMs = initialDelayMs * attempt;
+                logger.warn("Redis connection failed (attempt {}/{}), retrying in {} ms...", attempt, maxRetries, delayMs, e);
+                try {
+                    Thread.sleep(delayMs);
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                    throw new RuntimeException("Interrupted while waiting to retry Redis connection", ie);
+                }
+            }
+        }
+        throw new RuntimeException("Failed to connect to Redis");
+    }
 
     private String publishJobToStream(AsrPcdJob job){
         String asrJobRedisStream = "asr_jobs";

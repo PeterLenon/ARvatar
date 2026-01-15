@@ -41,19 +41,11 @@ public class AssetGrpcService extends AssetServiceGrpc.AssetServiceImplBase {
     public void uploadGuruVideo(UploadGuruVideoRequest request, 
                                StreamObserver<UploadGuruVideoResponse> responseObserver) {
         try {
-            // TODO: Implement video upload logic
-            UploadGuruVideoResponse response = UploadGuruVideoResponse.newBuilder()
-                    .setSuccess(true)
-                    .setMessage("Video upload received successfully")
-                    .setPointCloudVariant("neutral")
-                    .setProcessedAt(com.google.protobuf.Timestamp.newBuilder()
-                            .setSeconds(System.currentTimeMillis() / 1000)
-                            .build())
-                    .build();
-            
+            UploadGuruVideoResponse response = assetService.uploadGuruVideo(request);
             responseObserver.onNext(response);
             responseObserver.onCompleted();
         } catch (Exception e) {
+            System.out.println("Error: " + e);
             responseObserver.onError(e);
         }
     }

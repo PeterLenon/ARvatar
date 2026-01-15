@@ -34,10 +34,7 @@ public class DialogueGrpcService extends DialogueServiceGrpc.DialogueServiceImpl
             
             // Get the initial response from the business service
             AnswerChunk initialChunk = dialogueService.askQuestion(request);
-            
-            // Send the initial chunk
             responseObserver.onNext(initialChunk);
-            
             // TODO: Implement proper streaming logic here
             // For now, we'll simulate streaming by sending additional chunks
             if (!initialChunk.getIsFinal()) {
@@ -45,13 +42,9 @@ public class DialogueGrpcService extends DialogueServiceGrpc.DialogueServiceImpl
                 AnswerChunk.Builder additionalChunk = AnswerChunk.newBuilder()
                         .setTranscriptDelta(" (Additional streaming content)")
                         .setIsFinal(true);
-                
                 responseObserver.onNext(additionalChunk.build());
             }
-            
-            // Complete the stream
             responseObserver.onCompleted();
-            
         } catch (Exception e) {
             responseObserver.onError(e);
         }

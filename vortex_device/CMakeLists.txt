@@ -96,7 +96,7 @@ target_link_libraries(voxel_grpc PUBLIC gRPC::grpc++ voxel_proto)
 # ---------------- Your source libs/apps ----------------
 # Voxel renderer uses PCL
 add_library(vortex_renderer STATIC
-        src/VoxelRenderer.cpp
+        src/components/VoxelRenderer.cpp
 )
 target_include_directories(vortex_renderer PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src
@@ -105,11 +105,11 @@ target_link_libraries(vortex_renderer PUBLIC pcl_deps)
 
 # Device client pulls in renderer (→ PCL), and gRPC stubs
 add_executable(device_client
-        src/device_client.cc
         src/models/CylinderVox.cpp
         src/models/CylinderVox.h
-        src/GrpcClient.cpp
-        src/GrpcClient.h
+        src/components/GrpcClient.cpp
+        src/components/GrpcClient.h
+        src/main.cpp
 )
 target_include_directories(device_client PRIVATE ${GEN_DIR})
 target_link_libraries(device_client PRIVATE vortex_renderer voxel_grpc)

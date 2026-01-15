@@ -1,6 +1,7 @@
 package com.arvatar.vortex.controller;
 
 import com.arvatar.vortex.service.DialogueService;
+import io.lettuce.core.dynamic.annotation.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -49,24 +50,18 @@ public class DialogueController {
         return ResponseEntity.ok(response);
     }
 
-    /**
-     * Simple ask endpoint with question as query parameter
-     */
-    @PostMapping("/guru/{guruId}/ask-simple")
-    public ResponseEntity<AnswerChunk> askSimpleQuestion(
-            @PathVariable String guruId,
-            @RequestParam String userQuery,
-            @RequestParam(required = false) String conversationId) {
-        
+    @PostMapping("/intent/parse")
+    public ResponseEntity<AnswerChunk> parseActionIntent(
+            @Param("guruId") String guruId,
+            @RequestBody AskRequest askRequest) {
         AskRequest request = AskRequest.newBuilder()
                 .setGuruId(guruId)
-                .setUserQuery(userQuery)
-                .setConversationId(conversationId != null ? conversationId : "")
+                .setUserQuery(askRequest.getUserQuery())
+                .setConversationId(askRequest.getConversationId())
                 .setReturnAudio(false)
                 .setReturnLipsync(false)
                 .build();
-        
-        AnswerChunk response = dialogueService.askQuestion(request);
+        AnswerChunk response = dialogueService.getIntent(request);
         return ResponseEntity.ok(response);
     }
 }

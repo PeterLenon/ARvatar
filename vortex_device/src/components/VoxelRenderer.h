@@ -12,7 +12,7 @@
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 #include <vector>
-#include "models/CylinderVox.h"
+#include "../models/CylinderVox.h"
 #include "Eigen/Dense"
 
 class VoxelRenderer {

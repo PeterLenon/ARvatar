@@ -19,6 +19,7 @@ import io.temporal.client.WorkflowClient;
 import io.temporal.client.WorkflowOptions;
 import io.temporal.client.WorkflowServiceException;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -33,21 +34,47 @@ import java.util.concurrent.Executors;
 public class PcdService {
     private final RedisAsyncCommands<String, String> asyncCommands;
     private final StatefulRedisConnection<String, String> connection;
+    private final RedisClient redisClient;
     private final ObjectMapper objectMapper;
     private final Logger logger = org.slf4j.LoggerFactory.getLogger(PcdService.class);
     private final ExecutorService workerExecutor = Executors.newSingleThreadExecutor();
     private final WorkflowClient workflowClient;
     private final TemporalProperties temporalProperties;
 
-    PcdService(WorkflowClient workflowClient, TemporalProperties temporalProperties) {
+    PcdService(WorkflowClient workflowClient, TemporalProperties temporalProperties, @Value("${redis.uri:redis://localhost:6379}") String redisUri) {
         this.workflowClient = workflowClient;
         this.temporalProperties = temporalProperties;
         this.objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        RedisClient redisClient = RedisClient.create("redis://localhost:6379");
-        this.connection = redisClient.connect();
+        this.redisClient = RedisClient.create(redisUri);
+        this.connection = connectWithRetry(redisClient);
         this.asyncCommands = connection.async();
+    }
+
+    private StatefulRedisConnection<String, String> connectWithRetry(RedisClient client) {
+        int maxRetries = 10;
+        long initialDelayMs = 1000;
+        for (int attempt = 1; attempt <= maxRetries; attempt++) {
+            try {
+                logger.info("Attempting to connect to Redis (attempt {}/{})", attempt, maxRetries);
+                return client.connect();
+            } catch (Exception e) {
+                if (attempt == maxRetries) {
+                    logger.error("Failed to connect to Redis after {} attempts", maxRetries, e);
+                    throw new RuntimeException("Unable to connect to Redis after " + maxRetries + " attempts", e);
+                }
+                long delayMs = initialDelayMs * attempt;
+                logger.warn("Redis connection failed (attempt {}/{}), retrying in {} ms...", attempt, maxRetries, delayMs, e);
+                try {
+                    Thread.sleep(delayMs);
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                    throw new RuntimeException("Interrupted while waiting to retry Redis connection", ie);
+                }
+            }
+        }
+        throw new RuntimeException("Failed to connect to Redis");
     }
 
     @PostConstruct
@@ -124,7 +151,12 @@ public class PcdService {
     @PreDestroy
     public void shutdown() {
         workerExecutor.shutdownNow();
-        connection.close();
+        if (connection != null) {
+            connection.close();
+        }
+        if (redisClient != null) {
+            redisClient.shutdown();
+        }
     }
 }
 
